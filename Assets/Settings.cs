@@ -3,10 +3,13 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using UnityEngine.Rendering;
+using TMPro;
 
 public class Settings : MonoBehaviour
 {
-    public Dropdown resolutionDropdown;
+    public TMP_Dropdown resolutionDropdown;
+    public GameObject settingsPanel;
+    public GameObject mainMenuPanel;
 
     Resolution[] resolutions;
 
@@ -58,6 +61,12 @@ public class Settings : MonoBehaviour
             Screen.fullScreen = System.Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference"));
         else
             Screen.fullScreen = true;
+    }
+
+    public void BackToMainMenu()
+    {
+        settingsPanel.SetActive(false);
+        mainMenuPanel.SetActive(true);
     }
 
 }
