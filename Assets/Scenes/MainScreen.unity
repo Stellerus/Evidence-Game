@@ -4335,7 +4335,7 @@ MonoBehaviour:
   settingsPanel: {fileID: 1377713097}
   mainMenuPanel: {fileID: 1056792781}
   fullscreenToggle: {fileID: 246269880}
-  toggleMusic: {fileID: 246269880}
+  toggleMusic: {fileID: 158754078}
   sliderVolumeMusic: {fileID: 1313687832}
   audioSource: {fileID: 0}
 --- !u!1 &1430624804
