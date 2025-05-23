@@ -20,7 +20,7 @@ public class TriggerClickHandler : MonoBehaviour
 
     private void HandleAction(Collider other)
     {
-        Debug.Log($"{other.gameObject.name} кликнут внутри триггера!");
+        Debug.Log($"{other.gameObject.name} was clicked!");
         
     }
 }
