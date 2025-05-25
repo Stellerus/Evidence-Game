@@ -2,26 +2,48 @@ using UnityEngine;
 
 public class TriggerClickHandler : MonoBehaviour
 {
-    // Here you can insert wanted tag (for example, "Player")
     public string targetTag = "Player";
 
-    private void OnTriggerStay2D(Collider2D other)
+    private bool isPlayerInTrigger = false;
+    private Collider2D playerCollider;
+
+    void OnTriggerEnter2D(Collider2D other)
     {
-        // Checking if it's the right object
         if (other.CompareTag(targetTag))
         {
-            // Handling mouse click
-            if (Input.GetKeyDown(KeyCode.H))
+            Debug.Log("Player вошёл в триггер!");
+            isPlayerInTrigger = true;
+            playerCollider = other;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag(targetTag))
+        {
+            Debug.Log("Player вышел из триггера!");
+            isPlayerInTrigger = false;
+            playerCollider = null;
+        }
+    }
+
+    void Update()
+    {
+        if (isPlayerInTrigger && Input.GetMouseButtonDown(0))
+        {
+            Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            // Check if the mouse position is within the bounds of the player's collider
+            if (playerCollider != null && playerCollider.OverlapPoint(mouseWorldPos))
             {
-                HandleAction(other);
+                HandleAction(playerCollider);
             }
         }
     }
 
     private void HandleAction(Collider2D other)
     {
-        Debug.Log($"{other.gameObject.name} was clicked!");
-        
+        Debug.Log($"{other.gameObject.name} was clicked inside trigger!");
     }
 }
 
