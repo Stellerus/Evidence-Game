@@ -2,10 +2,10 @@
 
 public class CameraZoomOnClick : MonoBehaviour
 {
-    public float zoomSize = 3f; // Size of zoom camera
-    public float zoomSpeed = 5f; // Speed ​​of sound and movement
-    public float startSize = 5f; // Start camera size
-    public float moveSpeed = 5f; // Speed ​​of camera movement
+    public float zoomSize = 3f;     // Camera size when zoomed in
+    public float zoomSpeed = 5f;    // Speed of camera size change
+    public float startSize = 5f;    // Initial camera size
+    public float moveSpeed = 5f;    // Camera movement speed
 
     private Camera cam;
     private Vector3 targetPosition;
@@ -23,27 +23,28 @@ public class CameraZoomOnClick : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
-            if (hit.collider != null)
+            Vector2 mouseWorldPos = cam.ScreenToWorldPoint(Input.mousePosition);
+            Collider2D hit = Physics2D.OverlapPoint(mouseWorldPos);
+
+            if (hit != null && hit.CompareTag("Player"))
             {
-                // Click on an object — zoom to it
-                targetPosition = new Vector3(hit.collider.transform.position.x, hit.collider.transform.position.y, cam.transform.position.z);
+                // Clicked on an object with the "Player" tag — zoom in on it
+                targetPosition = new Vector3(hit.transform.position.x, hit.transform.position.y, cam.transform.position.z);
                 targetSize = zoomSize;
                 isZoomed = true;
             }
             else if (isZoomed)
             {
-                // Click on an empty place — return the camera to its original position
+                // Clicked on empty space — return camera to initial position
                 targetPosition = new Vector3(0, 0, cam.transform.position.z);
-                targetSize = normalSize;
+                targetSize = startSize;
                 isZoomed = false;
             }
         }
 
         // Smooth camera movement
         cam.transform.position = Vector3.Lerp(cam.transform.position, targetPosition, moveSpeed * Time.deltaTime);
-        // Smooth camera resizing
+        // Smooth camera size change
         cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetSize, zoomSpeed * Time.deltaTime);
     }
 }
