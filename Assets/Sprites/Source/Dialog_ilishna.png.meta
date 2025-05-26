@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Dialog_ilishna_0: -5720459319137796470
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

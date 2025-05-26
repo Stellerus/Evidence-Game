@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Dialog_Kobel_0: -2931364738774702684
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
