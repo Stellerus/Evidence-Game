@@ -2,16 +2,18 @@ using UnityEngine;
 
 public class SpriteToggleOnClick : MonoBehaviour
 {
-    public Sprite newSprite; // New sprite to switch to on click
+    public Sprite newSprite;
 
     private SpriteRenderer spriteRenderer;
     private Sprite originalSprite;
     private bool isNew = false;
 
+    public bool IsNew => isNew; // Property to check if the sprite is new
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        originalSprite = spriteRenderer.sprite; // Save the original sprite
+        originalSprite = spriteRenderer.sprite;
     }
 
     void OnMouseDown()
@@ -28,3 +30,4 @@ public class SpriteToggleOnClick : MonoBehaviour
         }
     }
 }
+

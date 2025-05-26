@@ -1,8 +1,12 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TriggerClickHandler : MonoBehaviour
 {
     public string targetTag = "Player";
+
+    [Header("Event when clicking on an object in a trigger")]
+    public UnityEvent onClickInTrigger;
 
     private bool isPlayerInTrigger = false;
     private Collider2D playerCollider;
@@ -11,7 +15,6 @@ public class TriggerClickHandler : MonoBehaviour
     {
         if (other.CompareTag(targetTag))
         {
-            Debug.Log("Player вошёл в триггер!");
             isPlayerInTrigger = true;
             playerCollider = other;
         }
@@ -21,7 +24,6 @@ public class TriggerClickHandler : MonoBehaviour
     {
         if (other.CompareTag(targetTag))
         {
-            Debug.Log("Player вышел из триггера!");
             isPlayerInTrigger = false;
             playerCollider = null;
         }
@@ -43,7 +45,7 @@ public class TriggerClickHandler : MonoBehaviour
 
     private void HandleAction(Collider2D other)
     {
-        Debug.Log($"{other.gameObject.name} was clicked inside trigger!");
+        onClickInTrigger.Invoke(); // Invoke the UnityEvent when the player clicks while inside the trigger
     }
 }
 
