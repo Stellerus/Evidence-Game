@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d7705327ed5905841b78597d1b52c520
+guid: 895a218c25483004c8540a688c75b517
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8977226308482283395
-    second: IMG_9699_0
+      213: 545209741518129082
+    second: plant_little_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,7 +97,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WindowsStoreApps
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -110,7 +110,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
+    buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_9699_0
+      name: plant_little_0
       rect:
         serializedVersion: 2
-        x: 239
-        y: 247
-        width: 1845
-        height: 1298
+        x: 301
+        y: 220
+        width: 356
+        height: 641
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d784f9e5c3c7a6380800000000000000
-      internalID: -8977226308482283395
+      spriteID: ab7454b0f59f09700800000000000000
+      internalID: 545209741518129082
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      IMG_9699_0: -8977226308482283395
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

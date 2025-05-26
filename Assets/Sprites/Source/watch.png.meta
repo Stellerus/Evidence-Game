@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: d7705327ed5905841b78597d1b52c520
+guid: 6a7de753252bba34bb2fb84a1d2cd79e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8977226308482283395
-    second: IMG_9699_0
+      213: 6325397865789782373
+    second: watch_0
+  - first:
+      213: -2916015885107539856
+    second: watch_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,7 +100,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WindowsStoreApps
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -110,7 +113,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
+    buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -126,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_9699_0
+      name: watch_0
       rect:
         serializedVersion: 2
-        x: 239
-        y: 247
-        width: 1845
-        height: 1298
+        x: 275
+        y: 144
+        width: 504
+        height: 631
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +144,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d784f9e5c3c7a6380800000000000000
-      internalID: -8977226308482283395
+      spriteID: 569f96578d358c750800000000000000
+      internalID: 6325397865789782373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: watch_1
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 774
+        width: 100
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 070d4c0900b3887d0800000000000000
+      internalID: -2916015885107539856
       vertices: []
       indices: 
       edges: []
@@ -160,8 +185,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      IMG_9699_0: -8977226308482283395
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
