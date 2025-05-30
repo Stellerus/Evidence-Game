@@ -664,6 +664,7 @@ GameObject:
   - component: {fileID: 1438452016}
   - component: {fileID: 1438452015}
   - component: {fileID: 1438452014}
+  - component: {fileID: 1438452017}
   m_Layer: 0
   m_Name: DialogueTextMesh
   m_TagString: Untagged
@@ -679,8 +680,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438452013}
-  m_Text: "Sample text dududu \tdududu dududu. Pi pu pi pi pipipupu. pew pew pew
-    pew pew pew pew pew pew pew pew pew pew pew\nPupurupupupu."
+  m_Text: "Sample text dududu \tdududu dududu. Pi pu pi pi pipipupu. pew pew pew"
   m_OffsetZ: -1
   m_CharacterSize: 0.1
   m_LineSpacing: 1
@@ -754,6 +754,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1301220393}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1438452017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438452013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a1f9a56e79203b4ab9981527afc8b09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLength: 68
+  uiText: {fileID: 1438452014}
+  editorMode: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
