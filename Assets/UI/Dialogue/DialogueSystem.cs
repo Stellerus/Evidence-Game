@@ -26,8 +26,13 @@ public class DialogueSystem : MonoBehaviour
 
     private string NextDialogue()
     {
-        Debug.Log($"Assigning dialogue: {SetTextMesh()}");
-        return dialogueData.dialogueSequence[counter++];
+        if (counter < dialogueList.Count)
+        {
+            Debug.Log($"Assigning dialogue: {SetTextMesh()}");
+            return dialogueData.dialogueSequence[counter++];
+        }
+        else
+            return string.Empty;
     }
 
     public string SetTextMesh()
@@ -40,7 +45,11 @@ public class DialogueSystem : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log($"Text assigned: {NextDialogue()}");
+            if(counter < dialogueList.Count)
+                Debug.Log($"Text assigned: {NextDialogue()}");
+            else
+                Debug.Log("No more dialogues to display.");
         }
+            
     }
 }
