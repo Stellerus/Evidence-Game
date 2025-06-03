@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class DialogueSwitchS : MonoBehaviour
@@ -7,8 +8,9 @@ public class DialogueSwitchS : MonoBehaviour
     public GameObject targetObject1;
     public GameObject targetObject2;
     public GameObject targetObject3;
-    private int currentIndex = 0;
+    private int currentIndex =0;
 
+    public PhoneCallingScript phoneCallingScript;
     public void NextDialogue()
     {
         // ¬ыключаем текущий текст, если он есть
@@ -21,49 +23,42 @@ public class DialogueSwitchS : MonoBehaviour
         {
             case 1:
                 dialogueTexts[1].SetActive(true);
-                // «десь можно добавить уникальную логику дл€ второго текста
                 break;
             case 2:
                 dialogueTexts[2].SetActive(true);
-                // ”никальна€ логика дл€ третьего текста
                 break;
             case 3:
                 dialogueTexts[3].SetActive(true);
-                // «десь можно добавить уникальную логику дл€ второго текста
                 break;
             case 4:
                 dialogueTexts[4].SetActive(true);
-                // «десь можно добавить уникальную логику дл€ второго текста
                 break;
             case 5:
                 dialogueTexts[5].SetActive(true);
-                gameObject.SetActive(false);
-                targetObject0.SetActive(false);
                 break;
             case 6:
                 dialogueTexts[6].SetActive(true);
-                // «десь можно добавить уникальную логику дл€ второго текста
                 break;
             case 7:
                 dialogueTexts[7].SetActive(true);
-                // «десь можно добавить уникальную логику дл€ второго текста
                 break;
                 case 8:
                     dialogueTexts[8].SetActive(true);
-            // «десь можно добавить уникальную логику дл€ второго текста
-            break;
+                break;
                 case 9:
-                    dialogueTexts[9].SetActive(true);
-            // «десь можно добавить уникальную логику дл€ второго текста
-            break;
+                phoneCallingScript.StartCoroutine(phoneCallingScript.Stage2Delay());
+                gameObject.SetActive(false);
+                targetObject0.SetActive(false);
+                break;
                 case 10:
-                    dialogueTexts[10].SetActive(true);
+                dialogueTexts[10].SetActive(true);
                 break;
                 case 11:
                     dialogueTexts[11].SetActive(true);
                 break;
                 case 12:
-                    dialogueTexts[12].SetActive(true);
+                gameObject.SetActive(false);
+                targetObject1.SetActive(false);
                 break;
                 case 13:
                     dialogueTexts[13].SetActive(true);
@@ -84,7 +79,8 @@ public class DialogueSwitchS : MonoBehaviour
                     dialogueTexts[18].SetActive(true);
                 break;
                 case 19:
-                    dialogueTexts[19].SetActive(true);
+                gameObject.SetActive(false);
+                targetObject2.SetActive(false);
                 break;
                 case 20:
                     dialogueTexts[20].SetActive(true);
@@ -122,9 +118,12 @@ public class DialogueSwitchS : MonoBehaviour
             case 31:
                 dialogueTexts[31].SetActive(true);
                 break;
+                case 32:
+                    dialogueTexts[32].SetActive(true);
+                break;
             default:
-                // ¬се диалоги закончились
-                Debug.Log("ƒиалог завершЄн");
+                gameObject.SetActive(false);
+                targetObject3.SetActive(false);
                 break;
         }
     }
