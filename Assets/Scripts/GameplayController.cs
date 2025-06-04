@@ -13,6 +13,8 @@ public class DialogueSwitchS : MonoBehaviour
     [Header("Dependencies")]
     [SerializeField] private PhoneCallingScript phoneCallingScript;
 
+    [SerializeField] private ScreenFader fader;
+
     private int currentIndex = -1;
     private Typewriter3DEffect currentTypewriter;
 
@@ -68,20 +70,24 @@ public class DialogueSwitchS : MonoBehaviour
         {
             case 9:
                 phoneCallingScript.StartCoroutine(phoneCallingScript.Stage2Delay());
+                fader.Enable();
                 ToggleObjects(false, 0);
                 ToggleCharacter(false, 0);
                 return true;
 
             case 12:
+                fader.Enable();
                 ToggleObjects(false, 1);
                 return true;
 
             case 19:
+                fader.Enable();
                 ToggleObjects(false, 2);
                 ToggleCharacter(false, 1);
                 return true;
 
             case 32:
+                fader.Enable();
                 ToggleObjects(false, 3);
                 ToggleCharacter(false, 2);
                 return true;
