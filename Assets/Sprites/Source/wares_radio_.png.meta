@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 5c917894770fca249ab5db116bfd4417
+guid: e46da74ac7276784a9437d524c035eb1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3860347858520176686
-    second: IMG_9991_0
-  - first:
-      213: -6512260542538099015
-    second: IMG_9991_1
+      213: -8506194833184410185
+    second: wares_radio__0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -112,30 +109,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_9991_0
+      name: wares_radio__0
       rect:
         serializedVersion: 2
-        x: 490
-        y: 647
-        width: 285
-        height: 176
+        x: 474
+        y: 406
+        width: 51
+        height: 188
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e28f880ace5b29530800000000000000
-      internalID: 3860347858520176686
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: IMG_9991_1
-      rect:
-        serializedVersion: 2
-        x: 1171
-        y: 536
-        width: 472
-        height: 354
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9b6593d3a8dcf95a0800000000000000
-      internalID: -6512260542538099015
+      spriteID: 7b5b7c1fddce3f980800000000000000
+      internalID: -8506194833184410185
       vertices: []
       indices: 
       edges: []
@@ -186,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      IMG_9991_0: 3860347858520176686
-      IMG_9991_1: -6512260542538099015
+      wares_radio__0: -8506194833184410185
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
