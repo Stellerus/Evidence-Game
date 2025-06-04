@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class DialogueSwitchS : MonoBehaviour
 {
-    public GameObject[] dialogueTexts; // Массив объектов текста
+    public GameObject[] dialogueTexts; //  Array of text objects
     public GameObject targetObject0;
     public GameObject targetObject1;
     public GameObject targetObject2;
@@ -17,7 +17,7 @@ public class DialogueSwitchS : MonoBehaviour
     public PhoneCallingScript phoneCallingScript;
     public void NextDialogue()
     {
-        // Выключаем текущий текст, если он есть
+        // Disable the current text, if there is any
         if (currentIndex < dialogueTexts.Length)
             dialogueTexts[currentIndex].SetActive(false);
 
