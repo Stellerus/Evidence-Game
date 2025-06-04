@@ -5,7 +5,7 @@ public class MainMenu : MonoBehaviour
 {
     public void Continue() 
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("Assembly");
     }
 
     public void ExitGame()
