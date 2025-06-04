@@ -7,26 +7,26 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
 public class PhoneCallingScript : MonoBehaviour
 {
-    [Header("Номер для действия")]
-    public List<int> targetNumber = new List<int>() { 0, 0, 0 }; // Например, "123"
-    public UnityEvent OnTargetNumberDialed; // Событие при совпадении
+    [Header("ГЌГ®Г¬ГҐГ° Г¤Г«Гї Г¤ГҐГ©Г±ГІГўГЁГї")]
+    public List<int> targetNumber = new List<int>() { 0, 0, 0 }; // Example: "123"
+    public UnityEvent OnTargetNumberDialed; // Answers for the survey
 
     [Header("Dial Settings")]
-    public Transform diskCenter;      // Центр диска (пустой объект в центре)
-    public float maxRotation = 270f;  // Максимальный угол набора (по часовой стрелке)
-    public float returnSpeed = 200f;  // Скорость возврата (градусов в секунду)
+    public Transform diskCenter;      // Disk center (empty object at the center)
+    public float maxRotation = 270f;  // Maximum height of the slope (by time of day)
+    public float returnSpeed = 200f;  // Wind speed (meters per second)
     public float deadZone = 10f;
-    public int numbersCount = 10;     // Количество цифр (обычно 10)
+    public int numbersCount = 10;     // Number of digits (usually 10)
 
     [Header("Audio")]
-    public AudioSource tickSound;     // Звук щелчка (опционально)
-    public float tickStep = 12f;      // Через сколько градусов воспроизводить щелчок
+    public AudioSource tickSound;     // Smoke density (optional)
+    public float tickStep = 12f;      // How many degrees to raise the smoke through the chimney
 
     [Header("Events")]
-    public UnityEvent<int> OnNumberSelected; // Событие выбора цифры
+    public UnityEvent<int> OnNumberSelected; // Digit selection answers
 
     [Header("Debug")]
-    public List<int> dialedNumbers = new List<int>(); // Список набранных цифр
+    public List<int> dialedNumbers = new List<int>(); // List of selected digits
 
     private bool isDragging = false;
     private float startAngle;
@@ -35,10 +35,10 @@ public class PhoneCallingScript : MonoBehaviour
     private bool isReturning = false;
     private int currentStage = 0;
 
-    public GameObject[] stage1Objects; // Для первого сценария
-    public GameObject[] stage2Objects; // Для второго сценария
-    public GameObject[] stage3Objects; // Для третьего сценария
-    public GameObject[] stage4Objects; // Для четвёртого сценария
+    public GameObject[] stage1Objects; // For the 1st scene
+    public GameObject[] stage2Objects; // For the 2nd scene
+    public GameObject[] stage3Objects; // For the 3rd scene
+    public GameObject[] stage4Objects; // For the 4th scene
 
     void Update()
     {
@@ -64,7 +64,7 @@ public class PhoneCallingScript : MonoBehaviour
             currentAngle = Mathf.MoveTowards(currentAngle, 0, returnSpeed * Time.deltaTime);
             transform.rotation = Quaternion.Euler(0, 0, -currentAngle);
 
-            // Воспроизведение щелчка при прохождении каждого tickStep
+            // Smoke rise speed for each tickStep increment
             if (tickSound != null && Mathf.FloorToInt(Mathf.Abs(currentAngle / tickStep)) != Mathf.FloorToInt(Mathf.Abs(prevRotation / tickStep)))
             {
                 tickSound.Play();
@@ -91,7 +91,7 @@ public class PhoneCallingScript : MonoBehaviour
         isDragging = false;
         isReturning = true;
         int selectedNumber = CalculateNumber();
-        dialedNumbers.Add(selectedNumber); // Добавляем в список
+        dialedNumbers.Add(selectedNumber); // Adding to the list
         if (OnNumberSelected != null)
             OnNumberSelected.Invoke(selectedNumber);
 
@@ -99,7 +99,7 @@ public class PhoneCallingScript : MonoBehaviour
         {
             if (currentStage == 0 && dialedNumbers[0] == 0 && dialedNumbers[1] == 0 && dialedNumbers[2] == 0)
             {
-                Debug.Log("Первый номер введён верно!");
+                Debug.Log("The first number entered is correct!");
                 foreach (var obj in stage1Objects)
                     obj.SetActive(true);
                 currentStage = 1;
@@ -111,7 +111,7 @@ public class PhoneCallingScript : MonoBehaviour
             }
             else if (currentStage == 2 && dialedNumbers[0] == 7 && dialedNumbers[1] == 7 && dialedNumbers[2] == 7)
             {
-                Debug.Log("Второй номер введён верно!");
+                Debug.Log("The second number entered is correct!");
                 foreach (var obj in stage3Objects)
                     obj.SetActive(true);
                 currentStage = 3;
@@ -119,7 +119,7 @@ public class PhoneCallingScript : MonoBehaviour
             }
             else if (currentStage == 3 && dialedNumbers[0] == 9 && dialedNumbers[1] == 9 && dialedNumbers[2] == 9)
             {
-                Debug.Log("Третий номер введён верно!");
+                Debug.Log("The third number entered is correct!");
                 foreach (var obj in stage4Objects)
                     obj.SetActive(true);
                 currentStage = 4;
@@ -127,15 +127,15 @@ public class PhoneCallingScript : MonoBehaviour
             }
             else
             {
-                Debug.Log("Неверный номер! Начните сначала.");
+                Debug.Log("Invalid number! Please start over.");
                 dialedNumbers.Clear();
             }
         }
-        Debug.Log("Цифра выбрана: " + selectedNumber);
+        Debug.Log("Selected digit: " + selectedNumber);
     }
 
     /// <summary>
-    /// Вычисляет выбранную цифру по углу поворота.
+    /// Extracts the selected digit according to the pointer position.
     /// </summary>
     int CalculateNumber()
     {
@@ -145,10 +145,10 @@ public class PhoneCallingScript : MonoBehaviour
         float step = (maxRotation - deadZone) / (numbersCount - 1);
         int number = Mathf.RoundToInt(positiveAngle / step);
 
-        // Смещаем на +1
+        // Shifted by +1
         number += 1;
 
-        // Ограничиваем диапазон (если 10 — это 0, как на дисковом телефоне)
+        // We consider the dial (if 10 вЂ” that means 0, like on a telephone keypad).
         if (number >= numbersCount)
             number = 0;
 
@@ -156,7 +156,7 @@ public class PhoneCallingScript : MonoBehaviour
     }
 
     /// <summary>
-    /// Сбросить набранный номер (можно вызвать из другого скрипта или UI)
+    /// Display the entered number (can be called from another script or UI).
     /// </summary>
     public void ClearDialedNumbers()
     {
@@ -168,9 +168,9 @@ public class PhoneCallingScript : MonoBehaviour
     }
     public IEnumerator Stage2Delay()
     {
-        Debug.Log("Вам звонят!");
-        yield return new WaitForSeconds(2f); // Задержка 2 секунды (можно изменить)
-        Debug.Log("Вам позвонили!");
+        Debug.Log("Г‚Г Г¬ Г§ГўГ®Г­ГїГІ!");
+        yield return new WaitForSeconds(2f); // Task for 2 seconds (can be changed)
+        Debug.Log("Г‚Г Г¬ ГЇГ®Г§ГўГ®Г­ГЁГ«ГЁ!");
         foreach (var obj in stage2Objects)
             obj.SetActive(true);
         currentStage = 2;
