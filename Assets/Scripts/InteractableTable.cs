@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class InteractableTable : MonoBehaviour
 {
-    public Transform focusPoint;  // Точка, куда камера будет приближаться
+    public Transform focusPoint;  // The point the camera will zoom in to
 
     private void OnMouseDown()
     {
@@ -13,7 +13,7 @@ public class InteractableTable : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("CameraFocus не найден или focusPoint не задан.");
+            Debug.LogWarning("CameraFocus not found or focusPoint not set.");
         }
     }
 }
