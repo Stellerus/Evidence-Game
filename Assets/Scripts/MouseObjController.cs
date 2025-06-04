@@ -16,12 +16,12 @@ public class MouseObjController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            // Перемещаем объект в позицию мыши
+            // Move the object to the mouse position
             Vector3 mouseWorldPos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
             mouseWorldPos.z = 0;
             transform.position = mouseWorldPos;
 
-            // Если объект был невидимым, делаем видимым
+            // If the object was invisible, make it visible
             if (!GetComponent<SpriteRenderer>().enabled)
             {
                 GetComponent<SpriteRenderer>().enabled = true;
@@ -38,7 +38,7 @@ public class MouseObjController : MonoBehaviour
 
             OnMouseObjTrigger?.Invoke();
 
-            // Делаем объект невидимым и отключаем коллайдер
+            // Make the object invisible and disable the collider
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<Collider2D>().enabled = false;
         }
