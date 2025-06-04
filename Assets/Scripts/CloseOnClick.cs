@@ -9,7 +9,7 @@ public class HideOnClickOutside : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            // Если Raycast не попал в этот объект — выключаем его
+            // If the Raycast didn't hit this object вЂ“ disable it
             if (Physics.Raycast(ray, out hit))
             {
                 if (hit.collider.gameObject != gameObject)
@@ -19,7 +19,7 @@ public class HideOnClickOutside : MonoBehaviour
             }
             else
             {
-                // Если клик по пустому месту — тоже выключаем
+                // If the click is on an empty spot вЂ“ disable it as well
                 gameObject.SetActive(false);
             }
         }

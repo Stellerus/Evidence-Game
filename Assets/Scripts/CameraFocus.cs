@@ -3,12 +3,12 @@ using UnityEngine.UI;
 
 public class CameraFocus : MonoBehaviour
 {
-    public Transform defaultPosition;       // Исходное положение камеры
-    public float moveSpeed = 2f;            // Скорость перемещения камеры
-    private Transform targetFocus;          // Текущая цель камеры
+    public Transform defaultPosition;       // Initial camera position
+    public float moveSpeed = 2f;            // Camera movement speed
+    private Transform targetFocus;          // Current camera target
 
-    public GameObject backButton;           // Кнопка "Назад"
-    public CanvasGroup overlayCanvas;       // Затемнение фона (опционально)
+    public GameObject backButton;           // Button "Back"
+    public CanvasGroup overlayCanvas;       // Background dimming (optional)
 
     private bool isFocusing = false;
 
@@ -39,7 +39,7 @@ public class CameraFocus : MonoBehaviour
         if (overlayCanvas != null)
             overlayCanvas.alpha = 1;
 
-        // Тут можно отключить коллайдеры у остальных объектов или заблокировать ввод
+        // Here you can disable colliders on other objects or block input
     }
 
     public void ResetFocus()
@@ -52,6 +52,6 @@ public class CameraFocus : MonoBehaviour
         if (overlayCanvas != null)
             overlayCanvas.alpha = 0;
 
-        // Тут можно включить обратно всё остальное
+        // Here you can re-enable everything else.
     }
 }

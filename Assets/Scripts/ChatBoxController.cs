@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class ClickHandler : MonoBehaviour
 {
-    public DialogueSwitchS dialogueManager; // Ссылка на ваш скрипт с логикой диалогов
+    public DialogueSwitchS dialogueManager; // Link to your dialogue logic script
 
-    // Вызывается при клике на объект
+    // Triggered when clicking on the object
     public void OnMouseDown()
     {
         if (dialogueManager != null)
