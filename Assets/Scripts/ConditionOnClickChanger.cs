@@ -16,6 +16,15 @@ public class SpriteToggleOnClick : MonoBehaviour
         originalSprite = spriteRenderer.sprite;
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && isNew && CompareTag("Player"))
+        {
+            // Reset to original sprite when Escape is pressed
+            spriteRenderer.sprite = originalSprite;
+            isNew = false;
+        }
+    }
     void OnMouseDown()
     {
         if (!isNew)

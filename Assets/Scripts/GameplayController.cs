@@ -8,7 +8,11 @@ public class DialogueSwitchS : MonoBehaviour
     public GameObject targetObject1;
     public GameObject targetObject2;
     public GameObject targetObject3;
-    private int currentIndex =0;
+    public GameObject Character1;
+    public GameObject Character2;
+    public GameObject Character3;
+
+    private int currentIndex = 0;
 
     public PhoneCallingScript phoneCallingScript;
     public void NextDialogue()
@@ -49,6 +53,7 @@ public class DialogueSwitchS : MonoBehaviour
                 phoneCallingScript.StartCoroutine(phoneCallingScript.Stage2Delay());
                 gameObject.SetActive(false);
                 targetObject0.SetActive(false);
+                Character1.SetActive(false);
                 break;
                 case 10:
                 dialogueTexts[10].SetActive(true);
@@ -81,6 +86,7 @@ public class DialogueSwitchS : MonoBehaviour
                 case 19:
                 gameObject.SetActive(false);
                 targetObject2.SetActive(false);
+                Character2.SetActive(false);
                 break;
                 case 20:
                     dialogueTexts[20].SetActive(true);
@@ -124,6 +130,7 @@ public class DialogueSwitchS : MonoBehaviour
             default:
                 gameObject.SetActive(false);
                 targetObject3.SetActive(false);
+                Character3.SetActive(false);
                 break;
         }
     }

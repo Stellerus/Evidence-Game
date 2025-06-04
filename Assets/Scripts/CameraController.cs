@@ -33,17 +33,23 @@ public class CameraZoomOnClick : MonoBehaviour
                 targetSize = zoomSize;
                 isZoomed = true;
             }
-            else if (isZoomed)
-            {
-                // Clicked on empty space — return camera to initial position
-                targetPosition = new Vector3(0, 0, cam.transform.position.z);
+            //else if (isZoomed)
+            //{
+            //    // Clicked on empty space — return camera to initial position
+            //    targetPosition = new Vector3(0, 0, cam.transform.position.z);
+            //    targetSize = startSize;
+            //    isZoomed = false;
+            //}
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            targetPosition = new Vector3(0, 0, cam.transform.position.z);
                 targetSize = startSize;
                 isZoomed = false;
-            }
         }
 
-        // Smooth camera movement
-        cam.transform.position = Vector3.Lerp(cam.transform.position, targetPosition, moveSpeed * Time.deltaTime);
+            // Smooth camera movement
+            cam.transform.position = Vector3.Lerp(cam.transform.position, targetPosition, moveSpeed * Time.deltaTime);
         // Smooth camera size change
         cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetSize, zoomSpeed * Time.deltaTime);
     }
