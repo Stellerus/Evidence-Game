@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Runtime.CompilerServices;
+using UnityEngine;
 
 public class CameraZoomOnClick : MonoBehaviour
 {
@@ -12,7 +13,15 @@ public class CameraZoomOnClick : MonoBehaviour
     private float targetSize;
     private bool isZoomed = false;
 
-    void Start()
+    Collider2D hit;
+    GameObject obj = null;
+
+    int cachedLayer = 0;
+    int finalLayer = 6;
+
+    [SerializeField] private ScreenFocus focusVignette;
+
+    void Awake()
     {
         cam = Camera.main;
         targetPosition = cam.transform.position;
@@ -23,40 +32,81 @@ public class CameraZoomOnClick : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Vector2 mouseWorldPos = cam.ScreenToWorldPoint(Input.mousePosition);
-            Collider2D hit = Physics2D.OverlapPoint(mouseWorldPos);
+            hit = MouseHit();
+
 
             if (hit != null && hit.CompareTag("Player"))
             {
-                // Clicked on an object with the "Player" tag — zoom in on it
-                targetPosition = new Vector3(hit.transform.position.x, hit.transform.position.y, cam.transform.position.z);
-                targetSize = zoomSize;
-                isZoomed = true;
+                if (hit.gameObject != obj && obj != null)
+                {
+                    SpriteLayerElevator(obj, cachedLayer);
+                }
+
+                obj = hit.gameObject;
+
+                Zoom();
+
+                cachedLayer = SpriteLayerElevator(obj, finalLayer);
+                focusVignette.BlurEnable();
             }
-            //else if (isZoomed)
-            //{
-            //    // Clicked on empty space — return camera to initial position
-            //    targetPosition = new Vector3(0, 0, cam.transform.position.z);
-            //    targetSize = startSize;
-            //    isZoomed = false;
-            //}
         }
-        else if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1))
         {
-            targetPosition = new Vector3(0, 0, cam.transform.position.z);
-            targetSize = startSize;
-            isZoomed = false;
+
+            SpriteLayerElevator(obj, cachedLayer);
+            focusVignette.BlurDisable();
+
+            Unzoom();
+
         }
-        else if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            targetPosition = new Vector3(0, 0, cam.transform.position.z);
-            targetSize = startSize;
-            isZoomed = false;
+            
+            SpriteLayerElevator(obj, cachedLayer);
+            focusVignette.BlurDisable();
+
+            Unzoom();
+
         }
 
         // Smooth camera movement
         cam.transform.position = Vector3.Lerp(cam.transform.position, targetPosition, moveSpeed * Time.deltaTime);
         // Smooth camera size change
         cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetSize, zoomSpeed * Time.deltaTime);
+
+        
+    }
+
+    private int SpriteLayerElevator(GameObject target, int layerNumber)
+    {
+        SpriteRenderer sprite = target.GetComponent<SpriteRenderer>();
+
+
+        int previousLayer = sprite.sortingOrder;
+        sprite.sortingOrder = layerNumber;
+        
+        Debug.Log($"Layer: {layerNumber} assigned to {target.name}\nCached: {previousLayer}");
+
+        return previousLayer;
+    }    
+
+    private Collider2D MouseHit()
+    {
+        Vector2 mouseWorldPos = cam.ScreenToWorldPoint(Input.mousePosition);
+        return Physics2D.OverlapPoint(mouseWorldPos);
+    }
+
+    private void Zoom()
+    {
+        targetPosition = new Vector3(hit.transform.position.x, hit.transform.position.y, cam.transform.position.z);
+        targetSize = zoomSize;
+        isZoomed = true;
+    }
+
+    private void Unzoom()
+    {
+        targetPosition = new Vector3(0, 0, cam.transform.position.z);
+        targetSize = startSize;
+        isZoomed = false;
     }
 }
