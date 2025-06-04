@@ -36,7 +36,7 @@ public class DialogueSwitchS : MonoBehaviour
 
     public void NextDialogue()
     {
-        // Отключаем предыдущий текст
+        // Turning off the previous text
         if (currentIndex >= 0 && currentIndex < dialogueTexts.Length)
         {
             if (dialogueTexts[currentIndex] != null)
@@ -50,9 +50,9 @@ public class DialogueSwitchS : MonoBehaviour
         currentIndex++;
 
         if (HandleSpecialCases(currentIndex))
-            return; // Если был особый случай — выход, не активируем текст
+            return; // If a special case is handled, exit early
 
-        // Активация нового текста
+        // Activating the next text
         if (currentIndex < dialogueTexts.Length && dialogueTexts[currentIndex] != null)
         {
             dialogueTexts[currentIndex].SetActive(true);

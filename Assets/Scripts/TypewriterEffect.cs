@@ -42,7 +42,7 @@ public class Typewriter3DEffect : MonoBehaviour
 
             textMesh.text += fullText[currentChar];
 
-            // Пауза после знаков препинания
+            // pause for punctuation
             if (IsPunctuation(fullText[currentChar]))
                 yield return new WaitForSeconds(punctuationPause);
             else
