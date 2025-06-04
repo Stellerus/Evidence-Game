@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b56afe7720087614e963586a00ca5066
+guid: a3537181e7a0ff645b795fc308c1ea6b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6711805845105838275
-    second: IMG_9816_0
+      213: 7645864967598835732
+    second: YOU_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,7 +97,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WindowsStoreApps
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -110,7 +110,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
+    buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_9816_0
+      name: YOU_0
       rect:
         serializedVersion: 2
-        x: 522
-        y: 612
-        width: 1071
-        height: 509
+        x: 30
+        y: 81
+        width: 346
+        height: 450
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3773110520ead2a0800000000000000
-      internalID: -6711805845105838275
+      spriteID: 4180552bda19b1a60800000000000000
+      internalID: 7645864967598835732
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      IMG_9816_0: -6711805845105838275
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

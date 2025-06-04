@@ -26,11 +26,6 @@ public class ScreenFader : MonoBehaviour
 
 
 
-    void Awake()
-    {
-
-    }
-
     void Update()
     {
         if (debugReset)

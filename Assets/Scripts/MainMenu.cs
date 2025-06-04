@@ -8,6 +8,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Assembly");
     }
 
+    public void FirstLevel()
+    {
+        SceneManager.LoadScene("Assembly");
+    }
+
     public void ExitGame()
     {
         Debug.Log("Game is exit");
