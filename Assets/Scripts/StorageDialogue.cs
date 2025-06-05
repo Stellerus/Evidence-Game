@@ -87,12 +87,12 @@ public class StorageDialogueSwitch : MonoBehaviour
         switch (index)
         {
             case 5:
-                fader.Enable();
                 ToggleObjects(false, 0);
+                ToggleObjects(true, 1);
+                ToggleObjects(true, 2);
                 MainCharacter.SetActive(false);
                 return true;
             case 8:
-                fader.Enable();
                 ToggleObjects(false, 0);
                 MainCharacter.SetActive(false);
                 return true;

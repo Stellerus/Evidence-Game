@@ -36,7 +36,6 @@ public class PhoneCallingScript : MonoBehaviour
     private int currentStage = 0;
 
     public GameObject[] stage1Objects; // For the 1st scene
-    public GameObject[] stage2Objects; // For the 2nd scene
     public GameObject[] stage3Objects; // For the 3rd scene
     public GameObject[] stage4Objects; // For the 4th scene
 
@@ -108,26 +107,22 @@ public class PhoneCallingScript : MonoBehaviour
                 currentStage = 1;
                 dialedNumbers.Clear();
             }
-            else if (currentStage == 1)
-            {
-                StartCoroutine(Stage2Delay());
-            }
-            else if (currentStage == 2 && dialedNumbers[0] == 7 && dialedNumbers[1] == 7 && dialedNumbers[2] == 7)
+            else if (currentStage == 1 && dialedNumbers[0] == 7 && dialedNumbers[1] == 7 && dialedNumbers[2] == 7)
             {
                 Debug.Log("The second number entered is correct!");
                 screenFader.Enable();
                 foreach (var obj in stage3Objects)
                     obj.SetActive(true);
-                currentStage = 3;
+                currentStage = 2;
                 dialedNumbers.Clear();
             }
-            else if (currentStage == 3 && dialedNumbers[0] == 9 && dialedNumbers[1] == 9 && dialedNumbers[2] == 9)
+            else if (currentStage == 2 && dialedNumbers[0] == 9 && dialedNumbers[1] == 9 && dialedNumbers[2] == 9)
             {
                 Debug.Log("The third number entered is correct!");
                 screenFader.Enable();
                 foreach (var obj in stage4Objects)
                     obj.SetActive(true);
-                currentStage = 4;
+                currentStage = 3;
                 dialedNumbers.Clear();
             }
             else
@@ -170,15 +165,5 @@ public class PhoneCallingScript : MonoBehaviour
     public void SetTargetNumber(List<int> newNumber)
     {
         targetNumber = new List<int>(newNumber);
-    }
-    public IEnumerator Stage2Delay()
-    {
-        Debug.Log("Âàì çâîíÿò!");
-        yield return new WaitForSeconds(2f); // Task for 2 seconds (can be changed)
-        Debug.Log("Âàì ïîçâîíèëè!");
-        foreach (var obj in stage2Objects)
-            obj.SetActive(true);
-        currentStage = 2;
-        dialedNumbers.Clear();
     }
 }

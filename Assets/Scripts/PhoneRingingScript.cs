@@ -9,36 +9,31 @@ public class PhoneCallBlink : MonoBehaviour
 
     private bool isRinging = false;
     private bool isBlinking = false;
-    private int scenario = 0;
+    public int scenario = 0;
     void Start()
     {
         Invoke(nameof(StartRinging), 2f);
         gameObject.tag = "Untagged";
     }
 
-    void Update()
+    void OnMouseDown()
     {
-        if (isRinging && Input.GetMouseButtonDown(0))
+
+        switch (scenario)
         {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            if (spriteRenderer.bounds.Contains(mousePos))
-            {
+            case 0:
+                targetObjects[scenario].SetActive(true);
                 StopRinging();
-
                 scenario++;
-
-                switch (scenario)
-                {
-                    case 1:
-                        targetObjects[scenario - 1].SetActive(true);
-                        break;
-                    case 2:
-                        targetObjects[scenario - 1].SetActive(true);
-                        break;
-                }
-            }
+                break;
+            case 2:
+                targetObjects[scenario - 1].SetActive(true);
+                scenario++;
+                StopRinging();
+                break;
         }
     }
+
 
     public void StartRinging()
     {

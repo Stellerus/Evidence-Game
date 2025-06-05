@@ -5,6 +5,7 @@ public class DialogueSwitchS : MonoBehaviour
     [Header("Text Objects")]
     [SerializeField] private GameObject[] dialogueTexts;
     [SerializeField] private float startDelay = 0.5f;
+    [SerializeField] private GameObject MainCharacter;
 
     [Header("Scene Objects")]
     [SerializeField] private GameObject[] targetObjects;
@@ -39,6 +40,9 @@ public class DialogueSwitchS : MonoBehaviour
 
     public void NextDialogue()
     {
+        if (MainCharacter.activeSelf)
+            MainCharacter.SetActive(false);
+
         // Turning off the previous text
         if (currentIndex >= 0 && currentIndex < dialogueTexts.Length)
         {
@@ -51,6 +55,45 @@ public class DialogueSwitchS : MonoBehaviour
         }
 
         currentIndex++;
+
+        switch (currentIndex)
+        {
+            case 0:
+                MainCharacter.SetActive(true); // Show main character
+                break;
+            case 2:
+                MainCharacter.SetActive(true);
+                break;
+            case 6:
+                MainCharacter.SetActive(true);
+                break;
+            case 7:
+                MainCharacter.SetActive(true); // Show main character
+                break;
+            case 10:
+                MainCharacter.SetActive(true);
+                break;
+            case 12:
+                MainCharacter.SetActive(true); // Show main character
+                break;
+            case 14:
+                MainCharacter.SetActive(true);
+                break;
+            case 17:
+                MainCharacter.SetActive(true); // Show main character
+                break;
+            case 23:
+                MainCharacter.SetActive(true);
+                break;
+            case 24:
+                MainCharacter.SetActive(true); // Show main character
+                break;
+            case 26:
+                MainCharacter.SetActive(true);
+                break;
+            default:
+                break;
+        }
 
         if (HandleSpecialCases(currentIndex))
             return; // If a special case is handled, exit early
@@ -70,34 +113,36 @@ public class DialogueSwitchS : MonoBehaviour
         switch (index)
         {
             case 9:
-                phoneCallingScript.StartCoroutine(phoneCallingScript.Stage2Delay());
                 fader.Enable();
                 ToggleObjects(false, 0);
                 ToggleCharacter(false, 0);
+                if (MainCharacter.activeSelf)
+                    MainCharacter.SetActive(false);
                 return true;
 
-            case 12:
+            case 17:
                 fader.Enable();
                 ToggleObjects(false, 1);
+                ToggleCharacter(false, 1);
+                if (MainCharacter.activeSelf)
+                    MainCharacter.SetActive(false);
                 return true;
 
-            case 19:
+            case 30:
                 fader.Enable();
                 ToggleObjects(false, 2);
-                ToggleCharacter(false, 1);
-                return true;
-
-            case 32:
-                fader.Enable();
-                ToggleObjects(false, 3);
                 ToggleCharacter(false, 2);
                 PhoneCallBlink.Invoke(nameof(PhoneCallBlink.StartRinging), 2f);
+                if (MainCharacter.activeSelf)
+                    MainCharacter.SetActive(false);
                 return true;
 
             default:
                 if (index >= dialogueTexts.Length)
                 {
                     gameObject.SetActive(false);
+                    if (MainCharacter.activeSelf)
+                        MainCharacter.SetActive(false);
                     return true;
                 }
                 break;

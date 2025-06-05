@@ -54,11 +54,13 @@ public class CameraZoomOnClick : MonoBehaviour
                     if (phone.gameObject.GetComponent<SpriteRenderer>().sortingOrder <= finalLayer)
                     {
                         SpriteLayerElevator(phone.disk, finalLayer);
+                        SpriteLayerElevator(phone.pin, finalLayer);
                         Debug.Log($"Disk set to {finalLayer}");
                     }
                     else
                     {
                         SpriteLayerElevator(phone.disk, cachedLayer);
+                        SpriteLayerElevator(phone.pin, cachedLayer);
                     }
 
                     Debug.Log("Disk Handled");
