@@ -41,12 +41,29 @@ public class CameraZoomOnClick : MonoBehaviour
                 {
                     SpriteLayerElevator(obj, cachedLayer);
                 }
-
                 obj = hit.gameObject;
 
                 Zoom();
 
+                
+
                 cachedLayer = SpriteLayerElevator(obj, finalLayer);
+
+                if (obj.TryGetComponent<IsPhone>(out IsPhone phone))
+                {
+                    if (phone.gameObject.GetComponent<SpriteRenderer>().sortingOrder <= finalLayer)
+                    {
+                        SpriteLayerElevator(phone.disk, finalLayer);
+                        Debug.Log($"Disk set to {finalLayer}");
+                    }
+                    else
+                    {
+                        SpriteLayerElevator(phone.disk, cachedLayer);
+                    }
+
+                    Debug.Log("Disk Handled");
+                }
+
                 focusVignette.BlurEnable();
             }
         }

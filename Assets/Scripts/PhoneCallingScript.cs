@@ -40,6 +40,8 @@ public class PhoneCallingScript : MonoBehaviour
     public GameObject[] stage3Objects; // For the 3rd scene
     public GameObject[] stage4Objects; // For the 4th scene
 
+    public ScreenFader screenFader;
+
     void Update()
     {
         if (isDragging)
@@ -100,6 +102,7 @@ public class PhoneCallingScript : MonoBehaviour
             if (currentStage == 0 && dialedNumbers[0] == 0 && dialedNumbers[1] == 0 && dialedNumbers[2] == 0)
             {
                 Debug.Log("The first number entered is correct!");
+                screenFader.Enable();
                 foreach (var obj in stage1Objects)
                     obj.SetActive(true);
                 currentStage = 1;
@@ -112,6 +115,7 @@ public class PhoneCallingScript : MonoBehaviour
             else if (currentStage == 2 && dialedNumbers[0] == 7 && dialedNumbers[1] == 7 && dialedNumbers[2] == 7)
             {
                 Debug.Log("The second number entered is correct!");
+                screenFader.Enable();
                 foreach (var obj in stage3Objects)
                     obj.SetActive(true);
                 currentStage = 3;
@@ -120,6 +124,7 @@ public class PhoneCallingScript : MonoBehaviour
             else if (currentStage == 3 && dialedNumbers[0] == 9 && dialedNumbers[1] == 9 && dialedNumbers[2] == 9)
             {
                 Debug.Log("The third number entered is correct!");
+                screenFader.Enable();
                 foreach (var obj in stage4Objects)
                     obj.SetActive(true);
                 currentStage = 4;
@@ -171,6 +176,7 @@ public class PhoneCallingScript : MonoBehaviour
         Debug.Log("Âàì çâîíÿò!");
         yield return new WaitForSeconds(2f); // Task for 2 seconds (can be changed)
         Debug.Log("Âàì ïîçâîíèëè!");
+        screenFader.Enable();
         foreach (var obj in stage2Objects)
             obj.SetActive(true);
         currentStage = 2;
