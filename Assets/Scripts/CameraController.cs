@@ -16,7 +16,7 @@ public class CameraZoomOnClick : MonoBehaviour
     Collider2D hit;
     GameObject obj = null;
 
-    int cachedLayer = 0;
+    public int cachedLayer = 0;
     int finalLayer = 6;
 
     [SerializeField] private ScreenFocus focusVignette;
@@ -94,7 +94,7 @@ public class CameraZoomOnClick : MonoBehaviour
         
     }
 
-    private int SpriteLayerElevator(GameObject target, int layerNumber)
+    public int SpriteLayerElevator(GameObject target, int layerNumber)
     {
         SpriteRenderer sprite = target.GetComponent<SpriteRenderer>();
 
@@ -120,7 +120,7 @@ public class CameraZoomOnClick : MonoBehaviour
         isZoomed = true;
     }
 
-    private void Unzoom()
+    public void Unzoom()
     {
         targetPosition = new Vector3(0, 0, cam.transform.position.z);
         targetSize = startSize;

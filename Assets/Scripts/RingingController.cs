@@ -1,22 +1,21 @@
 using UnityEngine;
 
-public class StorageDialogueSwitch : MonoBehaviour
+public class RingingDialogueSwitch : MonoBehaviour
 {
     [Header("Text Objects")]
     [SerializeField] private GameObject[] dialogueTexts;
-    [SerializeField] private GameObject MainCharacter;
     [SerializeField] private float startDelay = 0.5f;
 
     [Header("Scene Objects")]
     [SerializeField] private GameObject[] targetObjects;
 
-    [SerializeField] private ScreenFader fader;
-
+    private GameObject gol;
     private int currentIndex = -1;
     private Typewriter3DEffect currentTypewriter;
 
     void Start()
     {
+        gol = GameObject.Find("Phone");
         InitializeTextObjects();
     }
 
@@ -35,10 +34,8 @@ public class StorageDialogueSwitch : MonoBehaviour
 
     public void NextDialogue()
     {
-        if (MainCharacter.activeSelf)
-            MainCharacter.SetActive(false); // Hide main character if active
 
-       
+
         // Turning off the previous text
         if (currentIndex >= 0 && currentIndex < dialogueTexts.Length)
         {
@@ -52,21 +49,6 @@ public class StorageDialogueSwitch : MonoBehaviour
 
         currentIndex++;
 
-        switch (currentIndex)
-        {
-            case 0:
-                MainCharacter.SetActive(true); // Show main character
-                break;
-            case 2:
-                MainCharacter.SetActive(true);
-                break;
-            case 4:
-                MainCharacter.SetActive(true);
-                break;
-            case 5:
-                MainCharacter.SetActive(true); // Show main character
-                break;
-        }
 
 
         if (HandleSpecialCases(currentIndex))
@@ -87,14 +69,12 @@ public class StorageDialogueSwitch : MonoBehaviour
         switch (index)
         {
             case 5:
-                fader.Enable();
                 ToggleObjects(false, 0);
-                MainCharacter.SetActive(false);
+                if (gol != null)
+                    gol.tag = "Player";
                 return true;
-            case 8:
-                fader.Enable();
-                ToggleObjects(false, 0);
-                MainCharacter.SetActive(false);
+            case 7:
+                ToggleObjects(false, 1);
                 return true;
         }
         return false;

@@ -6,7 +6,7 @@ public class SpriteToggleOnClick : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
     private Sprite originalSprite;
-    private bool isNew = false;
+    public bool isNew = false;
 
     public bool IsNew => isNew; // Property to check if the sprite is new
 
@@ -25,7 +25,7 @@ public class SpriteToggleOnClick : MonoBehaviour
             isNew = false;
         }
     }
-    void OnMouseDown()
+    public void OnMouseDown()
     {
         if (!isNew)
         {

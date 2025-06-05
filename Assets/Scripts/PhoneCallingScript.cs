@@ -176,7 +176,6 @@ public class PhoneCallingScript : MonoBehaviour
         Debug.Log("Âàì çâîíÿò!");
         yield return new WaitForSeconds(2f); // Task for 2 seconds (can be changed)
         Debug.Log("Âàì ïîçâîíèëè!");
-        screenFader.Enable();
         foreach (var obj in stage2Objects)
             obj.SetActive(true);
         currentStage = 2;

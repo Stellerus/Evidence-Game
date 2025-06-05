@@ -12,6 +12,7 @@ public class DialogueSwitchS : MonoBehaviour
 
     [Header("Dependencies")]
     [SerializeField] private PhoneCallingScript phoneCallingScript;
+    [SerializeField] private PhoneCallBlink PhoneCallBlink;
 
     [SerializeField] private ScreenFader fader;
 
@@ -90,6 +91,7 @@ public class DialogueSwitchS : MonoBehaviour
                 fader.Enable();
                 ToggleObjects(false, 3);
                 ToggleCharacter(false, 2);
+                PhoneCallBlink.Invoke(nameof(PhoneCallBlink.StartRinging), 2f);
                 return true;
 
             default:

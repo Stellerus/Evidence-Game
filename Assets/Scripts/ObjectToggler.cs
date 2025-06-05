@@ -4,6 +4,7 @@ public class ObjectToggler : MonoBehaviour
 {
         // Array of objects that will be enabled/disabled
     public GameObject[] objectsToToggle;
+    public bool changeBackActive = true; // Whether the objects should be active at the start
 
     // This method is called when the user clicks the Collider of this GameObject with the mouse
     void OnMouseDown()
@@ -21,7 +22,7 @@ public class ObjectToggler : MonoBehaviour
     void Update()
     {
         // Check if the Escape key is pressed
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && changeBackActive)
         {
             // Disable each object in the array
             foreach (GameObject obj in objectsToToggle)
