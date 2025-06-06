@@ -14,7 +14,6 @@ public class SpriteDropper : MonoBehaviour
     void Start()
     {
         startPosition = transform.position; // Запоминаем изначальную позицию
-        StartDrop();
     }
 
     public void StartDrop()

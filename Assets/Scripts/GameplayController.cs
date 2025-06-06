@@ -79,16 +79,19 @@ public class DialogueSwitchS : MonoBehaviour
             case 14:
                 MainCharacter.SetActive(true);
                 break;
-            case 17:
+            case 18:
                 MainCharacter.SetActive(true); // Show main character
                 break;
-            case 23:
+            case 21:
                 MainCharacter.SetActive(true);
                 break;
             case 24:
+                MainCharacter.SetActive(true);
+                break;
+            case 25:
                 MainCharacter.SetActive(true); // Show main character
                 break;
-            case 26:
+            case 27:
                 MainCharacter.SetActive(true);
                 break;
             default:
@@ -128,11 +131,12 @@ public class DialogueSwitchS : MonoBehaviour
                     MainCharacter.SetActive(false);
                 return true;
 
-            case 30:
+            case 31:
                 fader.Enable();
                 ToggleObjects(false, 2);
                 ToggleCharacter(false, 2);
                 PhoneCallBlink.Invoke(nameof(PhoneCallBlink.StartRinging), 2f);
+                PhoneCallBlink.scenario = 2;
                 if (MainCharacter.activeSelf)
                     MainCharacter.SetActive(false);
                 return true;

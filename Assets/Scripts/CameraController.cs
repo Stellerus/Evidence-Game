@@ -17,6 +17,8 @@ public class CameraZoomOnClick : MonoBehaviour
     GameObject obj = null;
 
     public int cachedLayer = 0;
+    private int cachedDiskLayer = 0;
+    private int cachedPinLayer = 0;
     int finalLayer = 6;
 
     [SerializeField] private ScreenFocus focusVignette;
@@ -51,19 +53,12 @@ public class CameraZoomOnClick : MonoBehaviour
 
                 if (obj.TryGetComponent<IsPhone>(out IsPhone phone))
                 {
-                    if (phone.gameObject.GetComponent<SpriteRenderer>().sortingOrder <= finalLayer)
-                    {
-                        SpriteLayerElevator(phone.disk, finalLayer);
+                    cachedDiskLayer = phone.disk.GetComponent<SpriteRenderer>().sortingOrder;
+                    cachedPinLayer = phone.pin.GetComponent<SpriteRenderer>().sortingOrder;
+
+                    SpriteLayerElevator(phone.disk, finalLayer);
                         SpriteLayerElevator(phone.pin, finalLayer);
                         Debug.Log($"Disk set to {finalLayer}");
-                    }
-                    else
-                    {
-                        SpriteLayerElevator(phone.disk, cachedLayer);
-                        SpriteLayerElevator(phone.pin, cachedLayer);
-                    }
-
-                    Debug.Log("Disk Handled");
                 }
 
                 focusVignette.BlurEnable();
@@ -71,16 +66,29 @@ public class CameraZoomOnClick : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(1))
         {
+            if (obj != null && obj.TryGetComponent<IsPhone>(out IsPhone phone))
+            {
+                SpriteLayerElevator(phone.disk, cachedDiskLayer);
+                SpriteLayerElevator(phone.pin, cachedPinLayer);
+                Debug.Log($"Disk set to {cachedDiskLayer}");
+            }
 
             SpriteLayerElevator(obj, cachedLayer);
             focusVignette.BlurDisable();
+
 
             Unzoom();
 
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            
+            if (obj != null && obj.TryGetComponent<IsPhone>(out IsPhone phone))
+            {
+                SpriteLayerElevator(phone.disk, cachedDiskLayer);
+                SpriteLayerElevator(phone.pin, cachedPinLayer);
+                Debug.Log($"Disk set to {cachedDiskLayer}");
+            }
+
             SpriteLayerElevator(obj, cachedLayer);
             focusVignette.BlurDisable();
 

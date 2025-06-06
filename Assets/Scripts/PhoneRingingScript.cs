@@ -3,6 +3,7 @@ using UnityEngine;
 public class PhoneCallBlink : MonoBehaviour
 {
     [SerializeField] private GameObject[] targetObjects;
+    [SerializeField] private IL IL;
     public SpriteRenderer spriteRenderer; // —юда назначьте нужный SpriteRenderer
     public AudioSource ringAudioSource;   // —юда назначьте AudioSource с рингтоном
     public float blinkInterval = 0.5f;    // »нтервал мигани€ в секундах
@@ -30,6 +31,7 @@ public class PhoneCallBlink : MonoBehaviour
                 targetObjects[scenario - 1].SetActive(true);
                 scenario++;
                 StopRinging();
+                IL.scenario = 2;
                 break;
         }
     }

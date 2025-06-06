@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -8,25 +8,38 @@ using UnityEngine.Events;
 public class PhoneCallingScript : MonoBehaviour
 {
     [Header("Íîìåð äëÿ äåéñòâèÿ")]
-    public List<int> targetNumber = new List<int>() { 0, 0, 0 }; // Example: "123"
-    public UnityEvent OnTargetNumberDialed; // Answers for the survey
+    public List<int> targetNumber = new List<int>() { 0, 0, 0 };
+    public UnityEvent OnTargetNumberDialed;
 
     [Header("Dial Settings")]
-    public Transform diskCenter;      // Disk center (empty object at the center)
-    public float maxRotation = 270f;  // Maximum height of the slope (by time of day)
-    public float returnSpeed = 200f;  // Wind speed (meters per second)
+    public Transform diskCenter;
+    public float maxRotation = 270f;
+    public float returnSpeed = 200f;
     public float deadZone = 10f;
-    public int numbersCount = 10;     // Number of digits (usually 10)
+    public int numbersCount = 10;
 
     [Header("Audio")]
-    public AudioSource tickSound;     // Smoke density (optional)
-    public float tickStep = 12f;      // How many degrees to raise the smoke through the chimney
+    public AudioSource tickSound;
+    public float tickStep = 12f;
 
     [Header("Events")]
-    public UnityEvent<int> OnNumberSelected; // Digit selection answers
+    public UnityEvent<int> OnNumberSelected;
 
     [Header("Debug")]
-    public List<int> dialedNumbers = new List<int>(); // List of selected digits
+    public List<int> dialedNumbers = new List<int>();
+
+    [Header("Manual Optioning")]
+    [SerializeField] private DigitAnglePair[] digitAngles;
+
+    [Serializable]
+    public class DigitAnglePair
+    {
+        public int digit;
+        [Tooltip("min angle")]
+        public float minAngle;
+        [Tooltip("max angle")]
+        public float maxAngle;
+    }
 
     private bool isDragging = false;
     private float startAngle;
@@ -35,17 +48,16 @@ public class PhoneCallingScript : MonoBehaviour
     private bool isReturning = false;
     private int currentStage = 0;
 
-    public GameObject[] stage1Objects; // For the 1st scene
-    public GameObject[] stage3Objects; // For the 3rd scene
-    public GameObject[] stage4Objects; // For the 4th scene
-
+    public GameObject[] stage1Objects;
+    public GameObject[] stage3Objects;
+    public GameObject[] stage4Objects;
     public ScreenFader screenFader;
 
     void Update()
     {
         if (isDragging)
         {
-            if (isDragging && Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0))
             {
                 Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 mouseWorldPos.z = diskCenter.position.z;
@@ -65,7 +77,6 @@ public class PhoneCallingScript : MonoBehaviour
             currentAngle = Mathf.MoveTowards(currentAngle, 0, returnSpeed * Time.deltaTime);
             transform.rotation = Quaternion.Euler(0, 0, -currentAngle);
 
-            // Smoke rise speed for each tickStep increment
             if (tickSound != null && Mathf.FloorToInt(Mathf.Abs(currentAngle / tickStep)) != Mathf.FloorToInt(Mathf.Abs(prevRotation / tickStep)))
             {
                 tickSound.Play();
@@ -92,38 +103,22 @@ public class PhoneCallingScript : MonoBehaviour
         isDragging = false;
         isReturning = true;
         int selectedNumber = CalculateNumber();
-        dialedNumbers.Add(selectedNumber); // Adding to the list
-        if (OnNumberSelected != null)
-            OnNumberSelected.Invoke(selectedNumber);
+        dialedNumbers.Add(selectedNumber);
+        OnNumberSelected?.Invoke(selectedNumber);
 
         if (dialedNumbers.Count == 3)
         {
-            if (currentStage == 0 && dialedNumbers[0] == 0 && dialedNumbers[1] == 0 && dialedNumbers[2] == 0)
+            if (currentStage == 0 && dialedNumbers.SequenceEqual(new[] { 5, 9, 2 }))
             {
-                Debug.Log("The first number entered is correct!");
-                screenFader.Enable();
-                foreach (var obj in stage1Objects)
-                    obj.SetActive(true);
-                currentStage = 1;
-                dialedNumbers.Clear();
+                HandleCorrectInput(stage1Objects, 1);
             }
-            else if (currentStage == 1 && dialedNumbers[0] == 7 && dialedNumbers[1] == 7 && dialedNumbers[2] == 7)
+            else if (currentStage == 1 && dialedNumbers.SequenceEqual(new[] { 2, 1, 3 }))
             {
-                Debug.Log("The second number entered is correct!");
-                screenFader.Enable();
-                foreach (var obj in stage3Objects)
-                    obj.SetActive(true);
-                currentStage = 2;
-                dialedNumbers.Clear();
+                HandleCorrectInput(stage3Objects, 2);
             }
-            else if (currentStage == 2 && dialedNumbers[0] == 9 && dialedNumbers[1] == 9 && dialedNumbers[2] == 9)
+            else if (currentStage == 2 && dialedNumbers.SequenceEqual(new[] { 6, 0, 6 }))
             {
-                Debug.Log("The third number entered is correct!");
-                screenFader.Enable();
-                foreach (var obj in stage4Objects)
-                    obj.SetActive(true);
-                currentStage = 3;
-                dialedNumbers.Clear();
+                HandleCorrectInput(stage4Objects, 3);
             }
             else
             {
@@ -134,36 +129,36 @@ public class PhoneCallingScript : MonoBehaviour
         Debug.Log("Selected digit: " + selectedNumber);
     }
 
-    /// <summary>
-    /// Extracts the selected digit according to the pointer position.
-    /// </summary>
     int CalculateNumber()
     {
-        float positiveAngle = Mathf.Abs(currentAngle) - deadZone;
-        if (positiveAngle < 0) positiveAngle = 0;
+        float currentAngle = Mathf.Abs(transform.localEulerAngles.z);
 
-        float step = (maxRotation - deadZone) / (numbersCount - 1);
-        int number = Mathf.RoundToInt(positiveAngle / step);
+        foreach (var pair in digitAngles)
+        {
+            if (currentAngle >= pair.minAngle && currentAngle < pair.maxAngle)
+            {
+                Debug.Log($"Угол: {currentAngle}° → Цифра: {pair.digit}");
+                return pair.digit;
+            }
+        }
 
-        // Shifted by +1
-        number += 1;
-
-        // We consider the dial (if 10 — that means 0, like on a telephone keypad).
-        if (number >= numbersCount)
-            number = 0;
-
-        return number;
+        Debug.LogWarning($"Угол {currentAngle}° не попадает ни в один диапазон!");
+        return 0; // fallback
     }
 
-    /// <summary>
-    /// Display the entered number (can be called from another script or UI).
-    /// </summary>
-    public void ClearDialedNumbers()
+
+
+
+    void HandleCorrectInput(GameObject[] objectsToActivate, int newStage)
     {
+        Debug.Log($"Stage {newStage} correct!");
+        screenFader.Enable();
+        foreach (var obj in objectsToActivate)
+            obj.SetActive(true);
+        currentStage = newStage;
         dialedNumbers.Clear();
     }
-    public void SetTargetNumber(List<int> newNumber)
-    {
-        targetNumber = new List<int>(newNumber);
-    }
+
+    public void ClearDialedNumbers() => dialedNumbers.Clear();
+    public void SetTargetNumber(List<int> newNumber) => targetNumber = new List<int>(newNumber);
 }

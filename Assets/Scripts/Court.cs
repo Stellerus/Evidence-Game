@@ -1,10 +1,10 @@
+using System.Collections;
 using UnityEngine;
 
-public class StorageDialogueSwitch : MonoBehaviour
+public class Court : MonoBehaviour
 {
     [Header("Text Objects")]
     [SerializeField] private GameObject[] dialogueTexts;
-    [SerializeField] private GameObject MainCharacter;
     [SerializeField] private float startDelay = 0.5f;
 
     [Header("Scene Objects")]
@@ -35,10 +35,7 @@ public class StorageDialogueSwitch : MonoBehaviour
 
     public void NextDialogue()
     {
-        if (MainCharacter.activeSelf)
-            MainCharacter.SetActive(false); // Hide main character if active
 
-       
         // Turning off the previous text
         if (currentIndex >= 0 && currentIndex < dialogueTexts.Length)
         {
@@ -52,21 +49,6 @@ public class StorageDialogueSwitch : MonoBehaviour
 
         currentIndex++;
 
-        switch (currentIndex)
-        {
-            case 0:
-                MainCharacter.SetActive(true); // Show main character
-                break;
-            case 2:
-                MainCharacter.SetActive(true);
-                break;
-            case 4:
-                MainCharacter.SetActive(true);
-                break;
-            case 6:
-                MainCharacter.SetActive(true); // Show main character
-                break;
-        }
 
 
         if (HandleSpecialCases(currentIndex))
@@ -86,15 +68,9 @@ public class StorageDialogueSwitch : MonoBehaviour
     {
         switch (index)
         {
-            case 5:
+            case 1:
                 ToggleObjects(false, 0);
                 ToggleObjects(true, 1);
-                ToggleObjects(true, 2);
-                MainCharacter.SetActive(false);
-                return true;
-            case 9:
-                ToggleObjects(false, 0);
-                MainCharacter.SetActive(false);
                 return true;
         }
         return false;
@@ -104,5 +80,13 @@ public class StorageDialogueSwitch : MonoBehaviour
     {
         if (targetIndex >= 0 && targetIndex < targetObjects.Length)
             targetObjects[targetIndex].SetActive(state);
+    }
+
+    public IEnumerator DelayedAction(float delay, System.Action action)
+    {
+
+        yield return new WaitForSeconds(delay);
+        ToggleObjects(true, 0);
+        action?.Invoke();
     }
 }
