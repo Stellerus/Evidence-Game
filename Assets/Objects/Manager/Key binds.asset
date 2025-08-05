@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e7df3b6350ca704fba6b2217b304ed6, type: 3}
+  m_Name: Key binds
+  m_EditorClassIdentifier: 
+  A: 97
+  B: 98
+  C: 99
+  D: 100
+  E: 101
+  F: 102
+  G: 103
+  H: 104
+  I: 105
+  J: 106
+  K: 107
+  L: 108
+  M: 109
+  N: 110
+  O: 111
+  P: 112
+  Q: 113
+  R: 114
+  S: 115
+  T: 116
+  U: 117
+  V: 118
+  W: 119
+  X: 120
+  Y: 121
+  Z: 122
+  Alpha0: 48
+  Alpha1: 49
+  Alpha2: 50
+  Alpha3: 51
+  Alpha4: 52
+  Alpha5: 53
+  Alpha6: 54
+  Alpha7: 55
+  Alpha8: 56
+  Alpha9: 57
+  Space: 32
+  LeftArrow: 276
+  RightArrow: 275
+  UpArrow: 273
+  DownArrow: 274
+  Escape: 27
+  Return: 13
+  Backspace: 8
+  Tab: 9
+  LeftShift: 304
+  RightShift: 303
+  LeftControl: 306
+  RightControl: 305
+  LeftAlt: 308
+  RightAlt: 307
+  F1: 282
+  F2: 283
+  F3: 284
+  F4: 285
+  F5: 286
+  F6: 287
+  F7: 288
+  F8: 289
+  F9: 290
+  F10: 291
+  F11: 292
+  F12: 293
