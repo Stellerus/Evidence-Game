@@ -1,12 +1,10 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public interface IClickable
 {
-    public Action ClickAction { get; set; }
+    public BaseAction_SO actionEvent { get; set; }
 
-    public void OnClick();
-
-
-    public void OnClick(Action outerClickAction);
+    void OnClick();
 }
