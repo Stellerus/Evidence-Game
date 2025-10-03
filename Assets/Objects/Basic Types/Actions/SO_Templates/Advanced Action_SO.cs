@@ -1,15 +1,25 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 [CreateAssetMenuAttribute(fileName = "Advanced Action", menuName = "Advanced Action"),]
 public class AdvancedAction_SO : ScriptableObject
 {
-    public UnityEvent[] Action;
+    public ParamSettings ParamSettings;
+    public UnityEvent<object> objAction;
+
+    private void OnValidate()
+    {
+
+    }
+
+
 }
 
-public class ActionSettings
+[Serializable]
+public class ActionSettings : MonoBehaviour
 {
-
+    
 }
 
 public enum ParamSettings

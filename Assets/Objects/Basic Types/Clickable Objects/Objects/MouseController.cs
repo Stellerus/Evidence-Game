@@ -21,15 +21,6 @@ public class MouseCursor : MonoBehaviour
 
         Collider2D hit = Physics2D.OverlapPoint(mousePos);
 
-        if (hit != null)
-        {
-            Debug.Log("Hit in obj: " + hit.name);
-
-            IClickable clickable = hit.GetComponent<IClickable>();
-            if (clickable != null && Input.GetMouseButtonDown(0))
-            {
-                clickable.OnClick();
-            }
-        }
+       
     }
 }
