@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Molodec_01_0: 193609395309886002
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

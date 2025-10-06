@@ -5,7 +5,8 @@ using UnityEngine.Events;
 [RequireComponent(typeof(PolygonCollider2D))]
 public class CO_Behaviour : MonoBehaviour, IClickable
 {
-    [field: SerializeField] public BaseAction_SO actionEvent { get; set; }
+    //[field: SerializeField] public BaseAction_SO actionEvent { get; set; }
+    [field: SerializeField] public UnityEvent actionEvent { get; set; }
 
     private PolygonCollider2D polygonCollider;
     
@@ -14,10 +15,11 @@ public class CO_Behaviour : MonoBehaviour, IClickable
         polygonCollider = GetComponent<PolygonCollider2D>();
     }
 
+
     public void OnClick()
     {
-        actionEvent.Action.Invoke();
-        Debug.Log($"Event {actionEvent.name} happens, shit too");
+        actionEvent.Invoke();
+        Debug.Log($"Event {actionEvent} happens, shit too");
     }
 
     void Start()

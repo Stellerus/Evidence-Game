@@ -6,3 +6,5 @@ public class BaseAction_SO : ScriptableObject
 {
     public UnityEvent Action;
 }
+
+
