@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79a4a855d7747434eacf07f58325b0ea, type: 3}
   m_Name: Advanced Action
   m_EditorClassIdentifier: 
-  ActionSettings: {fileID: 0}
+  ParamSettings: 1
+  objAction:
+    m_PersistentCalls:
+      m_Calls: []

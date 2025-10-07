@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class MouseCursor : MonoBehaviour
+public class MouseController : MonoBehaviour
 {
     private Camera mainCamera;
 
-    void Start()
+    void Awake()
     {
         mainCamera = Camera.main;
         Cursor.visible = false;
@@ -21,6 +21,15 @@ public class MouseCursor : MonoBehaviour
 
         Collider2D hit = Physics2D.OverlapPoint(mousePos);
 
-       
+        if (hit is null)
+        {
+            Debug.Log("No Object");
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("GetButton 1 works");
+            hit.gameObject.GetComponent<IClickable>().OnClick();
+        }
     }
 }
