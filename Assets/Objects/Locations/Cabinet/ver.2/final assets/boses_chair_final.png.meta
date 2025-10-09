@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      boses_chair_final_0: 4427729756640143358
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
