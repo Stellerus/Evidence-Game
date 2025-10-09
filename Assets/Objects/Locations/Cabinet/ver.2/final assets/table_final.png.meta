@@ -129,10 +129,10 @@ TextureImporter:
       name: table_final_0
       rect:
         serializedVersion: 2
-        x: 28
-        y: 83
+        x: 71
+        y: 256
         width: 1503
-        height: 475
+        height: 489
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      table_final_0: 1474537748631199270
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
