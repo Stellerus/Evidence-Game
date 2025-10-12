@@ -13,6 +13,7 @@ public class LocationManager : MonoBehaviour
     [SerializeField] Transform Interrogation;
     [SerializeField] Transform Hallway;
     [SerializeField] Transform UnzoomFromPhone;
+    [SerializeField] Transform UnzoomFromMap;
 
 
     private void Awake()
@@ -57,6 +58,12 @@ public class LocationManager : MonoBehaviour
     public void MoveToPhone()
     {
         cam.transform.position = UnzoomFromPhone.position;
+        isZoomed = true;
+    }
+
+    public void MoveToMap()
+    {
+        cam.transform.position = UnzoomFromMap.position;
         isZoomed = true;
     }
 

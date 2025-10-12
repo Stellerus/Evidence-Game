@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEngine.Events;
-
-public class UnzoomFromPhone : MonoBehaviour
+public class UnzoomFromMap : MonoBehaviour
 {
-    public UnityEvent ZoomBackToOffice; 
+
+    public UnityEvent ZoomBackToOffice;
+
     void Start()
     {
-
+        
     }
 
     void Update()
@@ -18,7 +19,7 @@ public class UnzoomFromPhone : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-           ZoomBackToOffice.Invoke();
+            ZoomBackToOffice.Invoke();
         }
     }
 }
