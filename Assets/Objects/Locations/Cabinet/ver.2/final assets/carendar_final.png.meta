@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      carendar_final_0: -3963125204514471815
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
