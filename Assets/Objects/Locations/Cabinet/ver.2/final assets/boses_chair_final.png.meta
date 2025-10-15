@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 48d687ff067ed1248bbec9fecb028b65
+guid: 4556afa7327b43c4fb8defd1616b22f4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7373102505062932663
-    second: plant1_final_0
+      213: 4427729756640143358
+    second: boses_chair_final_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: plant1_final_0
+      name: boses_chair_final_0
       rect:
         serializedVersion: 2
-        x: 136
-        y: 124
-        width: 151
-        height: 153
+        x: 109
+        y: 25
+        width: 307
+        height: 546
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 94f5e25065a7da990800000000000000
-      internalID: -7373102505062932663
+      spriteID: ef766f921c4727d30800000000000000
+      internalID: 4427729756640143358
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      plant1_final_0: -7373102505062932663
+      boses_chair_final_0: 4427729756640143358
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

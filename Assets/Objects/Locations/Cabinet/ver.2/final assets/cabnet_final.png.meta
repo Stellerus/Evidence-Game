@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 48d687ff067ed1248bbec9fecb028b65
+guid: 023896f262e5a2247b631a19b405ef89
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7373102505062932663
-    second: plant1_final_0
+      213: -7767415397552407952
+    second: cabnet_final_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: plant1_final_0
+      name: cabnet_final_0
       rect:
         serializedVersion: 2
-        x: 136
-        y: 124
-        width: 151
-        height: 153
+        x: 45
+        y: 90
+        width: 562
+        height: 227
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 94f5e25065a7da990800000000000000
-      internalID: -7373102505062932663
+      spriteID: 07a3df579d8943490800000000000000
+      internalID: -7767415397552407952
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      plant1_final_0: -7373102505062932663
+      cabnet_final_0: -7767415397552407952
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
