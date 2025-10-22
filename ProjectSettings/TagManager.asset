@@ -5,16 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Radio
-  - PhoneDigit1
-  - PhoneDigit2
-  - PhoneDigit3
-  - PhoneDigit4
-  - PhoneDigit5
-  - PhoneDigit6
-  - PhoneDigit7
-  - PhoneDigit8
-  - PhoneDigit9
-  - PhoneDigit0
+  - DropArea
   layers:
   - Default
   - TransparentFX
