@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 7a22a450bc79a0e46bf780a6ae21f4de
+<<<<<<<< HEAD:Assets/Sprites/Source/case.png.meta
+guid: 8d099227af96c664aa0d5f1cb2a2a073
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8731086724884625406
+    second: case_0
+========
+guid: 52a18aa618ed3b347bd274ebd6e54fa6
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: -4476114273203629923
     second: IMG_9987_0
+>>>>>>>> origin/Feature:Assets/Sprites/Source/IMG_9987.PNG.meta
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,36 +105,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+<<<<<<<< HEAD:Assets/Sprites/Source/case.png.meta
+      name: case_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 723
+        height: 826
+========
       name: IMG_9987_0
       rect:
         serializedVersion: 2
@@ -133,6 +125,7 @@ TextureImporter:
         y: 696
         width: 564
         height: 434
+>>>>>>>> origin/Feature:Assets/Sprites/Source/IMG_9987.PNG.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +134,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
+<<<<<<<< HEAD:Assets/Sprites/Source/case.png.meta
+      spriteID: 2088f1c02e2f4d680800000000000000
+      internalID: -8731086724884625406
+========
       spriteID: d9054a3b8c5a1e1c0800000000000000
       internalID: -4476114273203629923
+>>>>>>>> origin/Feature:Assets/Sprites/Source/IMG_9987.PNG.meta
       vertices: []
       indices: 
       edges: []
@@ -160,8 +158,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
+<<<<<<<< HEAD:Assets/Sprites/Source/case.png.meta
     nameFileIdTable:
-      IMG_9987_0: -4476114273203629923
+      case_0: -8731086724884625406
+========
+    nameFileIdTable: {}
+>>>>>>>> origin/Feature:Assets/Sprites/Source/IMG_9987.PNG.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
