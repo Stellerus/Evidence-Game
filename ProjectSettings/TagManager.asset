@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Radio
   - DropArea
+  - DropArea2D
+  - DropAreaTable
   layers:
   - Default
   - TransparentFX
