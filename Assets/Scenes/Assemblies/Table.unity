@@ -179,7 +179,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -237,8 +237,8 @@ Transform:
   m_GameObject: {fileID: 1030694637}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.178, y: 0.387, z: -0.05}
-  m_LocalScale: {x: 0.4963, y: 0.16443, z: 1}
+  m_LocalPosition: {x: -0.184, y: 0.352, z: -0.05}
+  m_LocalScale: {x: 0.07531693, y: 0.03525579, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1857403644}
@@ -293,17 +293,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.45664978, y: -0.011497974}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 7.23, y: 8.26}
+    newSize: {x: 7.23, y: 8.26}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 6.7455387, y: 8.747022}
   m_EdgeRadius: 0
 --- !u!212 &1030694642
 SpriteRenderer:
@@ -349,12 +349,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6679245, g: 0.124763206, b: 0.124763206, a: 0}
+  m_Sprite: {fileID: -8731086724884625406, guid: 5edc05d28cc9eef4386db7493e218a6b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 7.23, y: 8.26}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1034,6 +1034,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1623086037380787132, guid: 9260b81dd253d8648849137c65b906ce, type: 3}
+    - target: {fileID: 1240898770425943267, guid: af80ace71e797a84fb2c5476d3a1f04a, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1240898770425943267, guid: af80ace71e797a84fb2c5476d3a1f04a, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1240898770425943267, guid: af80ace71e797a84fb2c5476d3a1f04a, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1240898770425943267, guid: af80ace71e797a84fb2c5476d3a1f04a, type: 3}
       propertyPath: m_SortingOrder
       value: 3
