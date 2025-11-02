@@ -2,40 +2,48 @@ using Mono.Cecil.Cil;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class PhoneNumberHandler : MonoBehaviour
 {
-    [SerializeField]string dialedPhoneNumber;
+    [SerializeField] string dialedPhoneNumber;
     public int numberLength;
 
-    //UnityEvent[] numberVariation;
-    
-
-    List<string> existingNumbers;
+    private List<string> existingNumbers;
+    public List<NumberAction> numbers;
 
     [Serializable]
     public class NumberAction
     {
         public string number;
-        public BaseAction_SO action;
-        public NumberAction()
+        public UnityEvent action;
+        public NumberAction() { }
+    }
+
+
+
+    private void Awake()
+    {
+        foreach (var num in numbers)
         {
-            
+            existingNumbers.Add(num.number);
         }
     }
+
+
 
     public void ClearNumber()
     {
         dialedPhoneNumber = string.Empty;
     }
 
-    public void AddNumber(int phoneNumber)
+    public void AddNumber(char digit)
     {
-        dialedPhoneNumber += phoneNumber;
-        Debug.Log($"Added {phoneNumber}. Current number is {dialedPhoneNumber}");
+        dialedPhoneNumber += digit;
+        Debug.Log($"Added {digit}. Current number is {dialedPhoneNumber}");
 
         if (dialedPhoneNumber.Length >= numberLength)
         {

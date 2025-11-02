@@ -6,6 +6,17 @@ TagManager:
   tags:
   - Radio
   - DropArea
+  - PhoneDigit3
+  - PhoneDigit6
+  - PhoneDigit0
+  - PhoneDigit7
+  - PhoneDigit5
+  - PhoneDigit4
+  - PhoneDigit8
+  - PhoneDigit9
+  - PhoneDigit1
+  - PhoneDigit2
+  - PhoneCounter
   layers:
   - Default
   - TransparentFX
