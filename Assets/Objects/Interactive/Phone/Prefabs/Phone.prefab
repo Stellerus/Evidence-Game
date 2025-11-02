@@ -146,6 +146,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3470080553616321217}
   - component: {fileID: 7742184874206617514}
+  - component: {fileID: 5431002307888272404}
+  - component: {fileID: 1984204430336395905}
   m_Layer: 0
   m_Name: Disc
   m_TagString: Untagged
@@ -161,7 +163,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532710580963497143}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_ConstrainProportionsScale: 0
@@ -233,6 +235,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5431002307888272404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532710580963497143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68a8f161622d7e54bb97ccc5ff41a687, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 1
+--- !u!58 &1984204430336395905
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532710580963497143}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 2.3855627
 --- !u!1 &2130376696778925215
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,6 +497,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6303854938783842606}
+  - component: {fileID: 1893849401406757846}
   m_Layer: 0
   m_Name: CounterAxis
   m_TagString: Untagged
@@ -469,6 +521,52 @@ Transform:
   - {fileID: 1806939081775023234}
   m_Father: {fileID: 2951201450208204832}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -64.88}
+--- !u!61 &1893849401406757846
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3745933893587013227}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.16, y: 1.04}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.11, y: 2.38}
+  m_EdgeRadius: 0
 --- !u!1 &5072435879501221762
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,8 +943,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phoneDisk: {fileID: 1532710580963497143}
   phoneCounter: {fileID: 9059636022914575138}
-  blockDiskDegree: 45
-  endPoint: {x: 127.5, y: 5.32, z: 0}
+  digits:
+  - {fileID: 4959776141128439270}
+  - {fileID: 5440157556878859976}
+  - {fileID: 2033835120313668878}
+  - {fileID: 3834401773381918947}
+  - {fileID: 4406974944336764256}
+  - {fileID: 4670234546908558836}
+  - {fileID: 7562675340840766977}
+  - {fileID: 3585988494364624559}
+  - {fileID: 4597962271534165626}
+  - {fileID: 8241923859959419674}
+  blockDiskDegree: 295.12
+  degreeShift: 0.58
+  sectorSizeAngle: 25.6
 --- !u!1 &9059636022914575138
 GameObject:
   m_ObjectHideFlags: 0

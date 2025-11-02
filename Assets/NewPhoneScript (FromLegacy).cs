@@ -16,9 +16,9 @@ public class NewPhoneScriptFromLegacy : MonoBehaviour
     public float deadZone = 10f;
     public int numbersCount = 10;
 
-    [Header("Audio")]
-    public AudioSource tickSound;
-    public float tickStep = 12f;
+    //[Header("Audio")]
+    //public AudioSource tickSound;
+    //public float tickStep = 12f;
 
     [Header("Events")]
     public UnityEvent<int> OnNumberSelected;
@@ -26,7 +26,7 @@ public class NewPhoneScriptFromLegacy : MonoBehaviour
     [Header("Debug")]
     public List<int> dialedNumbers = new List<int>();
 
-    [Header("Manual Optioning")]
+    [Header("Assign Angles")]
     [SerializeField] private DigitAnglePair[] digitAngles;
 
     [Serializable]
@@ -40,10 +40,11 @@ public class NewPhoneScriptFromLegacy : MonoBehaviour
     }
 
 
-
+    // Phone usage bools
     private bool isReturning = false;
     private bool isDragging = false;
 
+    // Angles calculated on the go
     private float startAngle;
     private float currentAngle;
     private float prevAngle;
@@ -56,16 +57,7 @@ public class NewPhoneScriptFromLegacy : MonoBehaviour
     {
         if (isDragging && Input.GetMouseButton(0)) // Disk Dragging Check
         {
-            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mouseWorldPos.z = diskCenter.position.z;
-            Vector2 dir = mouseWorldPos - diskCenter.position;
-            float newAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-
-            float delta = Mathf.DeltaAngle(prevAngle, newAngle);
-            prevAngle = newAngle;
-
-            currentAngle = Mathf.Clamp(currentAngle - delta, 0, maxRotation);
-            transform.localRotation = Quaternion.Euler(0, 0, -currentAngle);
+            DragDisk();
         }
         else if (isReturning) // Disk returns to its position
         {
@@ -81,17 +73,19 @@ public class NewPhoneScriptFromLegacy : MonoBehaviour
 
         startAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg; // Degree of start
 
+        // Switch bools
         isDragging = true;
         isReturning = false;
     }
 
     void OnMouseUp()
     {
+        // Switch bools
         isDragging = false;
         isReturning = true;
 
         int selectedNumber = CalculateNumber();
-        dialedNumbers.Add(selectedNumber);
+        dialedNumbers.Add(selectedNumber); // add to dialedNumber Array
 
         OnNumberSelected?.Invoke(selectedNumber); // Invoke Event
 
@@ -102,7 +96,7 @@ public class NewPhoneScriptFromLegacy : MonoBehaviour
             //{
             //    HandleCorrectInput(stage1Objects, 1);
             //}
-            if (true)
+            if (true) // Check the number
             {
 
             }
@@ -113,6 +107,21 @@ public class NewPhoneScriptFromLegacy : MonoBehaviour
             }
         }
         Debug.Log("Selected digit: " + selectedNumber);
+    }
+
+
+    private void DragDisk()
+    {
+        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorldPos.z = diskCenter.position.z;
+        Vector2 dir = mouseWorldPos - diskCenter.position;
+        float newAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+
+        float delta = Mathf.DeltaAngle(prevAngle, newAngle);
+        prevAngle = newAngle;
+
+        currentAngle = Mathf.Clamp(currentAngle - delta, 0, maxRotation);
+        transform.localRotation = Quaternion.Euler(0, 0, -currentAngle);
     }
 
 
