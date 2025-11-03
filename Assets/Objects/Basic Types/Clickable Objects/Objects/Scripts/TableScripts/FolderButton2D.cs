@@ -2,46 +2,33 @@ using UnityEngine;
 
 public class FolderButton2D : MonoBehaviour
 {
-    public GameObject sheetPrefab;
+    [Header("Sheets cases")]
+    public GameObject[] sheetPrefabs;
+
+    [Header("Sheet settings")]
     public Transform stackAnchor;
-    public int count = 5;
-    public Vector3 offset = new Vector3(0, -0.5f, -0.01f);
+    public float sheetOffset = 0.15f;
 
-    private bool opened = false;
+    private bool isOpened = false;
 
-    void OnMouseDown()
+    private void OnMouseDown()
     {
-        if (!opened) OpenFolder();
-        else CloseFolder();
-    }
+        if (isOpened) return;
+        isOpened = true;
 
-    void OpenFolder()
-    {
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < sheetPrefabs.Length; i++)
         {
+            Vector3 localOffset = new Vector3(0, -i * sheetOffset, 0);
 
-            Vector3 localOffset = offset * i;
-            localOffset.z -= 0.05f * 1;
-            Vector3 pos = stackAnchor.position + localOffset;
+            GameObject prefab = sheetPrefabs[i];
+            GameObject newSheet = Instantiate(prefab, stackAnchor.position + localOffset, Quaternion.identity);
 
-            GameObject go = Instantiate(sheetPrefab, pos, Quaternion.identity, stackAnchor);
-
-            var sc = go.GetComponent<SheetController2D>();
-            if (sc != null) sc.SetOrigin(stackAnchor, localOffset);
-
-            var dd = go.GetComponent<DragAndDropTable>();
+            DragAndDropTable dd = newSheet.GetComponent<DragAndDropTable>();
             if (dd != null)
             {
                 dd.originStack = stackAnchor;
-                dd.originLocalOffset = localOffset;
+                dd.originLocalOffset = localOffset; 
             }
         }
-        opened = true;
-    }
-
-    void CloseFolder()
-    {
-        foreach (Transform t in stackAnchor) Destroy(t.gameObject);
-        opened = false;
     }
 }
