@@ -1903,9 +1903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 760953ede90bbe44ea8df894aba509f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clonePrefab: {fileID: 1346233973}
-  counter: {fileID: 1536835741}
-  isOriginal: 1
+  magnetSpeed: 2
 --- !u!212 &1040423524
 SpriteRenderer:
   m_ObjectHideFlags: 0

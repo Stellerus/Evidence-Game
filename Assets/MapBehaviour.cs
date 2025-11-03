@@ -1,4 +1,4 @@
-﻿using JetBrains.Annotations;
+using JetBrains.Annotations;
 using System.Collections.Generic;
 using System.Drawing;
 using Unity.VisualScripting;
@@ -24,7 +24,7 @@ public class MapBehaviour : MonoBehaviour
 
     void Awake()
     {
-        for (int x = 0; x < mapCount.currentCount; x++)
+        for (int x = 0; x < mapCount.startCount; x++)
         {
             SpawnPolice();
         }

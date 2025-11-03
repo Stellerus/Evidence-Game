@@ -8,11 +8,11 @@ public class PoliceSpawnpointBehaviour : MonoBehaviour
 
     void Start()
     {
-        
+
     }
     void Update()
     {
-        
+
     }
 
 }
