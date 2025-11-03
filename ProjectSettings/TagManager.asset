@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Radio
+  - DropArea
+  - DropArea2D
+  - DropAreaTable
   layers:
   - Default
   - TransparentFX

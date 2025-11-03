@@ -11,8 +11,10 @@ public class LocationManager : MonoBehaviour
     [SerializeField] Transform Cabinet;
     [SerializeField] Transform Archive;
     [SerializeField] Transform Interrogation;
-
     [SerializeField] Transform Hallway;
+    [SerializeField] Transform UnzoomFromPhone;
+    [SerializeField] Transform UnzoomFromMap;
+    [SerializeField] Transform Table;
 
 
     private void Awake()
@@ -38,9 +40,32 @@ public class LocationManager : MonoBehaviour
         }
     }
 
+    bool isZoomed = false;
+
     public void MoveToCabinet()
     {
         cam.transform.position = Cabinet.position;
+    }
+
+    public void ZoomBackToOffice()
+    {
+        if (isZoomed == true)
+        {
+            cam.transform.position = Cabinet.position;
+            isZoomed = false;
+        }
+    }
+
+    public void MoveToPhone()
+    {
+        cam.transform.position = UnzoomFromPhone.position;
+        isZoomed = true;
+    }
+
+    public void MoveToMap()
+    {
+        cam.transform.position = UnzoomFromMap.position;
+        isZoomed = true;
     }
 
     public void MoveToArchive()
@@ -57,6 +82,11 @@ public class LocationManager : MonoBehaviour
     public void MoveToHallway()
     {
         cam.transform.position = Hallway.position;
+    }
+
+    public void MoveToTable()
+    {
+        cam.transform.position = Table.position;
     }
 
     private void Update()
