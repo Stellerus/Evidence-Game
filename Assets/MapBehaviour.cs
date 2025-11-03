@@ -43,13 +43,6 @@ public class MapBehaviour : MonoBehaviour
     }
 
 
-    //public void CountDown()
-    //{
-    //    if (crimePoints != null) {
-    //        mapCount.Decrease();
-
-    //        }
-    //    }
 
 
     public void SpawnPolice()
