@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c50833a2d26508d45adf1bac67b4a044
+guid: 58a10dac2076e854abd2de50a8e79869
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8750747228815119118
-    second: case3rus_0
+      213: -6720181787809411018
+    second: dialog_tab_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: case3rus_0
+      name: dialog_tab_0
       rect:
         serializedVersion: 2
-        x: 433
-        y: 80
-        width: 2979
-        height: 1977
+        x: 32
+        y: 27
+        width: 1670
+        height: 255
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e0352ccbd36e07970800000000000000
-      internalID: 8750747228815119118
+      spriteID: 630129fd44e1db2a0800000000000000
+      internalID: -6720181787809411018
       vertices: []
       indices: 
       edges: []
@@ -173,8 +173,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      case3rus_0: 8750747228815119118
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

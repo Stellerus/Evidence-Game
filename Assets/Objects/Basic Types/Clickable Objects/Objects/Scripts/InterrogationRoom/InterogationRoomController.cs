@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnvegationRoomController : MonoBehaviour
+public class InterogationRoomController : MonoBehaviour
 {
     [Header("Suspects")]
     [SerializeField] private GameObject suspect1;
