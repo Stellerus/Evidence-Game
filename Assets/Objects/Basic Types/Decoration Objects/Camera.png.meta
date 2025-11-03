@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9b426b4a151931746ad36883b769c26c
+guid: 511aef8cf1328714f8e47fb9fb91a47e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9066153378095204456
-    second: button_new_game_0
+      213: 1349180431371488363
+    second: Camera_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: button_new_game_0
+      name: Camera_0
       rect:
         serializedVersion: 2
-        x: 30
-        y: 26
-        width: 862
-        height: 210
+        x: 2363
+        y: 2545
+        width: 5026
+        height: 4659
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8977d63898d8e2280800000000000000
-      internalID: -9066153378095204456
+      spriteID: b6c4ecd347049b210800000000000000
+      internalID: 1349180431371488363
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      button_new_game_0: -9066153378095204456
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -209,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ashtray_0: -8610703239322129299
+      ashtray_1: -949372462364874517
+      ashtray_2: -828195427953471456
+      ashtray_3: 1721834615444668524
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
