@@ -15,6 +15,7 @@ public class WorldDialogueTrigger : MonoBehaviour
     [Serializable]
     public class CharacterLine
     {
+        [TextArea(2, 4)]
         public string lines;
         public Sprite character;
     }
