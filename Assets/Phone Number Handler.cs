@@ -20,16 +20,20 @@ public class PhoneNumberHandler : MonoBehaviour
     {
         public string number;
         public UnityEvent action;
-        public NumberAction() { }
     }
 
 
 
     private void Awake()
     {
+        ClearNumber();
+        existingNumbers = new List<string>();
         foreach (var num in numbers)
         {
-            existingNumbers.Add(num.number);
+            if (num != null)
+            {
+                existingNumbers.Add(num.number);
+            }
         }
     }
 
@@ -55,11 +59,11 @@ public class PhoneNumberHandler : MonoBehaviour
     {
         if (existingNumbers.Contains(dialedPhoneNumber))
         {
-            foreach (var number in existingNumbers)
+            foreach (var num in numbers)
             {
-                if (number == dialedPhoneNumber)
+                if (num.number == dialedPhoneNumber)
                 {
-                    
+                    num.action.Invoke();
                 }
             }
         }

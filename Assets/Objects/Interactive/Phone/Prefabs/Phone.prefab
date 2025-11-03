@@ -108,7 +108,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1 &363094494081594302
 GameObject:
@@ -218,7 +218,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1 &1532710580963497143
 GameObject:
@@ -231,7 +231,6 @@ GameObject:
   - component: {fileID: 3470080553616321217}
   - component: {fileID: 7742184874206617514}
   - component: {fileID: 5431002307888272404}
-  - component: {fileID: 4389589345978964775}
   - component: {fileID: 9170558441975103996}
   m_Layer: 0
   m_Name: Disc
@@ -332,7 +331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68a8f161622d7e54bb97ccc5ff41a687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 1
+  rotationSpeed: 3
   startRotation: {x: 0, y: 0, z: 0, w: 0}
   currentDigit: 0
   transferDigit:
@@ -350,24 +349,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4389589345978964775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1532710580963497143}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68a8f161622d7e54bb97ccc5ff41a687, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 1
-  startRotation: {x: 0, y: 0, z: 0, w: 0}
-  currentDigit: 0
-  transferDigit:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!58 &9170558441975103996
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -512,7 +493,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1 &3112826629288583110
 GameObject:
@@ -681,7 +662,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1 &3544639726797410696
 GameObject:
@@ -791,7 +772,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1 &3745933893587013227
 GameObject:
@@ -860,7 +841,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.16, y: 1.04}
+  m_Offset: {x: 0.26, y: 1.04}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -870,7 +851,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.11, y: 2.38}
+  m_Size: {x: 0.51, y: 2.13}
   m_EdgeRadius: 0
 --- !u!1 &5072435879501221762
 GameObject:
@@ -980,7 +961,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1 &5367620802565238187
 GameObject:
@@ -1090,7 +1071,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1 &6262365970375369579
 GameObject:
@@ -1200,7 +1181,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1 &6539480357203738094
 GameObject:
@@ -1310,7 +1291,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1 &8876809126460156777
 GameObject:
@@ -1417,17 +1398,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phoneDisk: {fileID: 1532710580963497143}
   phoneCounter: {fileID: 9059636022914575138}
-  digits:
-  - {fileID: 4959776141128439270}
-  - {fileID: 5440157556878859976}
-  - {fileID: 2033835120313668878}
-  - {fileID: 3834401773381918947}
-  - {fileID: 4406974944336764256}
-  - {fileID: 4670234546908558836}
-  - {fileID: 7562675340840766977}
-  - {fileID: 3585988494364624559}
-  - {fileID: 4597962271534165626}
-  - {fileID: 8241923859959419674}
   blockDiskDegree: 295.12
   degreeShift: 0.58
   sectorSizeAngle: 25.6
@@ -1626,5 +1596,5 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
