@@ -341,7 +341,7 @@ MonoBehaviour:
       - m_Target: {fileID: 3993502402855460098}
         m_TargetAssemblyTypeName: PhoneNumberHandler, Assembly-CSharp
         m_MethodName: AddNumber
-        m_Mode: 3
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -560,6 +560,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialedPhoneNumber: 
   numberLength: 3
+  numbers:
+  - number: 613
+    action:
+      m_PersistentCalls:
+        m_Calls: []
+  - number: 047
+    action:
+      m_PersistentCalls:
+        m_Calls: []
+  - number: 295
+    action:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &3313787946954765075
 GameObject:
   m_ObjectHideFlags: 0

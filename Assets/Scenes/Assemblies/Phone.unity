@@ -331,17 +331,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &992526562 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3993502402855460098, guid: 725f7291134db3c4abfe7180e5b89e6a, type: 3}
-  m_PrefabInstance: {fileID: 1088004428}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6286bf34f62f164ea9b7e82e14db6a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1088004428
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -389,50 +378,6 @@ PrefabInstance:
     - target: {fileID: 2951201450208204832, guid: 725f7291134db3c4abfe7180e5b89e6a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3993502402855460098, guid: 725f7291134db3c4abfe7180e5b89e6a, type: 3}
-      propertyPath: numbers.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3993502402855460098, guid: 725f7291134db3c4abfe7180e5b89e6a, type: 3}
-      propertyPath: existingNumbers.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3993502402855460098, guid: 725f7291134db3c4abfe7180e5b89e6a, type: 3}
-      propertyPath: numbers.Array.data[0].number
-      value: 613
-      objectReference: {fileID: 0}
-    - target: {fileID: 3993502402855460098, guid: 725f7291134db3c4abfe7180e5b89e6a, type: 3}
-      propertyPath: numbers.Array.data[1].number
-      value: 047
-      objectReference: {fileID: 0}
-    - target: {fileID: 3993502402855460098, guid: 725f7291134db3c4abfe7180e5b89e6a, type: 3}
-      propertyPath: numbers.Array.data[2].number
-      value: 295
-      objectReference: {fileID: 0}
-    - target: {fileID: 3993502402855460098, guid: 725f7291134db3c4abfe7180e5b89e6a, type: 3}
-      propertyPath: 'existingNumbers.Array.data[0]'
-      value: 613
-      objectReference: {fileID: 0}
-    - target: {fileID: 3993502402855460098, guid: 725f7291134db3c4abfe7180e5b89e6a, type: 3}
-      propertyPath: 'existingNumbers.Array.data[1]'
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 3993502402855460098, guid: 725f7291134db3c4abfe7180e5b89e6a, type: 3}
-      propertyPath: 'existingNumbers.Array.data[2]'
-      value: 479
-      objectReference: {fileID: 0}
-    - target: {fileID: 5431002307888272404, guid: 725f7291134db3c4abfe7180e5b89e6a, type: 3}
-      propertyPath: transferDigit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5431002307888272404, guid: 725f7291134db3c4abfe7180e5b89e6a, type: 3}
-      propertyPath: transferDigit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 992526562}
-    - target: {fileID: 5431002307888272404, guid: 725f7291134db3c4abfe7180e5b89e6a, type: 3}
-      propertyPath: transferDigit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AddNumber
       objectReference: {fileID: 0}
     - target: {fileID: 8876809126460156777, guid: 725f7291134db3c4abfe7180e5b89e6a, type: 3}
       propertyPath: m_Name
