@@ -2612,6 +2612,7 @@ MonoBehaviour:
   Hallway: {fileID: 6450042979784394305}
   UnzoomFromPhone: {fileID: 667324282}
   UnzoomFromMap: {fileID: 2029802633}
+  Table: {fileID: 0}
 --- !u!4 &1232015218
 Transform:
   m_ObjectHideFlags: 0
@@ -2817,9 +2818,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 440509603}
     m_Modifications:
     - target: {fileID: 3130218690335642277, guid: 6603987d43b5cc34799820f7e27b81ff, type: 3}
+      propertyPath: m_Size.y
+      value: 4.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130218690335642277, guid: 6603987d43b5cc34799820f7e27b81ff, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1474537748631199270, guid: e7423821f9aaf6640b7e3184661cc7a5, type: 3}
+      objectReference: {fileID: 21300000, guid: e7423821f9aaf6640b7e3184661cc7a5, type: 3}
+    - target: {fileID: 3130218690335642277, guid: 6603987d43b5cc34799820f7e27b81ff, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5035790541235570812, guid: 6603987d43b5cc34799820f7e27b81ff, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 3.43
@@ -3682,8 +3691,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
-  m_Sprite: {fileID: 9107868595778930854, guid: c472db3247df74e40a8f87d2486de7af, type: 3}
-  m_Color: {r: 0.18490559, g: 0.02616586, b: 0.02616586, a: 0}
+  m_Sprite: {fileID: -6432669484191862200, guid: 6f4f6728330e9b14bb7e72978605c9da, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3817,7 +3826,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 15
   m_Sprite: {fileID: -3436401584669406299, guid: 42fc82ce8ae219b4f893b211940d839b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0.6301887, g: 0.6301887, b: 0.6301887, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
