@@ -54,13 +54,17 @@ public class PoliceBehaviour : MonoBehaviour
         float distance = Vector3.Distance(transform.position, crime.transform.position);
         if (distance < 0.2f)
         {
-            AttachToCrimePoint(crime);
+            if (crime != null)
+            {
+                AttachToCrimePoint(crime);
+            }
+            
         }
     }
 
     private void AttachToCrimePoint(CrimePointBehaviour newCrime)
     {
-        if (attachedCrimePoint != null && attachedCrimePoint != newCrime)
+        if (attachedCrimePoint == null && attachedCrimePoint != newCrime)
         {
             attachedCrimePoint.Release();
         }
