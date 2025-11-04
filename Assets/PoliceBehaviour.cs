@@ -13,22 +13,6 @@ public class PoliceBehaviour : MonoBehaviour
         magnetRadius = GetComponent<CircleCollider2D>();
     }
 
-    //private void OnTriggerStay2D(Collider2D collision)
-    //{
-    //    if (isLocked) return;
-
-    //    CrimePointBehaviour crime = collision.GetComponent<CrimePointBehaviour>();
-
-    //    if (crime != null)
-    //    {
-    //        transform.position = Vector3.Lerp(
-    //            transform.position,
-    //            crime.transform.position,
-    //            Time.deltaTime * magnetSpeed
-    //        );
-    //    }
-    //}
-
     public void LockMovement()
     {
         isLocked = true;

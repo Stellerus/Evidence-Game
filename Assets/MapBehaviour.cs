@@ -42,14 +42,18 @@ public class MapBehaviour : MonoBehaviour
 
     }
 
-
-    //public void CountDown()
-    //{
-    //    if (crimePoints != null) {
-    //        mapCount.Decrease();
-
-    //        }
-    //    }
+    public List<CrimePointBehaviour> GetActiveCP()
+    {
+        List <CrimePointBehaviour> crimePoints = new List<CrimePointBehaviour>();
+        foreach (var item in crimePoints)
+        {
+            if (item.isOccupied)
+            {
+                crimePoints.Add(item);
+            }
+        }
+        return crimePoints;
+    }
 
 
     public void SpawnPolice()
