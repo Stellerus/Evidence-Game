@@ -482,7 +482,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.18268403, y: -2.8882573, z: 0}
-  m_LocalScale: {x: 1.0750183, y: 1.0690913, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1392346775}
@@ -2469,6 +2469,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -2.02
       objectReference: {fileID: 0}
+    - target: {fileID: 867896348411877768, guid: 6603987d43b5cc34799820f7e27b81ff, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: aa7b014138340fd4a9df2a5a14526835, type: 3}
     - target: {fileID: 1960385099209891403, guid: 6603987d43b5cc34799820f7e27b81ff, type: 3}
       propertyPath: m_SortingOrder
       value: 9
@@ -2488,6 +2492,14 @@ PrefabInstance:
     - target: {fileID: 2491117880562022636, guid: 6603987d43b5cc34799820f7e27b81ff, type: 3}
       propertyPath: m_LocalPosition.y
       value: -2.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 4011468385826002397, guid: 6603987d43b5cc34799820f7e27b81ff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 4011468385826002397, guid: 6603987d43b5cc34799820f7e27b81ff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.85
       objectReference: {fileID: 0}
     - target: {fileID: 4432306867221200830, guid: 6603987d43b5cc34799820f7e27b81ff, type: 3}
       propertyPath: <actionEvent>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Target
