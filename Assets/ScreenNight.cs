@@ -14,34 +14,30 @@ public class ScreenNight : MonoBehaviour
     [SerializeField, Min(0f)] private float waitTime = 2.0f;
 
     [Header("Debug / Control")]
-    [SerializeField] private bool autoStart = false; // если true — запустить при Start()
+    [SerializeField] private bool autoStart = false;
     [SerializeField] private bool debugReset = false;
+
+    [Header("Limit opacity (0–1)")]
+    [Range(0f, 1f)][SerializeField] private float maxAlpha = 0.62f;
 
     private bool isCoroutineRunning = false;
 
-    private float nightMaskOrigAlpha = 1f;
-    private float fadeMaskOrigAlpha = 1f;
-
     private void Awake()
     {
-        // Сохраняем исходные альфы (если спрайты заданы)
-        if (NightMask != null)
-            nightMaskOrigAlpha = NightMask.color.a;
-        if (FadeMask != null)
-            fadeMaskOrigAlpha = FadeMask.color.a;
+        // Если спрайты заданы — ок, просто сохраняем текущие цвета
+        if (NightMask == null || FadeMask == null)
+        {
+            Debug.LogError($"[{nameof(ScreenNight)}] NightMask и/или FadeMask не назначены!");
+            enabled = false;
+        }
     }
 
     private void Start()
     {
-        // Проверки на назначенные спрайты
         if (NightMask == null || FadeMask == null)
-        {
-            Debug.LogError($"[{nameof(ScreenNight)}] NightMask и/или FadeMask не назначены в инспекторе. Присвойте SpriteRenderer'ы.");
-            enabled = false; // отключаем скрипт, чтобы не получать NRE
             return;
-        }
 
-        // Делает их полностью прозрачными при старте (как в твоём варианте)
+        // Начинаем с прозрачных
         SetAlpha(FadeMask, 0f);
         SetAlpha(NightMask, 0f);
 
@@ -58,9 +54,6 @@ public class ScreenNight : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Вызвать извне, чтобы запустить эффект затемнения/осветления.
-    /// </summary>
     public void StartFade()
     {
         if (!isCoroutineRunning)
@@ -72,13 +65,13 @@ public class ScreenNight : MonoBehaviour
         isCoroutineRunning = true;
         Debug.Log("[ScreenNight] Начало затемнения...");
 
-        // Затемнение до полной (1)
-        yield return StartCoroutine(FadeTo(1f));
+        // Плавное затемнение (до maxAlpha)
+        yield return StartCoroutine(FadeTo(maxAlpha));
 
-        Debug.Log("[ScreenNight] Полное затемнение. Ждём...");
+        Debug.Log("[ScreenNight] Полное затемнение (ограничено " + maxAlpha + "). Ждём...");
         yield return new WaitForSeconds(waitTime);
 
-        // Осветление до исходных (в данном случае до 0)
+        // Плавное осветление до нуля
         Debug.Log("[ScreenNight] Начало осветления...");
         yield return StartCoroutine(FadeTo(0f));
 
@@ -88,11 +81,11 @@ public class ScreenNight : MonoBehaviour
 
     private IEnumerator FadeTo(float targetAlpha)
     {
-        // Защита от нулевой скорости
+        const float eps = 0.001f;
         float speed = Mathf.Max(0.0001f, fadeSpeed);
 
-        // Используем небольшое эпсилон-окно для завершения
-        const float eps = 0.001f;
+        // Не позволяем целевому альфа превышать maxAlpha
+        targetAlpha = Mathf.Min(targetAlpha, maxAlpha);
 
         while (Mathf.Abs(FadeMask.color.a - targetAlpha) > eps ||
                Mathf.Abs(NightMask.color.a - targetAlpha) > eps)
@@ -105,15 +98,16 @@ public class ScreenNight : MonoBehaviour
             yield return null;
         }
 
-        // Устанавливаем точно целевую альфу (избежать мелких погрешностей)
         SetAlpha(FadeMask, targetAlpha);
         SetAlpha(NightMask, targetAlpha);
     }
 
     private void SetAlpha(SpriteRenderer sr, float a)
     {
+        // clamp to 0..maxAlpha instead of 0..1
+        a = Mathf.Clamp(a, 0f, maxAlpha);
         Color c = sr.color;
-        c.a = Mathf.Clamp01(a);
+        c.a = a;
         sr.color = c;
     }
 }
