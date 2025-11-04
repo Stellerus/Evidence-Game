@@ -10,7 +10,7 @@ public class WorldDialogueTrigger : MonoBehaviour
     [TextArea(2, 5)]
     [SerializeField] private string[] lines;
 
-    [SerializeField] private List<CharacterLine> CharacterList;
+    [SerializeField] public List<CharacterLine> CharacterList;
 
     [Serializable]
     public class CharacterLine
@@ -18,10 +18,11 @@ public class WorldDialogueTrigger : MonoBehaviour
         [TextArea(2, 4)]
         public string lines;
         public Sprite character;
+        public AudioClip voiceClip;
     }
 
     private void OnMouseDown()
     {
-        dialogueWindow.StartDialogue(lines);
+        dialogueWindow.StartDialogue(CharacterList);
     }
 }
