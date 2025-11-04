@@ -1,15 +1,19 @@
-using UnityEngine;
-using TMPro;
 using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using static WorldDialogueTrigger;
 
 public class WorldDialogueWindow : MonoBehaviour
 {
     [SerializeField] private TextMeshPro textMesh;
     [SerializeField] private SpriteRenderer background;
-    [SerializeField] private float typeSlow = 0.02f;
+    [SerializeField] private SpriteRenderer characterRenderer;
+    [SerializeField] private float typeSpeed = 0.02f;
     [SerializeField] private float fadeSpeed = 2f;
+    [SerializeField] private AudioSource audioSource;
 
-    private string[] lines;
+    private List<CharacterLine> characterList;
     private int index;
     private bool isTyping;
     private bool isActive;
@@ -33,7 +37,7 @@ public class WorldDialogueWindow : MonoBehaviour
             if (isTyping)
             {
                 StopCoroutine(typingCoroutine);
-                textMesh.text = lines[index];
+                textMesh.text = characterList[index].lines;
                 isTyping = false;
             }
             else
@@ -43,9 +47,9 @@ public class WorldDialogueWindow : MonoBehaviour
         }
     }
 
-    public void StartDialogue(string[] newLines)
+    public void StartDialogue(List<CharacterLine> newLines)
     {
-        lines = newLines;
+        characterList = newLines;
         index = 0;
         Show();
         ShowLine();
@@ -67,11 +71,13 @@ public class WorldDialogueWindow : MonoBehaviour
 
     private void HideInstant()
     {
-        Color c1 = bgColor; c1.a = 0;
-        Color c2 = textColor; c2.a = 0;
-        background.color = c1;
-        textMesh.color = c2;
+        Color b = bgColor; b.a = 0;
+        Color t = textColor; t.a = 0;
+        background.color = b;
+        textMesh.color = t;
         textMesh.text = "";
+        if (characterRenderer != null)
+            characterRenderer.sprite = null;
     }
 
     private IEnumerator Fade(bool show)
@@ -85,7 +91,6 @@ public class WorldDialogueWindow : MonoBehaviour
             Color t = textMesh.color; t.a = newAlpha;
             background.color = b;
             textMesh.color = t;
-            textMesh.ForceMeshUpdate();
             yield return null;
         }
 
@@ -95,29 +100,58 @@ public class WorldDialogueWindow : MonoBehaviour
 
     private void ShowLine()
     {
+        if (index < 0 || index >= characterList.Count) return;
+
         if (typingCoroutine != null)
             StopCoroutine(typingCoroutine);
-        typingCoroutine = StartCoroutine(TypeLine());
+
+        if (characterRenderer != null)
+        {
+            var sprite = characterList[index].character;
+            characterRenderer.sprite = sprite;
+            characterRenderer.color = sprite ? Color.white : new Color(1, 1, 1, 0);
+        }
+
+        PlayVoice(characterList[index]);
+        typingCoroutine = StartCoroutine(TypeLine(characterList[index].lines));
     }
 
-    private IEnumerator TypeLine()
+    private IEnumerator TypeLine(string line)
     {
         isTyping = true;
         textMesh.text = "";
-        foreach (char c in lines[index])
+
+        foreach (char c in line)
         {
             textMesh.text += c;
-            yield return new WaitForSeconds(typeSlow);
+            yield return new WaitForSeconds(typeSpeed);
         }
+
         isTyping = false;
     }
 
     private void NextLine()
     {
         index++;
-        if (index < lines.Length)
+        if (index < characterList.Count)
             ShowLine();
         else
             Hide();
+    }
+
+    private void PlayVoice(CharacterLine line)
+    {
+        if (audioSource == null) return;
+
+        if (line.voiceClip != null)
+        {
+            audioSource.Stop();
+            audioSource.clip = line.voiceClip;
+            audioSource.Play();
+        }
+        else
+        {
+            audioSource.Stop();
+        }
     }
 }
