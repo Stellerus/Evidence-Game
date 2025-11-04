@@ -613,19 +613,17 @@ MonoBehaviour:
   lines:
   - 
   CharacterList:
-  - lines: "\u0414\u043E\u0431\u0440\u043E\u0435 \u0443\u0442\u0440\u043E, \u042F\u043D!"
+  - lines: Good morning, Jan!
     character: {fileID: 0}
     voiceClip: {fileID: 8300000, guid: 59a4e9f7a55c0634eaa701e6e48836d6, type: 3}
-  - lines: "\u0414\u043E\u0431\u0440\u043E\u0435, \u0434\u0430. \u041D\u0430\u0447\u0430\u043B\u044C\u043D\u0438\u043A
-      \u0435\u0449\u0435 \u043D\u0435 \u0437\u0430\u0445\u043E\u0434\u0438\u043B?"
+  - lines: Good morning, yes. Has the boss come in yet?
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 8300000, guid: 48bf53eef4a8415468511797c289c250, type: 3}
-  - lines: "\u041D\u0435\u0442, \u0430 \u0434\u043E\u043B\u0436\u0435\u043D \u0431\u044B\u043B?"
+  - lines: No, should he have?
     character: {fileID: 0}
     voiceClip: {fileID: 8300000, guid: 59a4e9f7a55c0634eaa701e6e48836d6, type: 3}
-  - lines: "\u041A\u0442\u043E \u0435\u0433\u043E \u0437\u043D\u0430\u0435\u0442
-      \u0447\u0442\u043E \u0435\u043C\u0443 \u0432 \u0433\u043E\u043B\u043E\u0432\u0443
-      \u043F\u0440\u0438\u0434\u0435\u0442.  \u043E\u0442\u0447\u0438\u0442\u0430\u0442\u044C\u0441\u044F."
+  - lines: Who knows what he's thinking. Maybe he got a new case for us, and you're
+      keeping quiet so you can solve it alone and then report to the boss.
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 8300000, guid: 48bf53eef4a8415468511797c289c250, type: 3}
   - lines: "\u041C\u043E\u0436\u0435\u0442 \u043A\u0430\u043A\u043E\u0435 \u0434\u0435\u043B\u043E
