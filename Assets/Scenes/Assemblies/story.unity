@@ -626,120 +626,55 @@ MonoBehaviour:
       keeping quiet so you can solve it alone and then report to the boss.
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 8300000, guid: 48bf53eef4a8415468511797c289c250, type: 3}
-  - lines: "\u041C\u043E\u0436\u0435\u0442 \u043A\u0430\u043A\u043E\u0435 \u0434\u0435\u043B\u043E
-      \u043D\u043E\u0432\u043E\u0435 \u043F\u0435\u0440\u0435\u0434\u0430\u043B\u0438,
-      \u0430 \u0442\u044B \u043C\u043E\u043B\u0447\u0438\u0448\u044C, \u0447\u0442\u043E\u0431
-      \u0432\u0441\u0435 \u0441\u0430\u043C\u0438\u043C \u0440\u0435\u0448\u0438\u0442\u044C
-      \u0438 \u043D\u0430\u0447\u0430\u043B\u044C\u043D\u0438\u043A\u0443"
-    character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
-    voiceClip: {fileID: 8300000, guid: 59a4e9f7a55c0634eaa701e6e48836d6, type: 3}
-  - lines: "\u0412\u044B \u043F\u043B\u043E\u0445\u043E\u0433\u043E \u043E\u0431\u043E
-      \u043C\u043D\u0435 \u043C\u043D\u0435\u043D\u0438\u044F, \u043A\u043E\u043B\u043B\u0435\u0433\u0430.
-      \u042F \u0431\u044B \u0442\u0430\u043A \u043D\u0438\u043A\u043E\u0433\u0434\u0430
-      \u0431\u044B \u043D\u0435 \u0441\u0434\u0435\u043B\u0430\u043B!"
+  - lines: You have a bad opinion of me, colleague. I would never do that!
+    character: {fileID: 0}
+    voiceClip: {fileID: 0}
+  - lines: Never say never. You know that saying, don't you?
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 0}
-  - lines: "\u041D\u0438\u043A\u043E\u0433\u0434\u0430 \u043D\u0435 \u0433\u043E\u0432\u043E\u0440\u0438
-      \u043D\u0438\u043A\u043E\u0433\u0434\u0430, \u0437\u043D\u0430\u0435\u0448\u044C
-      \u0442\u0430\u043A\u0443\u044E \u043F\u043E\u0433\u043E\u0432\u043E\u0440\u043A\u0443?"
+  - lines: Of course I know it.
+    character: {fileID: 0}
+    voiceClip: {fileID: 0}
+  - lines: I don't want to say anything too strong, but after working here I've learned
+      that a person can lose their principles. You never know where you might end
+      up.
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 0}
-  - lines: "\u041A\u043E\u043D\u0435\u0447\u043D\u043E \u0437\u043D\u0430\u044E. "
+  - lines: I think you're right about some things.
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 0}
-  - lines: "\u041D\u0435 \u0445\u043E\u0447\u0443 \u0442\u0443\u0442 \u0440\u0435\u0447\u0438
-      \u0431\u0440\u043E\u0441\u0430\u0442\u044C \u0441\u0438\u043B\u044C\u043D\u044B\u0435,
-      \u043D\u043E \u043F\u043E\u0440\u0430\u0431\u043E\u0442\u0430\u0432 \u0442\u0443\u0442
-      \u044F \u043F\u043E\u043D\u044F\u043B, \u0447\u0442\u043E \u043C\u043E\u0436\u043D\u043E
-      \u0438 \u0441\u0432\u043E\u0438 \u043F\u0440\u0438\u043D\u0446\u0438\u043F\u044B
-      \u043F\u0440\u043E\u043F\u0438\u0442\u044C."
+  - lines: Of course I'm right. Oh, we were young and inexperienced once, just like
+      you are now.
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 0}
-  - lines: "\u0412\u043E\u0442 \u0447\u0442\u043E, \u0430 \u043D\u0438\u043A\u043E\u0433\u0434\u0430
-      \u043D\u0435 \u0437\u043D\u0430\u0435\u0448\u044C, \u0433\u0434\u0435 \u0442\u044B
-      \u0432 \u0438\u0442\u043E\u0433\u0435 \u043E\u043A\u0430\u0436\u0435\u0448\u044C\u0441\u044F."
+  - lines: You're not very old yourself right now.
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 0}
-  - lines: "\u0414\u0443\u043C\u0430\u044E \u0432\u044B \u0432 \u0447\u0451\u043C-\u0442\u043E
-      \u043F\u0440\u0430\u0432\u044B."
+  - lines: "I have a friend\u2014he works in a different city, actually\u2014but
+      we started together here."
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 0}
-  - lines: "\u0415\u0449\u0435 \u0431\u044B \u044F \u0431\u044B\u043B \u0432 \u0447\u0451\u043C-\u0442\u043E
-      \u043D\u0435 \u043F\u0440\u0430\u0432. \u041E\u0439, \u0431\u044B\u043B\u0438
-      \u043C\u044B \u043C\u043E\u043B\u043E\u0434\u044B\u0435 \u0438 \u0437\u0451\u043B\u0435\u043D\u044B\u0435
-      \u043A\u043E\u0433\u0434\u0430-\u0442\u043E, \u043A\u0430\u043A \u0438 \u0442\u044B
-      \u0441\u0435\u0439\u0447\u0430\u0441."
+  - lines: "We always came to work first. We always waited for the phone call from
+      the archive so we could pick up a new case. We read every word in those files
+      carefully. We had such a dream, you know\u2014an ideal dream: to make all the
+      guilty people face justice.\r"
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 0}
-  - lines: "\u0412\u044B \u0441\u0435\u0439\u0447\u0430\u0441 \u0442\u043E\u0436\u0435
-      \u043D\u0435 \u043E\u0447\u0435\u043D\u044C \u0442\u043E \u0438 \u0441\u0442\u0430\u0440\u044B."
+  - lines: Do you have a dream like that? Actually, you don't need to answer. I know
+      you do.
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 0}
-  - lines: "\u0423 \u043C\u0435\u043D\u044F \u0434\u0440\u0443\u0433 \u0435\u0441\u0442\u044C,
-      \u043F\u0440\u0430\u0432\u0434\u0430 \u043E\u043D \u0440\u0430\u0431\u043E\u0442\u0430\u0435\u0442
-      \u0432 \u0434\u0440\u0443\u0433\u043E\u043C \u0433\u043E\u0440\u043E\u0434\u0435
-      \u0432\u043E\u043E\u0431\u0449\u0435, \u043D\u043E \u043D\u0430\u0447\u0438\u043D\u0430\u043B\u0438
-      \u043C\u044B \u0432\u043C\u0435\u0441\u0442\u0435."
+  - lines: And then at some point, everything becomes gray. Maybe it's because there
+      isn't enough sun outside, or maybe the days just start to look the same.
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 0}
-  - lines: "\u041F\u0440\u0438\u0445\u043E\u0434\u0438\u043B\u0438 \u043F\u0435\u0440\u0432\u044B\u043C\u0438
-      \u043D\u0430 \u0440\u0430\u0431\u043E\u0442\u0443, \u0432\u0441\u0435\u0433\u0434\u0430
-      \u0436\u0434\u0430\u043B\u0438 \u0437\u0432\u043E\u043D\u043A\u0430 \u043E\u0442
-      \u0430\u0440\u0445\u0438\u0432\u0430, \u0447\u0442\u043E\u0431\u044B \u0437\u0430\u0431\u0440\u0430\u0442\u044C
-      \u043D\u043E\u0432\u043E\u0435 \u0434\u0435\u043B\u043E.  \u0423 \u0442\u0435\u0431\u044F
-      \u0435\u0441\u0442\u044C \u0442\u0430\u043A\u0430\u044F \u043C\u0435\u0447\u0442\u0430? "
+  - lines: But you sit there and notice that words don't really matter anymore. There's
+      always enough evidence. And besides, why do we even need more expert examination?
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 0}
-  - lines: "\u0423\u0441\u0435\u0440\u0434\u043D\u043E \u0432\u0447\u0438\u0442\u044B\u0432\u0430\u043B\u0438\u0441\u044C
-      \u0432 \u043A\u0430\u0436\u0434\u043E\u0435 \u0441\u043B\u043E\u0432\u043E
-      \u0432 \u043D\u0435\u043C. \u041C\u0435\u0447\u0442\u0430 \u0431\u044B\u043B\u0430
-      \u0442\u0430\u043A\u0430\u044F, \u0437\u043D\u0430\u0435\u0448\u044C, \u0438\u0434\u0435\u0430\u043B\u044C\u043D\u0430\u044F:
-      \u043F\u043E\u0441\u0430\u0434\u0438\u0442\u044C \u0432\u0441\u0435\u0445 \u043D\u0435\u043F\u0440\u0430\u0432\u044B\u0445."
-    character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
-    voiceClip: {fileID: 0}
-  - lines: "\u0410 \u0432\u043F\u0440\u043E\u0447\u0435\u043C \u043C\u043E\u0436\u0435\u0448\u044C
-      \u043D\u0435 \u043E\u0442\u0432\u0435\u0447\u0430\u0442\u044C, \u044F \u0442\u043E
-      \u0437\u043D\u0430\u044E \u0447\u0442\u043E \u0435\u0441\u0442\u044C."
-    character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
-    voiceClip: {fileID: 0}
-  - lines: "\u0418 \u0432 \u043A\u0430\u043A\u043E\u0439-\u0442\u043E \u043C\u043E\u043C\u0435\u043D\u0442
-      \u043E\u043D\u043E \u0432\u0441\u0435 \u0441\u0435\u0440\u0435\u0435\u0442.."
-    character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
-    voiceClip: {fileID: 0}
-  - lines: "\u0422\u043E \u043B\u0438 \u0441\u043E\u043B\u043D\u0446\u0430 \u043D\u0430
-      \u0443\u043B\u0438\u0446\u0435 \u043D\u0435 \u0445\u0432\u0430\u0442\u0430\u0435\u0442,
-      \u0442\u043E \u043B\u0438 \u0434\u043D\u0438 \u0443\u0436\u0435 \u043A\u0430\u0436\u0443\u0442\u044C\u0441\u044F
-      \u043E\u0434\u0438\u043D\u0430\u043A\u043E\u0432\u044B\u043C\u0438, "
-    character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
-    voiceClip: {fileID: 0}
-  - lines: "\u043D\u043E \u0441\u0438\u0434\u0438\u0448\u044C \u0442\u0430\u043A
-      \u0438 \u0437\u0430\u043C\u0435\u0447\u0430\u0435\u0448\u044C, \u0447\u0442\u043E
-      \u0441\u043B\u043E\u0432\u0430 \u0443\u0436\u0435 \u0432 \u043F\u0440\u0438\u043D\u0446\u0438\u043F\u0435
-      \u043D\u0435 \u0432\u0430\u0436\u043D\u044B \u0438 \u0443\u043B\u0438\u043A
-      \u0432\u0441\u0435\u0433\u0434\u0430 \u0445\u0432\u0430\u0442\u0430\u0435\u0442.  "
-    character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
-    voiceClip: {fileID: 0}
-  - lines: "\u0414\u0430 \u0432 \u043F\u0440\u043E\u0447\u0435\u043C \u0438 \u0437\u0430\u0447\u0435\u043C
-      \u0435\u0449\u0435 \u044D\u043A\u0441\u043F\u0435\u0440\u0442\u0438\u0437\u0443
-      \u043F\u0440\u043E\u0432\u043E\u0434\u0438\u0442\u044C \u0434\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u0443\u044E."
-    character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
-    voiceClip: {fileID: 0}
-  - lines: "\u0422\u043E \u043B\u0438 \u0441\u043E\u043B\u043D\u0446\u0430 \u043D\u0430
-      \u0443\u043B\u0438\u0446\u0435 \u043D\u0435 \u0445\u0432\u0430\u0442\u0430\u0435\u0442,
-      \u0442\u043E \u043B\u0438 \u0434\u043D\u0438 \u0443\u0436\u0435 \u043A\u0430\u0436\u0443\u0442\u044C\u0441\u044F
-      \u043E\u0434\u0438\u043D\u0430\u043A\u043E\u0432\u044B\u043C\u0438,"
-    character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
-    voiceClip: {fileID: 0}
-  - lines: "\u0414\u0430 \u0432 \u043E\u0431\u0449\u0435\u043C, \u0447\u0442\u043E
-      \u044F \u0445\u043E\u0447\u0443 \u0434\u043E\u043D\u0435\u0441\u0442\u0438.
-      \u041F\u043E\u043A\u0430 \u0433\u043B\u0430\u0437\u0430 \u0433\u043E\u0440\u044F\u0442
-      \u0442\u044B \u0431\u0443\u0434\u0435\u0448\u044C \u0434\u0435\u043B\u0430\u0442\u044C, "
-    character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
-    voiceClip: {fileID: 0}
-  - lines: "\u043D\u043E \u0432\u043E\u0442 \u043A\u0430\u043A \u043D\u0435 \u043F\u043E\u0442\u0435\u0440\u044F\u0442\u044C
-      \u0441\u0435\u0431\u044F \u0432 \u044D\u0442\u043E\u0439 \u0441\u0438\u0441\u0442\u0435\u043C\u0435
-      - \u0442\u0430\u043A\u043E\u0433\u043E \u043E\u0442\u0432\u0435\u0442\u0430
-      \u044F \u043F\u043E\u043A\u0430 \u043D\u0435 \u043D\u0430\u0448\u0435\u043B."
+  - lines: Listen, I want to tell you something. While your eyes are still bright
+      with hope, you will work hard. But how do you keep yourself from disappearing
+      into this system? I still haven't found the answer to that question.
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 0}
 --- !u!1 &1727582998
@@ -915,8 +850,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10.16, y: 0.08}
-  m_SizeDelta: {x: 14.5354, y: 1.621}
+  m_AnchoredPosition: {x: -9.3409, y: 0.1163}
+  m_SizeDelta: {x: 12.987, y: 1.5522}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1741803273
 GameObject:
@@ -929,7 +864,7 @@ GameObject:
   - component: {fileID: 1741803275}
   - component: {fileID: 1741803274}
   m_Layer: 0
-  m_Name: Character
+  m_Name: CharacterSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -998,12 +933,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741803273}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.1, y: -3.54, z: 0}
-  m_LocalScale: {x: 0.5772, y: 0.6028, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.5470366, y: -3.6851401, z: 0}
+  m_LocalScale: {x: 0.61066943, y: 0.6363774, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2018383162}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2018383159
 GameObject:
@@ -1089,7 +1024,8 @@ Transform:
   m_LocalPosition: {x: 0.0334, y: -0.0493, z: 0}
   m_LocalScale: {x: 0.94519216, y: 0.9472367, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1741803275}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
@@ -1099,4 +1035,3 @@ SceneRoots:
   - {fileID: 411457821}
   - {fileID: 2018383162}
   - {fileID: 716763041}
-  - {fileID: 1741803275}
