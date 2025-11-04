@@ -677,6 +677,30 @@ MonoBehaviour:
       into this system? I still haven't found the answer to that question.
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 0}
+  - lines: ...
+    character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
+    voiceClip: {fileID: 8300000, guid: 59a4e9f7a55c0634eaa701e6e48836d6, type: 3}
+  - lines: Investigation Department, this is the MC speaking.
+    character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
+    voiceClip: {fileID: 0}
+  - lines: Good morning, MC. Is Jan there with you?
+    character: {fileID: -6744787154190401284, guid: 51b4f26746a174b4d90656a405d0b41f, type: 3}
+    voiceClip: {fileID: 0}
+  - lines: Yes. What do you need me to tell him?
+    character: {fileID: 0}
+    voiceClip: {fileID: 0}
+  - lines: Tell him to come see me to pick up a letter.
+    character: {fileID: -6744787154190401284, guid: 51b4f26746a174b4d90656a405d0b41f, type: 3}
+    voiceClip: {fileID: 0}
+  - lines: Yes, of course. I'll tell him right away.
+    character: {fileID: 0}
+    voiceClip: {fileID: 0}
+  - lines: Lyudmila Ilyishna is calling for you. She wants you to pick up a letter.
+    character: {fileID: 0}
+    voiceClip: {fileID: 0}
+  - lines: Interesting. I'll go get it now, thanks.
+    character: {fileID: 0}
+    voiceClip: {fileID: 0}
 --- !u!1 &1727582998
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,7 +1024,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -5120638716243174356, guid: 35d571b5afb9c6b448f817a4b7bc86dc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -8,14 +8,12 @@ public class FadeTransition : MonoBehaviour
     private SpriteRenderer fadeRenderer;
     private Color fadeColor;
 
+    [SerializeField] private bool MoveToNextScene;
+
     void Awake()
     {
         fadeRenderer = GetComponent<SpriteRenderer>();
-
-        if (fadeRenderer.enabled == false)
-        {
-            fadeRenderer.enabled = true;
-        }
+        fadeRenderer.enabled = true;
 
         if (Instance == null)
         {
@@ -31,6 +29,7 @@ public class FadeTransition : MonoBehaviour
         fadeColor = fadeRenderer.color;
         fadeColor.a = 1;
         fadeRenderer.color = fadeColor;
+
         StartCoroutine(FadeIn());
     }
 
@@ -53,6 +52,14 @@ public class FadeTransition : MonoBehaviour
             yield return null;
         }
 
-        SceneManager.LoadScene(nextScene);
+        if (MoveToNextScene)
+        {
+            SceneManager.LoadScene(nextScene);
+        }
+        else
+        {
+            yield return new WaitForSeconds(0.2f);
+            yield return StartCoroutine(FadeIn(duration));
+        }
     }
 }
