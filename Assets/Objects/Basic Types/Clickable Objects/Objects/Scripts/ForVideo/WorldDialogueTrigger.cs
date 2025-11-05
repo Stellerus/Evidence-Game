@@ -6,7 +6,7 @@ public class WorldDialogueTrigger : MonoBehaviour
 {
     [Header("Настройки диалога")]
     [SerializeField] private WorldDialogueWindow dialogueWindow;
-    [SerializeField] private List<CharacterLine> characterList;
+    [SerializeField] public List<CharacterLine> characterList;
 
     [Serializable]
     public class CharacterLine
