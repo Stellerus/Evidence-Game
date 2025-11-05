@@ -19,7 +19,7 @@ public class WorldDialogueWindow : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
 
     private List<CharacterLine> characterList;
-    private int index;
+    public int index;
     private bool isTyping;
     private bool isActive;
     private Coroutine typingCoroutine;
