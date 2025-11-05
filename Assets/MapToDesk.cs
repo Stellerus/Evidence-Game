@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MapToDesk : MonoBehaviour
 {
-
     public MapBehaviour mapBehaviour;
     public FolderButton2D tableBehaviour;
 
@@ -12,19 +11,25 @@ public class MapToDesk : MonoBehaviour
     {
         GetDocuments(mapBehaviour.GetActiveCrimePoints(), tableBehaviour.sheetPrefabs);
     }
-    public List<GameObject> GetDocuments(List<CrimePointBehaviour> crimePoints, List<GameObject> documents)
+    public List<GameObject> GetDocuments(List<CrimePointBehaviour> crimePoints, List<GameObject> docs)
     {
 
         foreach (CrimePointBehaviour point in crimePoints)
         {
-            if (point is not null && !documents.Contains(point.gameObject))
+            if (point is not null)
             {
-                documents.Add(point.gameObject);
+                foreach(GameObject document in point.documents)
+                {
+                    if (!docs.Contains(document))
+                    {
+                        docs.Add(document);
+                    }
+                }
             }
 
         }
 
 
-        return documents;
+        return docs;
     }
 }
