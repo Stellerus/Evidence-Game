@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b4bc1ed88af7d54459a499d7bbf77c31
+guid: 9ca070992999e2b418302a965a59eb3e
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dark_sreen1_0: -3047933339145615687
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
