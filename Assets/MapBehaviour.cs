@@ -42,7 +42,7 @@ public class MapBehaviour : MonoBehaviour
 
     }
 
-    public List<CrimePointBehaviour> GetActiveCP()
+    public List<CrimePointBehaviour> GetActiveCrimePoints()
     {
         List <CrimePointBehaviour> crimePoints = new List<CrimePointBehaviour>();
         foreach (var item in crimePoints)

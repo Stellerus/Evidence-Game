@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -6,11 +6,16 @@ using static WorldDialogueTrigger;
 
 public class WorldDialogueWindow : MonoBehaviour
 {
+    [Header("Компоненты интерфейса")]
     [SerializeField] private TextMeshPro textMesh;
     [SerializeField] private SpriteRenderer background;
     [SerializeField] private SpriteRenderer characterRenderer;
+
+    [Header("Настройки анимации")]
     [SerializeField] private float typeSpeed = 0.02f;
     [SerializeField] private float fadeSpeed = 2f;
+
+    [Header("Звук")]
     [SerializeField] private AudioSource audioSource;
 
     private List<CharacterLine> characterList;
@@ -46,6 +51,7 @@ public class WorldDialogueWindow : MonoBehaviour
             }
         }
     }
+
 
     public void StartDialogue(List<CharacterLine> newLines)
     {
@@ -114,6 +120,8 @@ public class WorldDialogueWindow : MonoBehaviour
 
         PlayVoice(characterList[index]);
         typingCoroutine = StartCoroutine(TypeLine(characterList[index].lines));
+
+        StartCoroutine(HandleDialogueEvent(characterList[index].eventType));
     }
 
     private IEnumerator TypeLine(string line)
@@ -153,5 +161,32 @@ public class WorldDialogueWindow : MonoBehaviour
         {
             audioSource.Stop();
         }
+    }
+
+    private IEnumerator HandleDialogueEvent(DialogueEvent evt)
+    {
+        switch (evt)
+        {
+            case DialogueEvent.None:
+                yield break;
+
+            case DialogueEvent.FadeOut:
+                if (FadeTransition.Instance != null)
+                    yield return FadeTransition.Instance.FadeOutRoutine(null, false, 1f);
+                break;
+        }
+    }
+
+
+    public void NextLinePublic()
+    {
+        if (isActive && !isTyping)
+            NextLine();
+    }
+
+    public void StopDialoguePublic()
+    {
+        StopAllCoroutines();
+        Hide();
     }
 }

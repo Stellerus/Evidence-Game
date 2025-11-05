@@ -1,22 +1,24 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class FadeTransition : MonoBehaviour
 {
     public static FadeTransition Instance;
-    private SpriteRenderer fadeRenderer;
+
+    [Header("2D Fade")]
+    [SerializeField] private SpriteRenderer fadeRenderer;
     private Color fadeColor;
+
+    [Header("UI Fade (Canvas)")]
+    [SerializeField] private Image fadeUIImage;
+    private Color uiFadeColor;
+
+    [SerializeField] private bool MoveToNextScene;
 
     void Awake()
     {
-        fadeRenderer = GetComponent<SpriteRenderer>();
-
-        if (fadeRenderer.enabled == false)
-        {
-            fadeRenderer.enabled = true;
-        }
-
         if (Instance == null)
         {
             Instance = this;
@@ -28,9 +30,22 @@ public class FadeTransition : MonoBehaviour
             return;
         }
 
-        fadeColor = fadeRenderer.color;
-        fadeColor.a = 1;
-        fadeRenderer.color = fadeColor;
+        if (fadeRenderer)
+        {
+            fadeRenderer.enabled = true;
+            fadeColor = fadeRenderer.color;
+            fadeColor.a = 1;
+            fadeRenderer.color = fadeColor;
+        }
+
+        if (fadeUIImage)
+        {
+            fadeUIImage.enabled = true;
+            uiFadeColor = fadeUIImage.color;
+            uiFadeColor.a = 1;
+            fadeUIImage.color = uiFadeColor;
+        }
+
         StartCoroutine(FadeIn());
     }
 
@@ -38,21 +53,45 @@ public class FadeTransition : MonoBehaviour
     {
         for (float t = 1; t >= 0; t -= Time.deltaTime / duration)
         {
-            fadeColor.a = t;
-            fadeRenderer.color = fadeColor;
+            if (fadeRenderer)
+            {
+                fadeColor.a = t;
+                fadeRenderer.color = fadeColor;
+            }
+            if (fadeUIImage)
+            {
+                uiFadeColor.a = t;
+                fadeUIImage.color = uiFadeColor;
+            }
             yield return null;
         }
     }
 
-    public IEnumerator FadeOut(string nextScene, float duration = 1f)
+    public IEnumerator FadeOutRoutine(string nextScene = null, bool loadScene = false, float duration = 1f)
     {
         for (float t = 0; t <= 1; t += Time.deltaTime / duration)
         {
-            fadeColor.a = t;
-            fadeRenderer.color = fadeColor;
+            if (fadeRenderer)
+            {
+                fadeColor.a = t;
+                fadeRenderer.color = fadeColor;
+            }
+            if (fadeUIImage)
+            {
+                uiFadeColor.a = t;
+                fadeUIImage.color = uiFadeColor;
+            }
             yield return null;
         }
 
-        SceneManager.LoadScene(nextScene);
+        if (loadScene && !string.IsNullOrEmpty(nextScene))
+        {
+            SceneManager.LoadScene(nextScene);
+        }
+        else
+        {
+            yield return new WaitForSeconds(0.3f);
+            yield return StartCoroutine(FadeIn(duration));
+        }
     }
 }

@@ -1,16 +1,12 @@
-using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class WorldDialogueTrigger : MonoBehaviour
 {
+    [Header("Настройки диалога")]
     [SerializeField] private WorldDialogueWindow dialogueWindow;
-
-    [TextArea(2, 5)]
-    [SerializeField] private string[] lines;
-
-    [SerializeField] public List<CharacterLine> CharacterList;
+    [SerializeField] private List<CharacterLine> characterList;
 
     [Serializable]
     public class CharacterLine
@@ -19,10 +15,34 @@ public class WorldDialogueTrigger : MonoBehaviour
         public string lines;
         public Sprite character;
         public AudioClip voiceClip;
+        public DialogueEvent eventType;
+    }
+
+    public enum DialogueEvent
+    {
+        None,
+        FadeOut
+    }
+
+    public void StartDialogue()
+    {
+        dialogueWindow.StartDialogue(characterList);
+    }
+
+    public void NextLine()
+    {
+        if (dialogueWindow != null)
+            dialogueWindow.NextLinePublic();
+    }
+
+    public void StopDialogue()
+    {
+        if (dialogueWindow != null)
+            dialogueWindow.StopDialoguePublic();
     }
 
     private void OnMouseDown()
     {
-        dialogueWindow.StartDialogue(CharacterList);
+        StartDialogue();
     }
 }
