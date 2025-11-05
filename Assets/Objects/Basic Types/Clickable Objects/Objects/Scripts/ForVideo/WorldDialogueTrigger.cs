@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class WorldDialogueTrigger : MonoBehaviour
 {
+    [Header("Настройки диалога")]
     [SerializeField] private WorldDialogueWindow dialogueWindow;
-
-    [SerializeField] public List<CharacterLine> CharacterList;
+    [SerializeField] private List<CharacterLine> characterList;
 
     [Serializable]
     public class CharacterLine
@@ -18,14 +18,31 @@ public class WorldDialogueTrigger : MonoBehaviour
         public DialogueEvent eventType;
     }
 
+    public enum DialogueEvent
+    {
+        None,
+        FadeOut
+    }
+
+    public void StartDialogue()
+    {
+        dialogueWindow.StartDialogue(characterList);
+    }
+
+    public void NextLine()
+    {
+        if (dialogueWindow != null)
+            dialogueWindow.NextLinePublic();
+    }
+
+    public void StopDialogue()
+    {
+        if (dialogueWindow != null)
+            dialogueWindow.StopDialoguePublic();
+    }
+
     private void OnMouseDown()
     {
-        dialogueWindow.StartDialogue(CharacterList);
+        StartDialogue();
     }
-}
-
-public enum DialogueEvent
-{
-    None,
-    FadeOut
 }
