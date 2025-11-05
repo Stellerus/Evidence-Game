@@ -1,7 +1,11 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CrimePointBehaviour : MonoBehaviour
 {
+    public CircleCollider2D collision;
+    public List<GameObject> documents;
     public bool isOccupied = false;
 
     public bool CanAttach()
@@ -18,13 +22,18 @@ public class CrimePointBehaviour : MonoBehaviour
         isOccupied = false;
     }
 
-    void Start()
+    private void Awake()
     {
-
+        collision = GetComponent<CircleCollider2D>();
     }
 
-    void Update()
+    public void Deactivate()
     {
+        collision.enabled = false;
+    }
 
+    public void Activate()
+    {
+        collision.enabled = true;
     }
 }
