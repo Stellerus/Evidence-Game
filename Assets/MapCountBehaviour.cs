@@ -4,12 +4,18 @@ using UnityEngine;
 public class MapCountBehaviour : MonoBehaviour
 {
     public int startCount = 2;            
-    public int currentCount { get; set; } = 0;  
+    public int currentCount { get; private set; } = 0;  
 
     public TextMesh counterText;
 
     void Awake()
     {
+        Initialize();
+    }
+
+    public void Initialize()
+    {
+        counterText = GetComponent<TextMesh>();
         currentCount = startCount;
         UpdateText();
     }
@@ -22,7 +28,8 @@ public class MapCountBehaviour : MonoBehaviour
 
     public void Decrease()
     {
-        if (currentCount <= 0) return;
+        if (currentCount <= 0) 
+            return;
 
         currentCount--;
         UpdateText();

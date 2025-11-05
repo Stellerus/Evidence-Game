@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1237023573429827533}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -112,7 +112,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1376282025075401886}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -27.480686, y: -0.8839554, z: -9.811515}
   m_LocalScale: {x: 0.93518496, y: 0.9448731, z: 1}
   m_ConstrainProportionsScale: 0
@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 5106153657648099700}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28.36872, y: -0.8360911, z: 0}
+  m_LocalPosition: {x: 8.73, y: -0.79, z: 0}
   m_LocalScale: {x: 1.0693072, y: 1.0583432, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -200,7 +200,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: -4906278859020191255, guid: 97906b135e7ce3743aeae555812d26cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.53, y: 9.01}
@@ -226,7 +226,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LocationManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: MoveToHallway
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
