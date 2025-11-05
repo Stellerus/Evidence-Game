@@ -346,7 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88243ff64fc866540988d26993bf5781, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: TestScene1
+  nextSceneName: story
 --- !u!212 &1522300961
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -493,6 +493,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2945423343e0ac742b4b9ffc2cabca62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeRenderer: {fileID: 1746793607}
+  fadeUIImage: {fileID: 0}
   MoveToNextScene: 1
 --- !u!212 &1746793607
 SpriteRenderer:

@@ -462,6 +462,109 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &827089162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 827089163}
+  - component: {fileID: 827089165}
+  - component: {fileID: 827089164}
+  m_Layer: 0
+  m_Name: FadeController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &827089163
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827089162}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.019, y: -0.0189, z: 0}
+  m_LocalScale: {x: 19.647373, y: 11.49772, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2018383162}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &827089164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827089162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2945423343e0ac742b4b9ffc2cabca62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeRenderer: {fileID: 827089165}
+  fadeUIImage: {fileID: 0}
+  MoveToNextScene: 1
+--- !u!212 &827089165
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827089162}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 10
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1243074988
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,97 +713,268 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueWindow: {fileID: 716763039}
-  lines:
-  - 
   CharacterList:
   - lines: Good morning, Jan!
     character: {fileID: 0}
     voiceClip: {fileID: 8300000, guid: 59a4e9f7a55c0634eaa701e6e48836d6, type: 3}
+    eventType: 0
   - lines: Good morning, yes. Has the boss come in yet?
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 8300000, guid: 48bf53eef4a8415468511797c289c250, type: 3}
+    eventType: 1
   - lines: No, should he have?
     character: {fileID: 0}
     voiceClip: {fileID: 8300000, guid: 59a4e9f7a55c0634eaa701e6e48836d6, type: 3}
+    eventType: 0
   - lines: Who knows what he's thinking. Maybe he got a new case for us, and you're
       keeping quiet so you can solve it alone and then report to the boss.
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 8300000, guid: 48bf53eef4a8415468511797c289c250, type: 3}
+    eventType: 0
   - lines: You have a bad opinion of me, colleague. I would never do that!
     character: {fileID: 0}
     voiceClip: {fileID: 0}
+    eventType: 0
   - lines: Never say never. You know that saying, don't you?
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 0}
+    eventType: 0
   - lines: Of course I know it.
     character: {fileID: 0}
     voiceClip: {fileID: 0}
+    eventType: 0
   - lines: I don't want to say anything too strong, but after working here I've learned
       that a person can lose their principles. You never know where you might end
       up.
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 0}
+    eventType: 0
   - lines: I think you're right about some things.
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 0}
+    eventType: 0
   - lines: Of course I'm right. Oh, we were young and inexperienced once, just like
       you are now.
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 0}
+    eventType: 0
   - lines: You're not very old yourself right now.
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 0}
+    eventType: 0
   - lines: "I have a friend\u2014he works in a different city, actually\u2014but
       we started together here."
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 0}
+    eventType: 0
   - lines: "We always came to work first. We always waited for the phone call from
       the archive so we could pick up a new case. We read every word in those files
       carefully. We had such a dream, you know\u2014an ideal dream: to make all the
       guilty people face justice.\r"
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 0}
+    eventType: 0
   - lines: Do you have a dream like that? Actually, you don't need to answer. I know
       you do.
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 0}
+    eventType: 0
   - lines: And then at some point, everything becomes gray. Maybe it's because there
       isn't enough sun outside, or maybe the days just start to look the same.
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 0}
+    eventType: 0
   - lines: But you sit there and notice that words don't really matter anymore. There's
       always enough evidence. And besides, why do we even need more expert examination?
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 0}
+    eventType: 0
   - lines: Listen, I want to tell you something. While your eyes are still bright
       with hope, you will work hard. But how do you keep yourself from disappearing
       into this system? I still haven't found the answer to that question.
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 0}
+    eventType: 0
   - lines: ...
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 8300000, guid: 59a4e9f7a55c0634eaa701e6e48836d6, type: 3}
+    eventType: 0
   - lines: Investigation Department, this is the MC speaking.
     character: {fileID: -7258052522695345573, guid: 5c8d0f410ecf5f24e883e998a31f2080, type: 3}
     voiceClip: {fileID: 0}
+    eventType: 0
   - lines: Good morning, MC. Is Jan there with you?
     character: {fileID: -6744787154190401284, guid: 51b4f26746a174b4d90656a405d0b41f, type: 3}
     voiceClip: {fileID: 0}
+    eventType: 0
   - lines: Yes. What do you need me to tell him?
     character: {fileID: 0}
     voiceClip: {fileID: 0}
+    eventType: 0
   - lines: Tell him to come see me to pick up a letter.
     character: {fileID: -6744787154190401284, guid: 51b4f26746a174b4d90656a405d0b41f, type: 3}
     voiceClip: {fileID: 0}
+    eventType: 1
   - lines: Yes, of course. I'll tell him right away.
     character: {fileID: 0}
     voiceClip: {fileID: 0}
+    eventType: 0
   - lines: Lyudmila Ilyishna is calling for you. She wants you to pick up a letter.
     character: {fileID: 0}
     voiceClip: {fileID: 0}
+    eventType: 0
   - lines: Interesting. I'll go get it now, thanks.
     character: {fileID: 0}
     voiceClip: {fileID: 0}
+    eventType: 0
+--- !u!1 &1682242099
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1682242100}
+  - component: {fileID: 1682242103}
+  - component: {fileID: 1682242102}
+  - component: {fileID: 1682242101}
+  m_Layer: 0
+  m_Name: door_final_0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1682242100
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682242099}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.889071, y: -1.0872797, z: 0}
+  m_LocalScale: {x: 1.0579859, y: 1.0557023, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2018383162}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1682242101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682242099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88243ff64fc866540988d26993bf5781, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextSceneName: TestScene2
+--- !u!61 &1682242102
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682242099}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.53, y: 9.01}
+    newSize: {x: 1.53, y: 9.01}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.53, y: 9.01}
+  m_EdgeRadius: 0
+--- !u!212 &1682242103
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682242099}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -4906278859020191255, guid: 97906b135e7ce3743aeae555812d26cf, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.53, y: 9.01}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1727582998
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,6 +1324,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1741803275}
+  - {fileID: 827089163}
+  - {fileID: 1682242100}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
