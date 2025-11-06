@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3b11076128e742a4f9fa29dd081993c4
+guid: 170e9e141082012469cc7c65f0f2d8e9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 705906357346897629
-    second: IMG_9809_0
+      213: -9007981542807625382
+    second: button_back_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,7 +97,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WindowsStoreApps
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -110,7 +110,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
+    buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -126,23 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_9809_0
+      name: button_back_0
       rect:
         serializedVersion: 2
-        x: 210
-        y: 230
-        width: 1625
-        height: 1143
-      alignment: 9
-      pivot: {x: 0.5843218, y: 0.5042814}
+        x: 30
+        y: 26
+        width: 862
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dde0a5a8712ebc900800000000000000
-      internalID: 705906357346897629
+      spriteID: a512dad53883df280800000000000000
+      internalID: -9007981542807625382
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 7b4500573329ce04db88c7f5a83defd0
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      IMG_9809_0: 705906357346897629
+      button_back_0: -9007981542807625382
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
