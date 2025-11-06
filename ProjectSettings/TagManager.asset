@@ -17,6 +17,8 @@ TagManager:
   - PhoneDigit1
   - PhoneDigit2
   - PhoneCounter
+  - DropAreaTable
+  - DropArea2D
   layers:
   - Default
   - TransparentFX
