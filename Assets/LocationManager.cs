@@ -10,6 +10,7 @@ public class LocationManager : MonoBehaviour
     [Header("Drag Transforms of locations here")]
     [SerializeField] Transform Cabinet;
     [SerializeField] Transform Archive;
+    public bool FirstTimeArchive;
     [SerializeField] Transform Interrogation;
     [SerializeField] Transform Hallway;
     [SerializeField] Transform UnzoomFromPhone;
@@ -23,14 +24,14 @@ public class LocationManager : MonoBehaviour
         //FindLocations();
     }
 
-    private void FindLocations() //debug
-    {
-        Cabinet = GameObject.Find("Cabinet Location").transform;
-        Archive = GameObject.Find("Archive Location").transform;
-        Interrogation = GameObject.Find("Interrogation Location").transform;
+    //private void FindLocations() //debug
+    //{
+    //    Cabinet = GameObject.Find("Cabinet Location").transform;
+    //    Archive = GameObject.Find("Archive Location").transform;
+    //    Interrogation = GameObject.Find("Interrogation Location").transform;
 
-        Hallway = GameObject.Find("Hallway Location").transform;
-    }
+    //    Hallway = GameObject.Find("Hallway Location").transform;
+    //}
 
     void MoveTo(Transform location)
     {
@@ -45,15 +46,6 @@ public class LocationManager : MonoBehaviour
     public void MoveToCabinet()
     {
         cam.transform.position = Cabinet.position;
-    }
-
-    public void ZoomBackToOffice()
-    {
-        if (isZoomed == true)
-        {
-            cam.transform.position = Cabinet.position;
-            isZoomed = false;
-        }
     }
 
     public void MoveToPhone()
@@ -89,28 +81,28 @@ public class LocationManager : MonoBehaviour
         cam.transform.position = Table.position;
     }
 
-    private void Update()
-    {
-        TestLocationChangeOnArrows();
-    }
+    //private void Update()
+    //{
+    //    TestLocationChangeOnArrows();
+    //}
 
-    private void TestLocationChangeOnArrows()
-    {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            MoveToHallway();
-        }
-        if(Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            MoveToInterrogation();
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            MoveToCabinet();
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            MoveToArchive();
-        }
-    }
+    //private void TestLocationChangeOnArrows()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.UpArrow))
+    //    {
+    //        MoveToHallway();
+    //    }
+    //    if(Input.GetKeyDown(KeyCode.DownArrow))
+    //    {
+    //        MoveToInterrogation();
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.RightArrow))
+    //    {
+    //        MoveToCabinet();
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.LeftArrow))
+    //    {
+    //        MoveToArchive();
+    //    }
+    //}
 }
