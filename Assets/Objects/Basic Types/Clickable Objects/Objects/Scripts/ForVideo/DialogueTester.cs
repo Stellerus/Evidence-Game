@@ -1,21 +1,12 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DialogueTester : MonoBehaviour
 {
-    public WorldDialogueTrigger trigger;
+    [SerializeField] public UnityEvent testEvent;
 
-    void Start()
+    private void Start()
     {
-        Invoke(nameof(StartDialog), 1f);
-
-        Invoke(nameof(Next), 3f);
-
-        Invoke(nameof(Next), 4f);
-
-        Invoke(nameof(Stop), 7f);
+        testEvent.Invoke();
     }
-
-    void StartDialog() => trigger.StartDialogue();
-    void Next() => trigger.NextLine();
-    void Stop() => trigger.StopDialogue();
 }
