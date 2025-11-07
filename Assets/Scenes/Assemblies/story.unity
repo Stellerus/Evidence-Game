@@ -329,8 +329,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeRenderer: {fileID: 797133052}
   fadeUIImage: {fileID: 0}
-  nextScene: 
-  MoveToNextScene: 1
+  nextScene: Test Assembly
+  moveToNextSceneOnStart: 0
+  fadeDuration: 1
 --- !u!1 &411457817
 GameObject:
   m_ObjectHideFlags: 0
