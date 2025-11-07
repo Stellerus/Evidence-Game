@@ -18,14 +18,20 @@ public class StoryController : MonoBehaviour
     [Header("Phone")]
     public bool PhoneUnlocked { get; private set; }
     public bool Character1Unlocked { get; private set; }
+    public UnityEvent UnlockCharacter1Event;
     public bool Character2Unlocked { get; private set; }
+    public UnityEvent UnlockCharacter2Event;
     public bool Character3Unlocked { get; private set; }
+    public UnityEvent UnlockCharacter3Event;
 
 
     [Header("Interrogation")]
     public bool Character1Interrogated { get; private set; }
+    public UnityEvent InterrogationEvent1;
     public bool Character2Interrogated { get; private set; }
+    public UnityEvent InterrogationEvent2;
     public bool Character3Interrogated { get; private set; }
+    public UnityEvent InterrogationEvent3;
 
 
     int maxDays;
@@ -42,6 +48,49 @@ public class StoryController : MonoBehaviour
     public UnityEvent Day4Action;
     public bool Day5 { get; private set; }
     public UnityEvent Day5Action;
+
+
+    
+    public void InterrogateCharacter1()
+    {
+        InterrogationEvent1.Invoke();
+        Character1Interrogated = true;
+    }
+
+    public void InterrogateCharacter2()
+    {
+        InterrogationEvent1.Invoke();
+        Character1Interrogated = true;
+    }
+
+    public void InterrogateCharacter3()
+    {
+        InterrogationEvent1.Invoke();
+        Character1Interrogated = true;
+    } 
+
+
+
+
+    public void UnlockCharacter1()
+    {
+        UnlockCharacter1Event.Invoke();
+        Character1Unlocked = true;
+    }
+
+    public void UnlockCharacter2()
+    {
+        UnlockCharacter2Event.Invoke();
+        Character2Unlocked = true;
+    }
+
+    public void UnlockCharacter3()
+    {
+        UnlockCharacter3Event.Invoke();
+        Character3Unlocked = true;
+    }
+
+
 
 
     void Initialize()
@@ -82,10 +131,5 @@ public class StoryController : MonoBehaviour
     private void Awake()
     {
         Initialize();
-    }
-
-    private void Start()
-    {
-        NextDay();
     }
 }
