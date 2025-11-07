@@ -62,8 +62,8 @@ public class LocationManager : MonoBehaviour
 
     public void MoveToArchive()
     {
-        //cam.transform.position = Archive.position;
-        MoveTo(Archive);
+        cam.transform.position = Archive.position;
+        //MoveTo(Archive);
     }
 
     public void MoveToInterrogation()
