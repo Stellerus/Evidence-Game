@@ -25,13 +25,94 @@ public class StoryController : MonoBehaviour
     public UnityEvent UnlockCharacter3Event;
 
 
+    [Header("Dialogues")]
+
+    [Header("Day 2")]
+    public bool DialogueWithJanDay2Ended;
+    public UnityEvent DialogueWithJanDay2Event;
+
+    public void DialogueWithJanDay2()
+    {
+        DialogueWithJanDay2Event.Invoke();
+        DialogueWithJanDay2Ended = true;
+    }
+
+    public bool DialogueWithKobelDay2Ended;
+    public UnityEvent DialogueWithKobelDay2Event;
+
+    public void DialogueWithKobelDay2()
+    {
+        DialogueWithKobelDay2Event.Invoke();
+        DialogueWithKobelDay2Ended = true;
+    }
+
+    public bool DialogueWithIlyishnaDay2Ended;
+    public UnityEvent DialogueWithIlyishnaDay2Event;
+
+    public void DialogueWithIlyishnaDay2()
+    {
+        DialogueWithIlyishnaDay2Event.Invoke();
+        DialogueWithIlyishnaDay2Ended = true;
+    }
+
+    public bool MonologueMcDay2Ended;
+    public UnityEvent MonologueMcDay2Event;
+
+    public void MonologueMcDay2()
+    {
+        MonologueMcDay2Event.Invoke();
+        MonologueMcDay2Ended = true;
+    }
+
+
+    [Header("Day 3")]
+    public bool DialogueWithIlyishnaDay3Ended;
+    public UnityEvent DialogueWithIlyishnaDay3Event;
+
+    public void DialogueWithIlyishnaDay3()
+    {
+        DialogueWithIlyishnaDay3Event.Invoke();
+        DialogueWithIlyishnaDay3Ended = true;
+    }
+
+    public bool InterrogateAdelinaDay3Ended { get; private set; }
+    public UnityEvent InterrogationEventAdelinaDay3;
+
+    public void InterrogateAdelinaDay3()
+    {
+        InterrogationEventAdelinaDay3.Invoke();
+        InterrogateAdelinaDay3Ended = true;
+    }
+
+
+    public bool DialogueWithKobelDay3Ended;
+    public UnityEvent DialogueWithKobelDay3Event;
+
+    public void DialogueWithKobelDay3()
+    {
+        DialogueWithKobelDay3Event.Invoke();
+        DialogueWithKobelDay3Ended = true;
+    }
+
+    public bool InterrogateVictorDay3Ended { get; private set; }
+    public UnityEvent InterrogationEventVictorDay3;
+
+    public void InterrogateVictorDay3()
+    {
+        InterrogationEventVictorDay3.Invoke();
+        InterrogateVictorDay3Ended = true;
+    }
+
+    [Header("Day 4")]
+    public bool DilogueWithKobelDay4Ended;
+    public UnityEvent DilogueWithKobelDay4Event;
+
+    //The End;
+
     [Header("Interrogation")]
-    public bool Character1Interrogated { get; private set; }
-    public UnityEvent InterrogationEvent1;
-    public bool Character2Interrogated { get; private set; }
-    public UnityEvent InterrogationEvent2;
-    public bool Character3Interrogated { get; private set; }
-    public UnityEvent InterrogationEvent3;
+    
+
+    
 
 
     int maxDays;
@@ -48,26 +129,6 @@ public class StoryController : MonoBehaviour
     public UnityEvent Day4Action;
     public bool Day5 { get; private set; }
     public UnityEvent Day5Action;
-
-
-    
-    public void InterrogateCharacter1()
-    {
-        InterrogationEvent1.Invoke();
-        Character1Interrogated = true;
-    }
-
-    public void InterrogateCharacter2()
-    {
-        InterrogationEvent1.Invoke();
-        Character1Interrogated = true;
-    }
-
-    public void InterrogateCharacter3()
-    {
-        InterrogationEvent1.Invoke();
-        Character1Interrogated = true;
-    } 
 
 
 
@@ -131,5 +192,10 @@ public class StoryController : MonoBehaviour
     private void Awake()
     {
         Initialize();
+    }
+
+    private void Start()
+    {
+        NextDay();
     }
 }
