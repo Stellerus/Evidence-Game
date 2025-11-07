@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PoliceBehaviour : MonoBehaviour
 {
@@ -18,47 +18,43 @@ public class PoliceBehaviour : MonoBehaviour
         isLocked = true;
     }
 
-
-
-
-
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if (isLocked || attachedCrimePoint != null)
+            return;
+
         CrimePointBehaviour crime = collision.GetComponent<CrimePointBehaviour>();
-        if (crime == null) return;
-
-        if (!crime.CanAttach()) return;
-
-        transform.position = Vector3.Lerp(
-            transform.position,
-            crime.transform.position,
-            Time.deltaTime * magnetSpeed
-        );
+        if (crime == null || !crime.CanAttach())
+            return;
 
         float distance = Vector3.Distance(transform.position, crime.transform.position);
-        if (distance < 0.2f)
+
+        // Притягиваемся к ближайшей точке
+        if (distance < magnetRadius.radius) // можно настроить порог
         {
-            if (crime != null)
+            transform.position = Vector3.Lerp(
+                transform.position,
+                crime.transform.position,
+                Time.deltaTime * magnetSpeed
+            );
+
+            if (distance < 0.2f)
             {
                 AttachToCrimePoint(crime);
             }
-            
         }
     }
 
     private void AttachToCrimePoint(CrimePointBehaviour newCrime)
     {
-        if (attachedCrimePoint == null && attachedCrimePoint != newCrime)
+        if (attachedCrimePoint != null && attachedCrimePoint != newCrime)
         {
             attachedCrimePoint.Release();
         }
 
         attachedCrimePoint = newCrime;
-
         attachedCrimePoint.Occupy();
-
         transform.position = attachedCrimePoint.transform.position;
-
     }
 
     private void OnDestroy()

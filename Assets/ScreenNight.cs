@@ -42,7 +42,7 @@ public class ScreenNight : MonoBehaviour
         SetAlpha(NightMask, 0f);
 
         if (autoStart)
-            StartFade();
+            StartFullFade();
     }
 
     private void Update()
@@ -50,15 +50,22 @@ public class ScreenNight : MonoBehaviour
         if (debugReset)
         {
             debugReset = false;
-            StartFade();
+            StartFadeSequence();
         }
     }
 
-    public void StartFade()
+    public void StartFadeSequence()
     {
         if (!isCoroutineRunning)
             StartCoroutine(FadeSequence());
     }
+
+    public void StartFullFade()
+    {
+        StartCoroutine(FadeTo(maxAlpha));
+    }
+
+
 
     private IEnumerator FadeSequence()
     {

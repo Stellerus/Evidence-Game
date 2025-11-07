@@ -50,7 +50,7 @@ public class StoryController : MonoBehaviour
         currentDay = 0;
     }
 
-    public int NextDay()
+    public void NextDay()
     {
         if (currentDay == 1)
         {
@@ -74,14 +74,18 @@ public class StoryController : MonoBehaviour
         }
         if (currentDay < maxDays)
         {
-            return currentDay += 1;
+            currentDay += 1;
         }
         Debug.Log($"{currentDay} day set");
-        return currentDay;
     }
 
     private void Awake()
     {
         Initialize();
+    }
+
+    private void Start()
+    {
+        NextDay();
     }
 }
