@@ -1,18 +1,20 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class WorldDialogueTrigger : MonoBehaviour
 {
-    [Header("��������� �������")]
+    [Header("Настройки диалога")]
     [SerializeField] private WorldDialogueWindow dialogueWindow;
     [SerializeField] public List<CharacterLine> characterList;
+    [SerializeField] public bool DialogueEnded = false;
+    private BoxCollider2D boxCollider;
+    private bool dialogueActive = false; // 🔹 флаг, чтобы не перезапускать
 
     [Serializable]
     public class CharacterLine
     {
-        [TextArea(2, 4)]
-        public string lines;
+        [TextArea(2, 4)] public string lines;
         public Sprite character;
         public AudioClip voiceClip;
         public DialogueEvent eventType;
@@ -24,25 +26,61 @@ public class WorldDialogueTrigger : MonoBehaviour
         FadeOut
     }
 
-    public void StartDialogue()
+    private void Awake()
     {
-        dialogueWindow.StartDialogue(characterList);
-    }
-
-    public void NextLine()
-    {
-        if (dialogueWindow != null)
-            dialogueWindow.NextLinePublic();
-    }
-
-    public void StopDialogue()
-    {
-        if (dialogueWindow != null)
-            dialogueWindow.StopDialoguePublic();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     private void OnMouseDown()
     {
+        // 🔹 Если диалог уже идёт или завершён — игнорируем
+        if (dialogueActive || DialogueEnded)
+            return;
+        
+
         StartDialogue();
+    }
+
+    public void Initialize()
+    {
+        DialogueEnded = false;
+        dialogueActive = false;
+        if (boxCollider != null)
+            boxCollider.enabled = true;
+    }
+
+    public void StartDialogue()
+    {
+        if (dialogueWindow != null)
+        {
+            dialogueActive = true;
+            dialogueWindow.StartDialogue(characterList);
+            dialogueWindow.OnDialogueEnded += OnDialogueFinished; // подписываемся
+        }
+    }
+
+    private void OnDialogueFinished()
+    {
+        dialogueActive = false;
+        DialogueEnded = true;
+        TriggerOff();
+        dialogueWindow.OnDialogueEnded -= OnDialogueFinished; // чистим подписку
+    }
+
+    public void NextLine()
+    {
+        dialogueWindow?.NextLinePublic();
+    }
+
+    public void StopDialogue()
+    {
+        dialogueWindow?.StopDialoguePublic();
+        dialogueActive = false;
+    }
+
+    public void TriggerOff()
+    {
+        if (boxCollider != null)
+            boxCollider.enabled = false;
     }
 }

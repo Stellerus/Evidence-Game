@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2098912039552188475}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.80041, y: 0.07389909, z: 0}
+  m_LocalPosition: {x: -10.17, y: 1.7, z: 0}
   m_LocalScale: {x: 0.6106694, y: 0.6363774, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -113,7 +113,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5213094048589111128}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1.0579859, y: 1.0557023, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -121,7 +121,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10.16, y: 0.08}
+  m_AnchoredPosition: {x: -10.16, y: -0.51}
   m_SizeDelta: {x: 14.5354, y: 1.621}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &8917445465112875224
@@ -289,7 +289,7 @@ Transform:
   m_GameObject: {fileID: 6127478142213533249}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.95, y: -0.2874, z: 0}
+  m_LocalPosition: {x: -10.49, y: -0.54, z: 0}
   m_LocalScale: {x: 1.0579859, y: 0.7674956, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -377,7 +377,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6512972879770738020}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.67, y: -3.61, z: 0}
   m_LocalScale: {x: 0.94519216, y: 0.9472367, z: 1}
   m_ConstrainProportionsScale: 0
@@ -461,7 +461,7 @@ MonoBehaviour:
   typeSpeed: 0.02
   fadeSpeed: 2
   audioSource: {fileID: 182510895595105125}
-  index: 0
+  trigger: {fileID: 0}
 --- !u!82 &182510895595105125
 AudioSource:
   m_ObjectHideFlags: 0
@@ -586,8 +586,8 @@ Transform:
   m_GameObject: {fileID: 7630243611518247319}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.09, y: 3.59, z: 0.018124595}
-  m_LocalScale: {x: 22.694002, y: 12.237767, z: 1.4667}
+  m_LocalPosition: {x: -11.09, y: 4.2, z: 0.018124595}
+  m_LocalScale: {x: 27.686684, y: 16.520987, z: 1.4667}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8965716590990517781}
@@ -652,7 +652,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueWindow: {fileID: 3595540444671394971}
   characterList:
+  - lines: interrogation room dialogue
+    character: {fileID: 0}
+    voiceClip: {fileID: 0}
+    eventType: 0
   - lines: pisyn
     character: {fileID: 0}
     voiceClip: {fileID: 0}
     eventType: 0
+  DialogueEnded: 0

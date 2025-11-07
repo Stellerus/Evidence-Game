@@ -15,7 +15,7 @@ public class MouseController : MonoBehaviour
         Vector3 mousePos = mainCamera.ScreenToWorldPoint(
             new Vector3(Input.mousePosition.x, Input.mousePosition.y, -mainCamera.transform.position.z)
         );
-        mousePos.z = 0f;
+        mousePos.z = 10f;
 
         transform.position = mousePos;
 
@@ -29,7 +29,7 @@ public class MouseController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("GetButton 1 works");
-            hit.gameObject.GetComponent<IClickable>().OnClick();
+            hit.gameObject.GetComponent<IClickable>().OnClick();    
         }
     }
 }

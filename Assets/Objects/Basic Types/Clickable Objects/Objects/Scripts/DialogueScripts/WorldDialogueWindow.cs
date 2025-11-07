@@ -18,22 +18,30 @@ public class WorldDialogueWindow : MonoBehaviour
     [Header("Звук")]
     [SerializeField] private AudioSource audioSource;
 
+    [Header("Ссылка на триггер")]
+    [SerializeField] private WorldDialogueTrigger trigger;
+
     private List<CharacterLine> characterList;
-    public int index;
+    private int index;
     private bool isTyping;
     private bool isActive;
     private Coroutine typingCoroutine;
     private Color bgColor;
     private Color textColor;
 
-    void Start()
+    // 🔹 новое событие
+    public event System.Action OnDialogueEnded;
+
+    private void Start()
     {
         bgColor = background.color;
         textColor = textMesh.color;
         HideInstant();
+        bgColor.a = 1;
+        textColor.a = 1;
     }
 
-    void Update()
+    private void Update()
     {
         if (!isActive) return;
 
@@ -51,7 +59,6 @@ public class WorldDialogueWindow : MonoBehaviour
             }
         }
     }
-
 
     public void StartDialogue(List<CharacterLine> newLines)
     {
@@ -73,6 +80,8 @@ public class WorldDialogueWindow : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(Fade(false));
         isActive = false;
+        trigger?.TriggerOff();
+        OnDialogueEnded?.Invoke(); // 🔹 уведомляем триггер о завершении
     }
 
     private void HideInstant()
@@ -83,7 +92,10 @@ public class WorldDialogueWindow : MonoBehaviour
         textMesh.color = t;
         textMesh.text = "";
         if (characterRenderer != null)
+        {
             characterRenderer.sprite = null;
+            characterRenderer.color = new Color(1, 1, 1, 0);
+        }
     }
 
     private IEnumerator Fade(bool show)
@@ -111,16 +123,15 @@ public class WorldDialogueWindow : MonoBehaviour
         if (typingCoroutine != null)
             StopCoroutine(typingCoroutine);
 
+        var sprite = characterList[index].character;
         if (characterRenderer != null)
         {
-            var sprite = characterList[index].character;
             characterRenderer.sprite = sprite;
             characterRenderer.color = sprite ? Color.white : new Color(1, 1, 1, 0);
         }
 
         PlayVoice(characterList[index]);
         typingCoroutine = StartCoroutine(TypeLine(characterList[index].lines));
-
         StartCoroutine(HandleDialogueEvent(characterList[index].eventType));
     }
 
@@ -144,39 +155,30 @@ public class WorldDialogueWindow : MonoBehaviour
         if (index < characterList.Count)
             ShowLine();
         else
-            Hide();
+            Hide(); // 🔹 завершает диалог и вызывает OnDialogueEnded
     }
 
     private void PlayVoice(CharacterLine line)
     {
         if (audioSource == null) return;
 
+        audioSource.Stop();
+
         if (line.voiceClip != null)
         {
-            audioSource.Stop();
             audioSource.clip = line.voiceClip;
             audioSource.Play();
-        }
-        else
-        {
-            audioSource.Stop();
         }
     }
 
     private IEnumerator HandleDialogueEvent(DialogueEvent evt)
     {
-        switch (evt)
-        {
-            case DialogueEvent.None:
-                yield break;
+        if (evt == DialogueEvent.None)
+            yield break;
 
-            case DialogueEvent.FadeOut:
-                if (FadeTransition.Instance != null)
-                    yield return FadeTransition.Instance.FadeOutRoutine(null, false, 1f);
-                break;
-        }
+        if (evt == DialogueEvent.FadeOut && FadeTransition.Instance != null)
+            yield return FadeTransition.Instance.FadeOutRoutine(null, false, 1f);
     }
-
 
     public void NextLinePublic()
     {

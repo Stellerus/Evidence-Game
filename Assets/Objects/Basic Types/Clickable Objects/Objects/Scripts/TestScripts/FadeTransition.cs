@@ -15,6 +15,7 @@ public class FadeTransition : MonoBehaviour
     [SerializeField] private Image fadeUIImage;
     private Color uiFadeColor;
 
+    [SerializeField] public string nextScene;
     [SerializeField] private bool MoveToNextScene;
 
     void Awake()
@@ -65,9 +66,9 @@ public class FadeTransition : MonoBehaviour
             }
             yield return null;
         }
-    }
+    }   
 
-    public IEnumerator FadeOutRoutine(string nextScene = null, bool loadScene = false, float duration = 1f)
+    public IEnumerator FadeOutRoutine(string nextScene, bool loadScene = false, float duration = 1f)
     {
         for (float t = 0; t <= 1; t += Time.deltaTime / duration)
         {
