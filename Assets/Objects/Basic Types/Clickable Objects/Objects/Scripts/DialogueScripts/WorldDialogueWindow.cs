@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using static WorldDialogueTrigger;
 
@@ -122,6 +123,9 @@ public class WorldDialogueWindow : MonoBehaviour
 
         if (typingCoroutine != null)
             StopCoroutine(typingCoroutine);
+/*
+        if (trigger.Name != null)
+            trigger.Name.text = characterList[index].characterName;*/
 
         var sprite = characterList[index].character;
         if (characterRenderer != null)
