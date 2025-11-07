@@ -27,7 +27,8 @@ public class WorldDialogueTrigger : MonoBehaviour
     public enum DialogueEvent
     {
         None,
-        FadeOut
+        FadeOut,
+        Invisible
     }
 
     private void Awake()
