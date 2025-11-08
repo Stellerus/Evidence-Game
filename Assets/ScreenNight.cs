@@ -62,7 +62,8 @@ public class ScreenNight : MonoBehaviour
 
     public void StartFullFade()
     {
-        StartCoroutine(FadeTo(maxAlpha));
+        if (!isCoroutineRunning)
+            StartCoroutine(FadeTo(maxAlpha));
     }
 
 
@@ -88,6 +89,7 @@ public class ScreenNight : MonoBehaviour
 
     private IEnumerator FadeTo(float targetAlpha)
     {
+        isCoroutineRunning = true;
         const float eps = 0.001f;
         float speed = Mathf.Max(0.0001f, fadeSpeed);
 
@@ -107,6 +109,7 @@ public class ScreenNight : MonoBehaviour
 
         SetAlpha(FadeMask, targetAlpha);
         SetAlpha(NightMask, targetAlpha);
+        isCoroutineRunning = false;
     }
 
     private void SetAlpha(SpriteRenderer sr, float a)
