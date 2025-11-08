@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class WorldDialogueTrigger : MonoBehaviour
@@ -7,6 +8,8 @@ public class WorldDialogueTrigger : MonoBehaviour
     [Header("Настройки диалога")]
     [SerializeField] private WorldDialogueWindow dialogueWindow;
     [SerializeField] public List<CharacterLine> characterList;
+/*    [SerializeField] public String characterName = string.Empty;
+    [SerializeField] public TextMeshPro Name;*/
     [SerializeField] public bool DialogueEnded = false;
     private BoxCollider2D boxCollider;
     private bool dialogueActive = false; // 🔹 флаг, чтобы не перезапускать
@@ -18,12 +21,14 @@ public class WorldDialogueTrigger : MonoBehaviour
         public Sprite character;
         public AudioClip voiceClip;
         public DialogueEvent eventType;
+/*        public String characterName;*/
     }
 
     public enum DialogueEvent
     {
         None,
-        FadeOut
+        FadeOut,
+        Invisible
     }
 
     private void Awake()

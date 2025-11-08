@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using static WorldDialogueTrigger;
 
@@ -122,6 +123,11 @@ public class WorldDialogueWindow : MonoBehaviour
 
         if (typingCoroutine != null)
             StopCoroutine(typingCoroutine);
+/*
+        if (trigger.Name != null)
+            trigger.Name.text = characterList[index].characterName;*/
+        
+
 
         var sprite = characterList[index].character;
         if (characterRenderer != null)
@@ -171,6 +177,49 @@ public class WorldDialogueWindow : MonoBehaviour
         }
     }
 
+    private IEnumerator FadeInvisibleRoutine(float duration = 1f)
+    {
+        // Исчезновение
+        for (float t = 0; t <= 1; t += Time.deltaTime / duration)
+        {
+            float alpha = Mathf.Lerp(1f, 0f, t);
+
+            if (background) background.color = new Color(background.color.r, background.color.g, background.color.b, alpha);
+            if (textMesh) textMesh.color = new Color(textMesh.color.r, textMesh.color.g, textMesh.color.b, alpha);
+            if (characterRenderer) characterRenderer.color = new Color(characterRenderer.color.r, characterRenderer.color.g, characterRenderer.color.b, alpha);
+
+            yield return null;
+        }
+
+        // Смена реплики после исчезновения
+        index++;  // переключаемся на следующую строчку
+        if (index < characterList.Count)
+        {
+            ShowLine(); // сразу подготавливаем новую линию, но пока не отображаем
+        }
+        else
+        {
+            Hide(); // если реплик больше нет, закрываем диалог
+            yield break;
+        }
+
+        // Пауза
+        yield return new WaitForSeconds(0.1f);
+
+        // Появление
+        for (float t = 0; t <= 1; t += Time.deltaTime / duration)
+        {
+            float alpha = Mathf.Lerp(0f, 1f, t);
+
+            if (background) background.color = new Color(background.color.r, background.color.g, background.color.b, alpha);
+            if (textMesh) textMesh.color = new Color(textMesh.color.r, textMesh.color.g, textMesh.color.b, alpha);
+            if (characterRenderer) characterRenderer.color = new Color(characterRenderer.color.r, characterRenderer.color.g, characterRenderer.color.b, alpha);
+
+            yield return null;
+        }
+    }
+
+
     private IEnumerator HandleDialogueEvent(DialogueEvent evt)
     {
         if (evt == DialogueEvent.None)
@@ -178,7 +227,16 @@ public class WorldDialogueWindow : MonoBehaviour
 
         if (evt == DialogueEvent.FadeOut && FadeTransition.Instance != null)
             yield return FadeTransition.Instance.FadeOutRoutine(null, false, 1f);
+
+/*        if (evt == DialogueEvent.Invisible && FadeTransition.Instance != null)
+            yield return FadeTransition.Instance.FadeInvisibleRoutine(background, textMesh, characterRenderer, 1f);*/
+
+        if (evt == DialogueEvent.Invisible)
+            yield return StartCoroutine(FadeInvisibleRoutine(1f));
+
     }
+
+
 
     public void NextLinePublic()
     {

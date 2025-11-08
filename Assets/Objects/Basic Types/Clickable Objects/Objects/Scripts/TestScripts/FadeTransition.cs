@@ -1,4 +1,5 @@
-using System.Collections;
+﻿using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -66,7 +67,38 @@ public class FadeTransition : MonoBehaviour
             }
             yield return null;
         }
-    }   
+    }
+
+    public IEnumerator FadeInvisibleRoutine(SpriteRenderer background, TextMeshPro textMesh, SpriteRenderer characterRenderer, float duration = 1f)
+    {
+        // Исчезновение
+        for (float t = 0; t <= 1; t += Time.deltaTime / duration)
+        {
+            float alpha = Mathf.Lerp(1f, 0f, t);
+
+            if (background) background.color = new Color(background.color.r, background.color.g, background.color.b, alpha);
+            if (textMesh) textMesh.color = new Color(textMesh.color.r, textMesh.color.g, textMesh.color.b, alpha);
+            if (characterRenderer) characterRenderer.color = new Color(characterRenderer.color.r, characterRenderer.color.g, characterRenderer.color.b, alpha);
+
+            yield return null;
+        }
+
+        // Пауза перед возвращением
+        yield return new WaitForSeconds(0.3f);
+
+        // Появление
+        for (float t = 0; t <= 1; t += Time.deltaTime / duration)
+        {
+            float alpha = Mathf.Lerp(0f, 1f, t);
+
+            if (background) background.color = new Color(background.color.r, background.color.g, background.color.b, alpha);
+            if (textMesh) textMesh.color = new Color(textMesh.color.r, textMesh.color.g, textMesh.color.b, alpha);
+            if (characterRenderer) characterRenderer.color = new Color(characterRenderer.color.r, characterRenderer.color.g, characterRenderer.color.b, alpha);
+
+            yield return null;
+        }
+    }
+
 
     public IEnumerator FadeOutRoutine(string nextScene, bool loadScene = false, float duration = 1f)
     {
