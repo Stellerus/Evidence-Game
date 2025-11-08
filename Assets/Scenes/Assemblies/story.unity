@@ -297,6 +297,30 @@ MonoBehaviour:
     character: {fileID: -2424553518018739129, guid: 8feae5e148966844286ab28e8b8ab213, type: 3}
     voiceClip: {fileID: 0}
     eventType: 0
+  - lines: 
+    character: {fileID: 0}
+    voiceClip: {fileID: 0}
+    eventType: 2
+  - lines: The letter says... he's dead.
+    character: {fileID: -2424553518018739129, guid: 8feae5e148966844286ab28e8b8ab213, type: 3}
+    voiceClip: {fileID: 0}
+    eventType: 1
+  - lines: "What? Who\u2014him?"
+    character: {fileID: 3906255260909253054, guid: d54a8f2ba0492514a90ac6e0b9e3b156, type: 3}
+    voiceClip: {fileID: 0}
+    eventType: 0
+  - lines: My friend. He's dead.
+    character: {fileID: -2424553518018739129, guid: 8feae5e148966844286ab28e8b8ab213, type: 3}
+    voiceClip: {fileID: 0}
+    eventType: 0
+  - lines: I'm very sorry to hear that.
+    character: {fileID: 3906255260909253054, guid: d54a8f2ba0492514a90ac6e0b9e3b156, type: 3}
+    voiceClip: {fileID: 0}
+    eventType: 0
+  - lines: I need to go. Sorry.
+    character: {fileID: -2424553518018739129, guid: 8feae5e148966844286ab28e8b8ab213, type: 3}
+    voiceClip: {fileID: 0}
+    eventType: 0
   DialogueEnded: 0
 --- !u!61 &102378964
 BoxCollider2D:
@@ -387,7 +411,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
