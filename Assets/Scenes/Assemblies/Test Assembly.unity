@@ -855,6 +855,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fcb3cab348c90d64097cf96517753259, type: 3}
+--- !u!1 &264401366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8517239300124065231, guid: 13e05120df0712f4ca1560ff57190640, type: 3}
+  m_PrefabInstance: {fileID: 5895408459852011147}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &283642754 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2719578160641046555, guid: ea38454d8cb70424fb9b5f44e3af41a0, type: 3}
@@ -1779,6 +1784,26 @@ PrefabInstance:
     - target: {fileID: 570005346849007914, guid: fcb3cab348c90d64097cf96517753259, type: 3}
       propertyPath: characterList.Array.data[7].character
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2699466849015838722, guid: fcb3cab348c90d64097cf96517753259, type: 3}
+      propertyPath: DialogueEndedEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2699466849015838722, guid: fcb3cab348c90d64097cf96517753259, type: 3}
+      propertyPath: DialogueEndedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 264401366}
+    - target: {fileID: 2699466849015838722, guid: fcb3cab348c90d64097cf96517753259, type: 3}
+      propertyPath: DialogueEndedEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 719239773}
+    - target: {fileID: 2699466849015838722, guid: fcb3cab348c90d64097cf96517753259, type: 3}
+      propertyPath: DialogueEndedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2699466849015838722, guid: fcb3cab348c90d64097cf96517753259, type: 3}
+      propertyPath: DialogueEndedEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3825535489248386774, guid: fcb3cab348c90d64097cf96517753259, type: 3}
       propertyPath: m_LocalPosition.x
