@@ -4,9 +4,12 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using static WorldDialogueTrigger;
+using UnityEngine.Events;
 
 public class WorldDialogueWindow : MonoBehaviour
 {
+    public UnityEvent DialogueEndedEvent;
+
     [Header("Компоненты интерфейса")]
     [SerializeField] private TextMeshPro textMesh;
     [SerializeField] private SpriteRenderer background;
@@ -112,6 +115,8 @@ public class WorldDialogueWindow : MonoBehaviour
             textMesh.color = t;
             yield return null;
         }
+
+        DialogueEndedEvent.Invoke();
 
         if (!show)
             HideInstant();
