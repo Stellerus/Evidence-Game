@@ -1,13 +1,14 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 public class PhoneDiskBehaviour : MonoBehaviour
 {
     [SerializeField] float rotationSpeed = 10;
     [SerializeField] Quaternion startRotation;
-    bool rotateBack = false;
 
+    bool rotateBack = false;
     bool lockDigit = false;
+    bool lockPhone = false;
 
     public char currentDigit;
     public UnityEvent<char> transferDigit;
@@ -21,17 +22,12 @@ public class PhoneDiskBehaviour : MonoBehaviour
 
     private void Update()
     {
-        //if (rotateBack)
-        //{
-        //    if (transform.rotation == startRotation)
-        //    {
-        //        rotateBack = false;
-        //    }
-        //    //transform.rotation = Quaternion.RotateTowards(transform.rotation, startRotation, rotationSpeed * 2);
-        //    transform.rotation *= Quaternion.AngleAxis(rotationSpeed * 2, Vector3.forward);
-
-
-        //}
+        if (Input.GetMouseButtonUp(0))
+        {
+            lockPhone = false;
+            if (lockDigit)
+                StartRotateBack();
+        }
 
 
         if (rotateBack)
@@ -40,58 +36,42 @@ public class PhoneDiskBehaviour : MonoBehaviour
             float destinationZ = startRotation.eulerAngles.z;
             float angleDiff = Mathf.DeltaAngle(currentZ, destinationZ);
 
-            if (Mathf.Abs(angleDiff) <= 3f) // threshold to stop rotation
+            if (Mathf.Abs(angleDiff) <= 3f)
             {
                 transform.rotation = startRotation;
                 rotateBack = false;
+                lockDigit = false;
             }
             else
             {
                 transform.rotation *= Quaternion.AngleAxis(rotationSpeed * 100 * Time.deltaTime, Vector3.forward);
+                lockPhone = true;
             }
+
+            return;
         }
 
-
-        if (!rotateBack && lockDigit)
+        if (lockDigit && !lockPhone)
         {
             axis = Input.GetAxis("Mouse X");
 
-            //Debug.Log(axis);
-
-            if (!rotateBack && axis > 0)
+            if (axis > 0)
             {
                 DiskDrag();
             }
         }
-        
     }
+
     private void DiskDrag()
     {
-        //transform.rotation = new Quaternion(0, 0, transform.rotation.z - rotationSpeed * axis * Mathf.Deg2Rad, 0);
         transform.eulerAngles -= new Vector3(0, 0, rotationSpeed * axis);
     }
 
-
-    private void OnMouseDrag()
+    private void OnMouseDown()
     {
-        //axis = Input.GetAxis("Mouse X");
-
-        ////Debug.Log(axis);
-
-        //if (axis > 0 && !rotateBack)
-        //{
-        //    rotateBack = false;
-
-        //    DiskDrag();
-        //}
-        
+        lockDigit = true;
     }
 
-
-    private void OnMouseUp()
-    {
-        StartRotateBack();
-    }
 
     public void LockDigit()
     {
@@ -110,8 +90,8 @@ public class PhoneDiskBehaviour : MonoBehaviour
     {
         currentDigit = digit;
         transferDigit.Invoke(digit);
-
     }
+
     public void StartRotateBack()
     {
         rotateBack = true;
