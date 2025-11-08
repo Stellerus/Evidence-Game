@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3699697471753798815}
   - component: {fileID: 4124975395443478813}
   - component: {fileID: 7800371141525971474}
-  - component: {fileID: 2960336257671677197}
   - component: {fileID: 404623885886680068}
   m_Layer: 0
   m_Name: PoliceGroup 1
@@ -104,19 +103,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attachedCrimePoint: {fileID: 0}
   magnetSpeed: 10
---- !u!114 &2960336257671677197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4374449584030759158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d9a881ef6147bd4780ac7dc59b87b2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destinationTag: DropArea
 --- !u!58 &404623885886680068
 CircleCollider2D:
   m_ObjectHideFlags: 0
