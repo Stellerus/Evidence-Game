@@ -14,6 +14,8 @@ public class PhoneNumberHandler : MonoBehaviour
     [Serializable]
     public class NumberAction
     {
+        public bool Unlocked;
+
         public string number;
         public UnityEvent action;
     }
@@ -51,15 +53,64 @@ public class PhoneNumberHandler : MonoBehaviour
         }
     }
 
+
+    public void UnlockNumberAdelina()
+    {
+        UnlockNumber("613");
+    }
+    public void UnlockNumberVictor()
+    {
+        UnlockNumber("047");
+    }
+
+    public void LockNumberAdelina()
+    {
+        LockNumber("613");
+    }
+    public void LockNumberVictor()
+    {
+        LockNumber("047");
+    }
+
+    
+
+    private void UnlockNumber(string number)
+    {
+        foreach (var num in numbers)
+        {
+            if (num.number == dialedPhoneNumber && num.number == number)
+            {
+                num.Unlocked = true;
+            }
+        }
+    }
+    private void LockNumber(string number)
+    {
+        foreach (var num in numbers)
+        {
+            if (num.number == dialedPhoneNumber && num.number == number)
+            {
+                num.Unlocked = false;
+            }
+        }
+    }
+
     private void CheckPhoneNumber()
     {
         if (existingNumbers.Contains(dialedPhoneNumber))
         {
             foreach (var num in numbers)
             {
-                if (num.number == dialedPhoneNumber)
+                if (num.number == dialedPhoneNumber )
                 {
-                    num.action.Invoke();
+                    if (num.Unlocked)
+                    {
+                        num.action.Invoke();
+                    }
+                    else
+                    {
+                        Debug.Log($"{num.number} needs to be unlocked");
+                    }
                 }
             }
         }
