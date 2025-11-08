@@ -6,6 +6,8 @@ public class DoorBehaviour : MonoBehaviour, IClickable
     //[field: SerializeField] public BaseAction_SO actionEvent { get; set; }
     [field: SerializeField] public UnityEvent actionEvent { get; set; }
 
+    
+
     public void OnClick()
     {
         Debug.Log("IMBA");

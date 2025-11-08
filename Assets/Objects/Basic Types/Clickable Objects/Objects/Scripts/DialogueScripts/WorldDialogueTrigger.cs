@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WorldDialogueTrigger : MonoBehaviour
@@ -60,7 +61,6 @@ public class WorldDialogueTrigger : MonoBehaviour
         {
             dialogueActive = true;
             dialogueWindow.StartDialogue(characterList);
-            dialogueWindow.OnDialogueEnded += OnDialogueFinished; // подписываемся
         }
     }
 
@@ -69,7 +69,6 @@ public class WorldDialogueTrigger : MonoBehaviour
         dialogueActive = false;
         DialogueEnded = true;
         TriggerOff();
-        dialogueWindow.OnDialogueEnded -= OnDialogueFinished; // чистим подписку
     }
 
     public void NextLine()
@@ -88,4 +87,5 @@ public class WorldDialogueTrigger : MonoBehaviour
         if (boxCollider != null)
             boxCollider.enabled = false;
     }
+
 }

@@ -10,6 +10,8 @@ public class WorldDialogueWindow : MonoBehaviour
 {
     public UnityEvent DialogueEndedEvent;
 
+    public StoryController story;
+
     [Header("Компоненты интерфейса")]
     [SerializeField] private TextMeshPro textMesh;
     [SerializeField] private SpriteRenderer background;
@@ -28,15 +30,13 @@ public class WorldDialogueWindow : MonoBehaviour
     private List<CharacterLine> characterList;
     private int index;
     private bool isTyping;
-    private bool isActive;
+    public bool isActive;
     private Coroutine typingCoroutine;
     private Color bgColor;
     private Color textColor;
 
-    // 🔹 новое событие
-    public event System.Action OnDialogueEnded;
 
-    private void Start()
+    private void Awake()
     {
         bgColor = background.color;
         textColor = textMesh.color;
@@ -85,7 +85,6 @@ public class WorldDialogueWindow : MonoBehaviour
         StartCoroutine(Fade(false));
         isActive = false;
         trigger?.TriggerOff();
-        OnDialogueEnded?.Invoke(); // 🔹 уведомляем триггер о завершении
     }
 
     private void HideInstant()
@@ -253,5 +252,11 @@ public class WorldDialogueWindow : MonoBehaviour
     {
         StopAllCoroutines();
         Hide();
+    }
+
+
+    private void OnEnable()
+    {
+        trigger.StartDialogue();
     }
 }

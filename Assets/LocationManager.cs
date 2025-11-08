@@ -6,6 +6,7 @@ using UnityEngine;
 public class LocationManager : MonoBehaviour
 {
     public Camera cam;
+    public StoryController story;
 
     [Header("Drag Transforms of locations here")]
     [SerializeField] Transform Cabinet;

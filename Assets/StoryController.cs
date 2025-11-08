@@ -158,7 +158,7 @@ public class StoryController : MonoBehaviour
 
     public void NextDay()
     {
-        if (currentDay == 1)
+        if (currentDay <= 1)
         {
             Day1Action.Invoke();
         }
@@ -180,19 +180,16 @@ public class StoryController : MonoBehaviour
         }
         if (currentDay < maxDays)
         {
-            currentDay += 1;
+            ++currentDay;
             ArchiveDailyDialogue = true;
         }
         Debug.Log($"{currentDay} day set");
     }
 
+
     private void Awake()
     {
         Initialize();
-    }
-
-    private void Start()
-    {
         NextDay();
     }
 }

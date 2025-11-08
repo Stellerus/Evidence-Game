@@ -758,9 +758,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 746854756}
+      - m_Target: {fileID: 1158642619}
         m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1037,8 +1037,7 @@ MonoBehaviour:
   fadeRenderer: {fileID: 0}
   fadeUIImage: {fileID: 326903257}
   nextScene: story
-  moveToNextSceneOnStart: 1
-  fadeDuration: 1
+  MoveToNextScene: 0
 --- !u!4 &746854758
 Transform:
   m_ObjectHideFlags: 0
