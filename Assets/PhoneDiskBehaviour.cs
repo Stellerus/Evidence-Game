@@ -90,7 +90,7 @@ public class PhoneDiskBehaviour : MonoBehaviour
 
     private void OnMouseUp()
     {
-        rotateBack = true;
+        StartRotateBack();
     }
 
     public void LockDigit()

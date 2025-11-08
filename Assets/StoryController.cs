@@ -143,8 +143,7 @@ public class StoryController : MonoBehaviour
     public bool Day5;
     public UnityEvent Day5Action;
 
-
-
+    public bool ArchiveDailyDialogue;
 
     
 
@@ -182,6 +181,7 @@ public class StoryController : MonoBehaviour
         if (currentDay < maxDays)
         {
             currentDay += 1;
+            ArchiveDailyDialogue = true;
         }
         Debug.Log($"{currentDay} day set");
     }

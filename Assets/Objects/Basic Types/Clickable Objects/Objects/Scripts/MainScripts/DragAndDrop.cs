@@ -34,6 +34,7 @@ public class DragAndDrop : MonoBehaviour
         var rayDirection = MouseWorldPosition() - Camera.main.transform.position;
         RaycastHit2D hitInfo = Physics2D.Raycast(rayOrigin, rayDirection);
 
+
         if (hitInfo.collider != null && hitInfo.transform.CompareTag(destinationTag))
         {
             transform.position = hitInfo.transform.position + new Vector3(0, 0, -0.01f);
