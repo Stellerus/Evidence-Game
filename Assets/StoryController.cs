@@ -12,17 +12,30 @@ public class StoryController : MonoBehaviour
     //}
 
 
-    public bool TutorialEnded { get; private set; }
+    public bool TutorialEnded;
 
 
     [Header("Phone")]
-    public bool PhoneUnlocked { get; private set; }
-    public bool Character1Unlocked { get; private set; }
+    public bool PhoneUnlocked;
+
+    public bool VictorUnlocked;
     public UnityEvent UnlockCharacter1Event;
-    public bool Character2Unlocked { get; private set; }
+
+    public void UnlockAdelina()
+    {
+        UnlockCharacter1Event.Invoke();
+        AdelinaUnlocked = true;
+    }
+
+    public bool AdelinaUnlocked;
     public UnityEvent UnlockCharacter2Event;
-    public bool Character3Unlocked { get; private set; }
-    public UnityEvent UnlockCharacter3Event;
+
+    public void UnlockVictor()
+    {
+        UnlockCharacter2Event.Invoke();
+        AdelinaUnlocked = true;
+    }
+
 
 
     [Header("Dialogues")]
@@ -75,7 +88,7 @@ public class StoryController : MonoBehaviour
         DialogueWithIlyishnaDay3Ended = true;
     }
 
-    public bool InterrogateAdelinaDay3Ended { get; private set; }
+    public bool InterrogateAdelinaDay3Ended;
     public UnityEvent InterrogationEventAdelinaDay3;
 
     public void InterrogateAdelinaDay3()
@@ -94,7 +107,7 @@ public class StoryController : MonoBehaviour
         DialogueWithKobelDay3Ended = true;
     }
 
-    public bool InterrogateVictorDay3Ended { get; private set; }
+    public bool InterrogateVictorDay3Ended;
     public UnityEvent InterrogationEventVictorDay3;
 
     public void InterrogateVictorDay3()
@@ -119,37 +132,21 @@ public class StoryController : MonoBehaviour
     int currentDay;
 
     [Header("Days")]
-    public bool Day1 { get; private set; }
+    public bool Day1;
     public UnityEvent Day1Action;
-    public bool Day2 { get; private set; }
+    public bool Day2;
     public UnityEvent Day2Action;
-    public bool Day3 { get; private set; }
+    public bool Day3;
     public UnityEvent Day3Action;
-    public bool Day4 { get; private set; }
+    public bool Day4;
     public UnityEvent Day4Action;
-    public bool Day5 { get; private set; }
+    public bool Day5;
     public UnityEvent Day5Action;
 
 
 
 
-    public void UnlockCharacter1()
-    {
-        UnlockCharacter1Event.Invoke();
-        Character1Unlocked = true;
-    }
-
-    public void UnlockCharacter2()
-    {
-        UnlockCharacter2Event.Invoke();
-        Character2Unlocked = true;
-    }
-
-    public void UnlockCharacter3()
-    {
-        UnlockCharacter3Event.Invoke();
-        Character3Unlocked = true;
-    }
+    
 
 
 
