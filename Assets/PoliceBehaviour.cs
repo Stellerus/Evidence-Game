@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PoliceBehaviour : MonoBehaviour
 {
@@ -7,10 +7,13 @@ public class PoliceBehaviour : MonoBehaviour
     public float magnetSpeed = 2f;
 
     private bool isLocked = false;
+    private bool isBeingDragged = false;
+    private Camera mainCamera;
 
     private void Start()
     {
         magnetRadius = GetComponent<CircleCollider2D>();
+        mainCamera = Camera.main;
     }
 
     public void LockMovement()
@@ -18,12 +21,48 @@ public class PoliceBehaviour : MonoBehaviour
         isLocked = true;
     }
 
+    private void Update()
+    {
+        HandleDrag();
+    }
 
+    private void HandleDrag()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            
+            Vector2 mouseWorldPos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+            Collider2D hit = Physics2D.OverlapPoint(mouseWorldPos);
 
+            if (hit != null && hit.gameObject == gameObject)
+            {
+                
+                isBeingDragged = !isBeingDragged;
 
+                if (isBeingDragged)
+                {
+      
+                    if (attachedCrimePoint != null)
+                    {
+                        attachedCrimePoint.Release();
+                        attachedCrimePoint = null;
+                    }
+                }
+            }
+        }
+
+        if (isBeingDragged)
+        {
+            Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition.z = 0;
+            transform.position = mousePosition;
+        }
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if (isBeingDragged || isLocked) return;
+
         CrimePointBehaviour crime = collision.GetComponent<CrimePointBehaviour>();
         if (crime == null) return;
 
@@ -42,23 +81,20 @@ public class PoliceBehaviour : MonoBehaviour
             {
                 AttachToCrimePoint(crime);
             }
-            
         }
     }
 
     private void AttachToCrimePoint(CrimePointBehaviour newCrime)
     {
-        if (attachedCrimePoint == null && attachedCrimePoint != newCrime)
+        if (attachedCrimePoint != null && attachedCrimePoint != newCrime)
         {
             attachedCrimePoint.Release();
         }
 
         attachedCrimePoint = newCrime;
-
         attachedCrimePoint.Occupy();
 
         transform.position = attachedCrimePoint.transform.position;
-
     }
 
     private void OnDestroy()
