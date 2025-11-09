@@ -30,18 +30,18 @@ public class PoliceBehaviour : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-
+            
             Vector2 mouseWorldPos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
             Collider2D hit = Physics2D.OverlapPoint(mouseWorldPos);
 
             if (hit != null && hit.gameObject == gameObject)
             {
-
+                
                 isBeingDragged = !isBeingDragged;
 
                 if (isBeingDragged)
                 {
-
+      
                     if (attachedCrimePoint != null)
                     {
                         attachedCrimePoint.Release();
