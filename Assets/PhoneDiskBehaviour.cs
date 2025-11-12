@@ -51,12 +51,13 @@ public class PhoneDiskBehaviour : MonoBehaviour
             return;
         }
 
-        if (lockDigit && !lockPhone)
+        if (lockDigit && !lockPhone && Input.GetMouseButton(0))
         {
             axis = Input.GetAxis("Mouse X");
 
             if (axis > 0)
             {
+                lockDigit = true;
                 DiskDrag();
             }
         }
@@ -69,7 +70,7 @@ public class PhoneDiskBehaviour : MonoBehaviour
 
     private void OnMouseDown()
     {
-        lockDigit = true;
+
     }
 
 

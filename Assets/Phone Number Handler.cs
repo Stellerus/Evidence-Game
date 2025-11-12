@@ -11,6 +11,9 @@ public class PhoneNumberHandler : MonoBehaviour
     private List<string> existingNumbers;
     public List<NumberAction> numbers;
 
+    public TextMesh optionalMesh;
+    public bool optionalMeshActive = false;
+
     [Serializable]
     public class NumberAction
     {
@@ -36,7 +39,17 @@ public class PhoneNumberHandler : MonoBehaviour
     }
 
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
 
+        }
+        if (optionalMesh != null)
+        {
+            optionalMesh.text = dialedPhoneNumber;
+        }
+    }
     public void ClearNumber()
     {
         dialedPhoneNumber = string.Empty;

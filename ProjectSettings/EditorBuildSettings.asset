@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Assemblies/Test Assembly.unity
     guid: d01b04e02b0b0ea4bbba22e0d12dff31
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Assemblies/TestAssembly (alt).unity
     guid: b6434edd86a765f4895181ce8c13dea3
   m_configObjects:
